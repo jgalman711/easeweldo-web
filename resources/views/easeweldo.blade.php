@@ -81,18 +81,19 @@
                 <div class="bg-blue-500 py-12">
                     <div class="container mx-auto px-4">
                         <div class="flex flex-wrap justify-between">
-                            <div class="w-1/2 md:w-1/2">
+                            <div class="w-full md:w-2/5 pb-4">
+                                <h2 class="text-4xl lg:text-6xl font-bold mb-6 lg:hidden block text-white">Get to Know Us Better</h2>
                                 <div class="image-container">
                                 <img src="assets/images/overview.png" alt="Image description" class="w-full">
                                 </div>
                             </div>
-                            <div class="w-full md:w-1/2">
-                                <div class="text-white">
-                                    <h2 class="text-4xl lg:text-6xl font-bold mb-6">Get to Know Us Better</h2>
-                                    <hr class="mb-6 border-white-300 border-t-4 w-20">
-                                    <p class="mb-6 text-lg lg:text-xl text-justify">At Easeweldo, we understand the challenges and complexities of managing payroll for your business. We are more than just a payroll system; we are your trusted partner in simplifying the payroll process and ensuring the smooth operation of your company.</p>
-                                    <p class="mb-6 text-lg lg:text-xl text-justify">We are dedicated to providing you with a seamless payroll management experience, saving you valuable time and effort. With Easeweldo, you can rely on our state-of-the-art technology to automate calculations, tax deductions, and benefit contributions, eliminating the need for manual tasks and reducing the risk of errors. We are committed to staying up-to-date with the latest labor laws and tax regulations, ensuring your payroll remains compliant.</p>
-                                    <p class="mb-6 text-lg lg:text-xl text-justify">Our goal is to empower you to focus on what matters most – growing your business and nurturing your employees, while we take care of your payroll needs. Trust Easeweldo to simplify your payroll management to help your business thrive.</p>
+                            <div class="w-full md:w-3/5">
+                                <div class="text-white pl-0 md:pl-12">
+                                    <h2 class="text-4xl lg:text-6xl font-bold mb-6 hidden lg:block">Get to Know Us Better</h2>
+                                    <hr class="mb-6 border-white-300 border-t-4 w-20 hidden lg:block">
+                                    <p class="mb-6 text-lg text-lg lg:text-2xl text-justify">At Easeweldo, we understand the challenges and complexities of managing payroll for your business. We are more than just a payroll system; we are your trusted partner in simplifying the payroll process and ensuring the smooth operation of your company.</p>
+                                    <p class="mb-6 text-lg text-lg lg:text-2xl text-justify">We are dedicated to providing you with a seamless payroll management experience, saving you valuable time and effort. With Easeweldo, you can rely on our state-of-the-art technology to automate calculations, tax deductions, and benefit contributions, eliminating the need for manual tasks and reducing the risk of errors. We are committed to staying up-to-date with the latest labor laws and tax regulations, ensuring your payroll remains compliant.</p>
+                                    <p class="mb-6 text-lg text-lg lg:text-2xl text-justify">Our goal is to empower you to focus on what matters most – growing your business and nurturing your employees, while we take care of your payroll needs. Trust Easeweldo to simplify your payroll management to help your business thrive.</p>
                                 </div>
                             </div>
                         </div>
@@ -103,21 +104,21 @@
                     <div class="flex flex-wrap -mx-4">
                         <div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
                             <div class="flex items-center mb-4">
-                                <img src="image-url-1" alt="Reliability" class="w-8 h-8 mr-4">
+                                <img src="assets/images/reliability.png" alt="Reliability" class="w-8 h-8 mr-4">
                                 <h3 class="text-lg font-bold">Reliability</h3>
                             </div>
                             <p>Count on us to deliver consistent and accurate results.</p>
                             </div>
                             <div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
                             <div class="flex items-center mb-4">
-                                <img src="image-url-2" alt="Simplicity" class="w-8 h-8 mr-4">
+                                <img src="assets/images/simplicity.png" alt="Simplicity" class="w-8 h-8 mr-4">
                                 <h3 class="text-lg font-bold">Simplicity</h3>
                             </div>
                             <p>Driven to create an intuitive and user-friendly payroll system.</p>
                             </div>
                             <div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
                             <div class="flex items-center mb-4">
-                                <img src="image-url-3" alt="Partnership" class="w-8 h-8 mr-4">
+                                <img src="assets/images/partnership.png" alt="Partnership" class="w-8 h-8 mr-4">
                                 <h3 class="text-lg font-bold">Partnership</h3>
                             </div>
                             <p>We see ourselves as more than just a service provider; we are your trusted partner.</p>
