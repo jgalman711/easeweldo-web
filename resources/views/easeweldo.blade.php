@@ -97,29 +97,29 @@
                         <div class="mb-12 mx-auto max-w-6xl">
                             <h2 class="text-4xl lg:text-6xl text-center font-bold mb-4 text-white">Discover Our Solutions</h2>
                         </div>
-                        <div class="grid grid-cols-4 gap-4">
-                            <div class="bg-white shadow-md px-10 py-12">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="bg-white shadow-md p-6 lg:px-10 lg:py-12">
                                 <div class="flex flex-col relative">
                                     <img src="assets/images/feature-icons/icon1.png" alt="Feature Icon" class="w-16 h-16 mb-6">
                                     <h3 class="text-lg font-bold">Time and Attendance Tracking</h3>
                                 </div>
                                 <p class="text-gray-700">Track employee working hours, attendance, and time off.</p>
                             </div>
-                            <div class="bg-white shadow-md px-10 py-12">
+                            <div class="bg-white shadow-md p-6 lg:px-10 lg:py-12">
                                 <div class="flex flex-col relative">
                                     <img src="assets/images/feature-icons/icon2.png" alt="Feature Icon" class="w-16 h-16 mb-6">
                                     <h3 class="text-lg font-bold">Automated Payroll Calculation</h3>
                                 </div>
                                 <p class="text-gray-700">Automatically calculate salaries, deductions, and taxes based on employee data.</p>
                             </div>
-                            <div class="bg-white shadow-md px-10 py-12">
+                            <div class="bg-white shadow-md p-6 lg:px-10 lg:py-12">
                                 <div class="flex flex-col relative">
                                     <img src="assets/images/feature-icons/icon3.png" alt="Feature Icon" class="w-16 h-16 mb-6">
                                     <h3 class="text-lg font-bold">Efficient Employee Management</h3>
                                 </div>
                                 <p class="text-gray-700">Simplify and optimize employee management processes for seamless administration, from onboarding to payroll, using efficient tools and workflows.</p>
                             </div>
-                            <div class="bg-white shadow-md px-10 py-12">
+                            <div class="bg-white shadow-md p-6 lg:px-10 lg:py-12">
                                 <div class="flex flex-col relative">
                                     <img src="assets/images/feature-icons/icon4.png" alt="Feature Icon" class="w-16 h-16 mb-6">
                                     <h3 class="text-lg font-bold">QR Code Time Tracking</h3>
@@ -127,29 +127,29 @@
                                 <p class="text-gray-700">Streamline clock-in and clock-out processes using QR codes as a cost-effective alternative to biometrics for employee attendance tracking.</p>
                             </div>
                         </div>
-                        <div class="grid grid-cols-4 gap-4 mt-4">
-                            <div class="bg-white shadow-md px-10 py-12">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+                            <div class="bg-white shadow-md p-6 lg:px-10 lg:py-12">
                                 <div class="flex flex-col relative">
                                     <img src="assets/images/feature-icons/icon5.png" alt="Feature Icon" class="w-16 h-16 mb-6">
                                     <h3 class="text-lg font-bold">Flexible Employee Schedules</h3>
                                 </div>
                                 <p class="text-gray-700">Empower business owners to set and manage individualized time schedules for employees, allowing for flexibility in work hours and effective workforce management.</p>
                             </div>
-                            <div class="bg-white shadow-md px-10 py-12">
+                            <div class="bg-white shadow-md p-6 lg:px-10 lg:py-12">
                                 <div class="flex flex-col relative">
                                     <img src="assets/images/feature-icons/icon6.png" alt="Feature Icon" class="w-16 h-16 mb-6">
                                     <h3 class="text-lg font-bold">Customizable Deductions and Benefits</h3>
                                 </div>
                                 <p class="text-gray-700">Track employee working hours, attendance, and time off.</p>
                             </div>
-                            <div class="bg-white shadow-md px-10 py-12">
+                            <div class="bg-white shadow-md p-6 lg:px-10 lg:py-12">
                                 <div class="flex flex-col relative">
                                     <img src="assets/images/feature-icons/icon7.png" alt="Feature Icon" class="w-16 h-16 mb-6">
                                     <h3 class="text-lg font-bold">Comprehensive Reporting</h3>
                                 </div>
                                 <p class="text-gray-700">Generate detailed reports on various aspects of employee data, payroll, attendance, and more, providing valuable insights for informed decision-making.</p>
                             </div>
-                            <div class="bg-white shadow-md px-10 py-12">
+                            <div class="bg-white shadow-md p-6 lg:px-10 lg:py-12">
                                 <div class="flex flex-col relative">
                                     <img src="assets/images/feature-icons/icon8.png" alt="Feature Icon" class="w-16 h-16 mb-6">
                                     <h3 class="text-lg font-bold">Employee Self-Service</h3>
