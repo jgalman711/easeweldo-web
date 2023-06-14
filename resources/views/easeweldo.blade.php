@@ -94,6 +94,80 @@
                 </div>
                 <div class="bg-primary py-16">
                     <div class="container mx-auto px-4">
+                        <div class="mb-12 mx-auto max-w-6xl">
+                            <h2 class="text-4xl lg:text-6xl text-center font-bold mb-4 text-white">Discover Our Solutions</h2>
+                        </div>
+                        <div class="grid grid-cols-4 gap-4">
+                            <div class="bg-white shadow-md px-10 py-12">
+                                <div class="flex flex-col relative">
+                                    <img src="assets/images/feature-icons/icon1.png" alt="Feature Icon" class="w-16 h-16 mb-6">
+                                    <h3 class="text-lg font-bold">Time and Attendance Tracking</h3>
+                                </div>
+                                <p class="text-gray-700">Track employee working hours, attendance, and time off.</p>
+                            </div>
+                            <div class="bg-white shadow-md px-10 py-12">
+                                <div class="flex flex-col relative">
+                                    <img src="assets/images/feature-icons/icon2.png" alt="Feature Icon" class="w-16 h-16 mb-6">
+                                    <h3 class="text-lg font-bold">Automated Payroll Calculation</h3>
+                                </div>
+                                <p class="text-gray-700">Automatically calculate salaries, deductions, and taxes based on employee data.</p>
+                            </div>
+                            <div class="bg-white shadow-md px-10 py-12">
+                                <div class="flex flex-col relative">
+                                    <img src="assets/images/feature-icons/icon3.png" alt="Feature Icon" class="w-16 h-16 mb-6">
+                                    <h3 class="text-lg font-bold">Efficient Employee Management</h3>
+                                </div>
+                                <p class="text-gray-700">Simplify and optimize employee management processes for seamless administration, from onboarding to payroll, using efficient tools and workflows.</p>
+                            </div>
+                            <div class="bg-white shadow-md px-10 py-12">
+                                <div class="flex flex-col relative">
+                                    <img src="assets/images/feature-icons/icon4.png" alt="Feature Icon" class="w-16 h-16 mb-6">
+                                    <h3 class="text-lg font-bold">QR Code Time Tracking</h3>
+                                </div>
+                                <p class="text-gray-700">Streamline clock-in and clock-out processes using QR codes as a cost-effective alternative to biometrics for employee attendance tracking.</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-4 gap-4 mt-4">
+                            <div class="bg-white shadow-md px-10 py-12">
+                                <div class="flex flex-col relative">
+                                    <img src="assets/images/feature-icons/icon5.png" alt="Feature Icon" class="w-16 h-16 mb-6">
+                                    <h3 class="text-lg font-bold">Flexible Employee Schedules</h3>
+                                </div>
+                                <p class="text-gray-700">Empower business owners to set and manage individualized time schedules for employees, allowing for flexibility in work hours and effective workforce management.</p>
+                            </div>
+                            <div class="bg-white shadow-md px-10 py-12">
+                                <div class="flex flex-col relative">
+                                    <img src="assets/images/feature-icons/icon6.png" alt="Feature Icon" class="w-16 h-16 mb-6">
+                                    <h3 class="text-lg font-bold">Customizable Deductions and Benefits</h3>
+                                </div>
+                                <p class="text-gray-700">Track employee working hours, attendance, and time off.</p>
+                            </div>
+                            <div class="bg-white shadow-md px-10 py-12">
+                                <div class="flex flex-col relative">
+                                    <img src="assets/images/feature-icons/icon7.png" alt="Feature Icon" class="w-16 h-16 mb-6">
+                                    <h3 class="text-lg font-bold">Comprehensive Reporting</h3>
+                                </div>
+                                <p class="text-gray-700">Generate detailed reports on various aspects of employee data, payroll, attendance, and more, providing valuable insights for informed decision-making.</p>
+                            </div>
+                            <div class="bg-white shadow-md px-10 py-12">
+                                <div class="flex flex-col relative">
+                                    <img src="assets/images/feature-icons/icon8.png" alt="Feature Icon" class="w-16 h-16 mb-6">
+                                    <h3 class="text-lg font-bold">Employee Self-Service</h3>
+                                </div>
+                                <p class="text-gray-700">Track employee working hours, attendance, and time off.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto px-4 py-16">
+                    <h2 class="text-4xl lg:text-6xl text-center font-bold mb-4 text-primary">Unveiling Our Inspiring Roadmap</h2>
+                    <p class="text-lg lg:text-2xl text-center">We're thrilled to share our vision for the future, filled with groundbreaking advancements, innovative solutions, and transformative experiences. With each milestone along the way, we're dedicated to empowering you and revolutionizing the way you work, thrive, and succeed. Get ready to embrace the extraordinary as we celebrate the journey ahead and unlock a world of endless possibilities. Together, let's shape a brighter future and embark on this remarkable adventure.</p>
+                </div>
+                <div class="flex justify-center py-16">
+                    <img src="assets/images/roadmap.png" alt="Roadmap" class="max-w-full h-auto">
+                </div>
+                <div class="bg-primary py-16">
+                    <div class="container mx-auto px-4">
                         <div class="flex flex-wrap justify-between">
                             <div class="w-full md:w-2/5 pb-4">
                                 <h2 class="text-4xl lg:text-6xl font-bold mb-8 lg:hidden block text-white">Get to Know Us Better</h2>
