@@ -42,7 +42,7 @@
         <main>
             <section class="hero bg-cover bg-center pt-16" style="background-image: url('assets/images/hero-2.png')">
                 <div class="container lg:mx-auto mx-1 flex items-center justify-between">
-                    <div class="flex items-center">
+                    <div class="flex items-center md:px-12">
                         <img src="assets/images/logo.png" alt="Easeweldo Logo" class="h-12 w-auto"><h1 class="text-4xl lg:text-4xl font-bold ml-4">Easeweldo</h1>
                     </div>
                     <nav>
@@ -54,7 +54,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="container mx-auto pt-32 lg:py-64">
+                <div class="container mx-auto pt-32 md:px-12 lg:py-64">
                     <h1 class="text-6xl lg:text-8xl font-bold mb-4">Effortless Payroll,</h1>
                     <h1 class="text-6xl lg:text-8xl font-bold mb-4">Simplified</h1>
                     <p class="text-2xl lg:text-4xl font-semibold mb-8">Streamline your business operations with ease.</p>
