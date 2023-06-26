@@ -72,24 +72,47 @@
             <section class="bg-white">
                 <div class="container mx-auto px-4 py-16">
                     <div class="mb-12 mx-auto max-w-6xl">
-                        <h2 class="text-4xl lg:text-6xl text-center font-bold mb-4 text-primary">What We Can Do For You</h2>
-                        <p class="text-lg lg:text-2xl text-center">With Easeweldo as your trusted payroll system, you can simplify your payroll processes, improve accuracy, ensure compliance, and gain valuable insights into your financials. Our aim is to empower your business by taking the burden of payroll management off your shoulders, allowing you to focus on what matters most – growing and nurturing your business.</p>
+                        <h2 class="text-4xl lg:text-6xl text-center font-bold mb-4 text-primary">
+                            What We Can Do For You
+                        </h2>
+                        <p class="text-lg lg:text-2xl text-center">
+                            With Easeweldo as your trusted payroll system, you can simplify your payroll processes,
+                            improve accuracy, ensure compliance, and gain valuable insights into your financials.
+                            Our aim is to empower your business by taking the burden of payroll management off your
+                            shoulders, allowing you to focus on what matters most – growing and nurturing your business.
+                        </p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-14">
                         <div class="bg-gray-200 rounded-lg p-8 flex flex-col items-center relative mt-0 lg:mt-2">
                             <img src="assets/images/streamline-icon.png" class="h-32 w-32 absolute top-0 left-1/8 transform -translate-y-1/2" alt="Icon" />
-                            <h3 class="text-center text-2xl lg:text-4xl font-bold mb-8 mt-12">Streamlined Payroll Management</h3>
-                            <p class="text-gray-700 text-center text-xl">Simplify payroll management with Easeweldo. Automate calculations, tax deductions, and benefits to save time and reduce errors. Say goodbye to manual tasks and spreadsheets.</p>
+                            <h3 class="text-center text-2xl lg:text-4xl font-bold mb-8 mt-12">
+                                Streamlined Payroll Management
+                            </h3>
+                            <p class="text-gray-700 text-center text-xl">
+                                Simplify payroll management with Easeweldo. Automate calculations, tax deductions, and
+                                benefits to save time and reduce errors. Say goodbye to manual tasks and spreadsheets.
+                            </p>
                         </div>
                         <div class="bg-gray-200 rounded-lg p-8 flex flex-col items-center relative mt-14 lg:mt-2">
                             <img src="assets/images/accuracy-icon.png" class="h-32 w-32 absolute top-0 left-1/8 transform -translate-y-1/2" alt="Icon" />
-                            <h3 class="text-center text-2xl lg:text-4xl font-bold mb-8 mt-12">Enhanced Efficiency and Accuracy</h3>
-                            <p class="text-gray-700 text-center text-xl">Ensure accurate and efficient payroll processing with Easeweldo. Eliminate manual entry and minimize errors, freeing up time for strategic business initiatives.</p>
+                            <h3 class="text-center text-2xl lg:text-4xl font-bold mb-8 mt-12">
+                                Enhanced Efficiency and Accuracy
+                            </h3>
+                            <p class="text-gray-700 text-center text-xl">
+                                Ensure accurate and efficient payroll processing with Easeweldo. Eliminate manual entry
+                                and minimize errors, freeing up time for strategic business initiatives.
+                            </p>
                         </div>
                         <div class="bg-gray-200 rounded-lg p-8 flex flex-col items-center relative mt-14 lg:mt-2">
                             <img src="assets/images/compliant-icon.png" class="h-32 w-32 absolute top-0 left-1/8 transform -translate-y-1/2" alt="Icon" />
-                            <h3 class="text-center text-2xl lg:text-4xl font-bold mb-8 mt-12">Compliance with Regulations</h3>
-                            <p class="text-gray-700 text-center text-xl">Stay compliant effortlessly. Easeweldo keeps you up-to-date with labor laws and tax regulations. Our system automates calculations, ensuring payroll compliance and minimizing penalties.</p>
+                            <h3 class="text-center text-2xl lg:text-4xl font-bold mb-8 mt-12">
+                                Compliance with Regulations
+                            </h3>
+                            <p class="text-gray-700 text-center text-xl">
+                                Stay compliant effortlessly. Easeweldo keeps you up-to-date with labor laws and tax
+                                regulations. Our system automates calculations, ensuring payroll compliance and
+                                minimizing penalties.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -110,13 +133,13 @@
                                         Automated Payroll Calculation
                                     </h3>
                                     <hr class="mb-8 border-gray-500 border-t-4 w-20 hidden lg:block">
-                                    <p class="text-gray-600 mt-4">
+                                    <p class="text-gray-600 mt-4 text-2xl text-xl">
                                         Our cutting-edge solution revolutionizes the payroll process,
                                         providing you with accurate anderror-free calculations.With our
                                         automated system, you can bid farewell to manual computations that
                                         often lead to mistakes.
                                     </p>
-                                    <p class="text-gray-600 mt-4">
+                                    <p class="text-gray-600 mt-4 text-2xl">
                                         Our robust platform handles various aspects of payroll, including
                                         calculating salaries, deductions, contributions, and withheld taxes.
                                         You can trust our system to accurately calculate employee compensation,
@@ -130,12 +153,12 @@
                                         Flexible Shift Management
                                     </h3>
                                     <hr class="mb-8 border-gray-500 border-t-4 w-20 hidden lg:block">
-                                    <p class="text-gray-600 mt-4">
+                                    <p class="text-gray-600 mt-4 text-2xl">
                                         Empower your workforce with our versatile solution. Seamlessly assign
                                         different schedules to your employees, catering to the needs of both
                                         full-time and part-time staff with varying work schedules.
                                     </p>
-                                    <p class="text-gray-600 mt-4">
+                                    <p class="text-gray-600 mt-4 text-2xl">
                                         Our system allows you to effortlessly create and manage diverse shift schedules,
                                         accommodating individual preferences and availability. Whether it's rotating
                                         shifts, split shifts, or fixed schedules, our platform ensures optimal resource
@@ -159,13 +182,13 @@
                                         Seamless Integration of Existing Biometrics
                                     </h3>
                                     <hr class="mb-8 border-gray-500 border-t-4 w-20 hidden lg:block">
-                                    <p class="text-gray-600 mt-4">
+                                    <p class="text-gray-600 mt-4 text-2xl">
                                         Simplify the integration of your company's existing biometrics
                                         system with our seamless solution. By utilizing our CSV upload
                                         feature, you can effortlessly integrate the data generated by your
                                         biometrics system into our employee management platform.
                                     </p>
-                                    <p class="text-gray-600 mt-4">
+                                    <p class="text-gray-600 mt-4 text-2xl">
                                         No more manual data entry or tedious data migration processes. With a
                                         few clicks, upload the CSV file generated by your existing biometrics
                                         system and instantly synchronize the employee data, including
@@ -179,11 +202,11 @@
                                         Customizable Deductions and Benefits
                                     </h3>
                                     <hr class="mb-8 border-gray-500 border-t-4 w-20 hidden lg:block">
-                                    <p class="text-gray-600 mt-4">
+                                    <p class="text-gray-600 mt-4 text-2xl">
                                         Our flexible platform empowers you to tailor deductions and
                                         benefits to meet the unique needs of your organization and employees.
                                     </p>
-                                    <p class="text-gray-600 mt-4">
+                                    <p class="text-gray-600 mt-4 text-2xl">
                                         By offering customizable deductions and benefits, our platform ensures
                                         that your payroll accurately reflects the individual circumstances of
                                         your employees, promoting satisfaction and engagement. Experience the
@@ -208,13 +231,13 @@
                                         Comprehensive Reporting
                                     </h3>
                                     <hr class="mb-8 border-gray-500 border-t-4 w-20 hidden lg:block">
-                                    <p class="text-gray-600 mt-4">
+                                    <p class="text-gray-600 mt-4 text-2xl">
                                         With our solution, you can streamline payroll processing, effortlessly track
                                         employer contributions and withheld taxes, and access vital reports for
                                         financial analysis and compliance purposes. Simplify your financial
                                         management and make informed decisions with our comprehensive payroll system.
                                     </p>
-                                    <p class="text-gray-600 mt-4">
+                                    <p class="text-gray-600 mt-4 text-2xl">
                                         With advanced functionality, we accurately track employer contributions
                                         and withheld taxes, ensuring compliance and transparency.
                                     </p>
