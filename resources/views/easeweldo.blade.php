@@ -43,7 +43,8 @@
             <section class="hero bg-cover bg-center pt-16" style="background-image: url('assets/images/hero-2.png')">
                 <div class="container lg:mx-auto mx-1 flex items-center justify-between">
                     <div class="flex items-center md:px-12">
-                        <img src="assets/images/logo.png" alt="Easeweldo Logo" class="h-12 w-auto"><h1 class="text-4xl lg:text-4xl font-bold ml-4">Easeweldo</h1>
+                        <img src="assets/images/logo.png" alt="Easeweldo Logo" class="h-12 w-auto">
+                        <h1 class="text-4xl lg:text-4xl font-bold ml-4 italic">Easeweldo</h1>
                     </div>
                     <nav>
                         <ul class="flex space-x-4 hidden">
@@ -57,7 +58,7 @@
                 <div class="container mx-auto pt-32 md:px-12 lg:py-64">
                     <h1 class="text-6xl lg:text-8xl font-bold mb-4">Effortless Payroll,</h1>
                     <h1 class="text-6xl lg:text-8xl font-bold mb-4">Simplified</h1>
-                    <p class="text-2xl lg:text-4xl font-semibold mb-8">Streamline your business operations with ease.</p>
+                    <p class="text-2xl lg:text-4xl font-semibold mb-8">Elevate your payroll experience with ease!</p>
                     <div class="text-center sm:text-left py-8 lg:pt-32">
                         <!-- <a href="#" class="inline-block bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 mx-auto">
                             Start 90-Day Trial Now
@@ -92,10 +93,163 @@
                         </div>
                     </div>
                 </div>
+                <div class="bg-white pt-0 lg:py-16">
+                    <div class="bg-cover bg-center flex items-center justify-center mb-16 py-16" style="background-image: url('assets/images/core-solutions.png'); height: 300px;">
+                        <h1 class="text-white text-5xl lg:text-8xl font-bold text-center">Discover Our Core Solutions</h2>
+                    </div>
+                    <div class="container mx-auto px-4">
+                        <div class="flex flex-wrap justify-between">
+                            <div class="w-full md:w-2/5 my-16">
+                                <div class="image-container">
+                                    <img src="assets/images/automated.png" alt="Image description" class="w-full">
+                                </div>
+                            </div>
+                            <div class="w-full md:w-3/5 my-16">
+                                <div class="pl-0 md:pl-12 pt-4">
+                                    <h3 class="text-2xl lg:text-4xl font-bold mb-8">
+                                        Automated Payroll Calculation
+                                    </h3>
+                                    <hr class="mb-8 border-gray-500 border-t-4 w-20 hidden lg:block">
+                                    <p class="text-gray-600 mt-4">
+                                        Our cutting-edge solution revolutionizes the payroll process,
+                                        providing you with accurate anderror-free calculations.With our
+                                        automated system, you can bid farewell to manual computations that
+                                        often lead to mistakes.
+                                    </p>
+                                    <p class="text-gray-600 mt-4">
+                                        Our robust platform handles various aspects of payroll, including
+                                        calculating salaries, deductions, contributions, and withheld taxes.
+                                        You can trust our system to accurately calculate employee compensation,
+                                        taking into account all necessary components.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-3/5 my-16">
+                                <div class="pl-0 md:pr-12 pt-4">
+                                    <h3 class="text-2xl lg:text-4xl font-bold mb-8">
+                                        Flexible Shift Management
+                                    </h3>
+                                    <hr class="mb-8 border-gray-500 border-t-4 w-20 hidden lg:block">
+                                    <p class="text-gray-600 mt-4">
+                                        Empower your workforce with our versatile solution. Seamlessly assign
+                                        different schedules to your employees, catering to the needs of both
+                                        full-time and part-time staff with varying work schedules.
+                                    </p>
+                                    <p class="text-gray-600 mt-4">
+                                        Our system allows you to effortlessly create and manage diverse shift schedules,
+                                        accommodating individual preferences and availability. Whether it's rotating
+                                        shifts, split shifts, or fixed schedules, our platform ensures optimal resource
+                                        allocation and enhanced workforce productivity.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-2/5 my-16">
+                                <div class="image-container">
+                                    <img src="assets/images/flexible-shift.png" alt="Image description" class="w-full">
+                                </div>
+                            </div>
+                            <div class="w-full md:w-2/5 my-16">
+                                <div class="image-container">
+                                    <img src="assets/images/biometrics.png" alt="Image description" class="w-full">
+                                </div>
+                            </div>
+                            <div class="w-full md:w-3/5 my-16">
+                                <div class="pl-0 md:pl-12 pt-4">
+                                    <h3 class="text-2xl lg:text-4xl font-bold mb-8">
+                                        Seamless Integration of Existing Biometrics
+                                    </h3>
+                                    <hr class="mb-8 border-gray-500 border-t-4 w-20 hidden lg:block">
+                                    <p class="text-gray-600 mt-4">
+                                        Simplify the integration of your company's existing biometrics
+                                        system with our seamless solution. By utilizing our CSV upload
+                                        feature, you can effortlessly integrate the data generated by your
+                                        biometrics system into our employee management platform.
+                                    </p>
+                                    <p class="text-gray-600 mt-4">
+                                        No more manual data entry or tedious data migration processes. With a
+                                        few clicks, upload the CSV file generated by your existing biometrics
+                                        system and instantly synchronize the employee data, including
+                                        attendance records and other biometric information.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-3/5 my-16">
+                                <div class="pl-0 md:pr-12 pt-4">
+                                    <h3 class="text-2xl lg:text-4xl font-bold mb-8">
+                                        Customizable Deductions and Benefits
+                                    </h3>
+                                    <hr class="mb-8 border-gray-500 border-t-4 w-20 hidden lg:block">
+                                    <p class="text-gray-600 mt-4">
+                                        Our flexible platform empowers you to tailor deductions and
+                                        benefits to meet the unique needs of your organization and employees.
+                                    </p>
+                                    <p class="text-gray-600 mt-4">
+                                        By offering customizable deductions and benefits, our platform ensures
+                                        that your payroll accurately reflects the individual circumstances of
+                                        your employees, promoting satisfaction and engagement. Experience the
+                                        flexibility and control to create tailored deductions and benefits programs
+                                        that align with your organization's goals and the needs of your workforce.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-2/5 my-16">
+                                <div class="image-container">
+                                    <img src="assets/images/deductions.png" alt="Image description" class="w-full">
+                                </div>
+                            </div>
+                            <div class="w-full md:w-2/5 my-16">
+                                <div class="image-container">
+                                    <img src="assets/images/reports.png" alt="Image description" class="w-full">
+                                </div>
+                            </div>
+                            <div class="w-full md:w-3/5 my-16">
+                                <div class="pl-0 md:pl-12 pt-4">
+                                    <h3 class="text-2xl lg:text-4xl font-bold mb-8">
+                                        Comprehensive Reporting
+                                    </h3>
+                                    <hr class="mb-8 border-gray-500 border-t-4 w-20 hidden lg:block">
+                                    <p class="text-gray-600 mt-4">
+                                        With our solution, you can streamline payroll processing, effortlessly track
+                                        employer contributions and withheld taxes, and access vital reports for
+                                        financial analysis and compliance purposes. Simplify your financial
+                                        management and make informed decisions with our comprehensive payroll system.
+                                    </p>
+                                    <p class="text-gray-600 mt-4">
+                                        With advanced functionality, we accurately track employer contributions
+                                        and withheld taxes, ensuring compliance and transparency.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="bg-primary py-16">
                     <div class="container mx-auto px-4">
+                        <div class="flex flex-wrap justify-between">
+                            <div class="w-full md:w-2/5 pb-4">
+                                <h2 class="text-4xl lg:text-6xl font-bold mb-8 lg:hidden block text-white">Get to Know Us Better</h2>
+                                <div class="image-container">
+                                    <img src="assets/images/overview.png" alt="Image description" class="w-full">
+                                </div>
+                            </div>
+                            <div class="w-full md:w-3/5">
+                                <div class="text-white pl-0 md:pl-12 pt-10">
+                                    <h2 class="text-4xl lg:text-6xl font-bold mb-8 hidden lg:block">Get to Know Us Better</h2>
+                                    <hr class="mb-8 border-white-300 border-t-4 w-20 hidden lg:block">
+                                    <p class="mb-8 text-lg text-lg lg:text-2xl text-justify">At Easeweldo, we understand the challenges and complexities of managing payroll for your business. We are more than just a payroll system; we are your trusted partner in simplifying the payroll process and ensuring the smooth operation of your company.</p>
+                                    <p class="mb-8 text-lg text-lg lg:text-2xl text-justify">We are dedicated to providing you with a seamless payroll management experience, saving you valuable time and effort. With Easeweldo, you can rely on our state-of-the-art technology to automate calculations, tax deductions, and benefit contributions, eliminating the need for manual tasks and reducing the risk of errors. We are committed to staying up-to-date with the latest labor laws and tax regulations, ensuring your payroll remains compliant.</p>
+                                    <p class="mb-8 text-lg text-lg lg:text-2xl text-justify">Our goal is to empower you to focus on what matters most – growing your business and nurturing your employees, while we take care of your payroll needs. Trust Easeweldo to simplify your payroll management to help your business thrive.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-primary py-16 hidden">
+                    <div class="container mx-auto px-4">
                         <div class="mb-12 mx-auto max-w-6xl">
-                            <h2 class="text-4xl lg:text-6xl text-center font-bold mb-4 text-white">Discover Our Solutions</h2>
+                            <h2 class="text-4xl lg:text-6xl text-center font-bold mb-4 text-white">
+                                Discover Our Solutions
+                            </h2>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                             <div class="bg-white shadow-md p-6 lg:px-10 lg:py-12">
@@ -110,21 +264,29 @@
                                     <img src="assets/images/feature-icons/icon2.png" alt="Feature Icon" class="w-16 h-16 mb-6">
                                     <h3 class="text-lg font-bold">Automated Payroll Calculation</h3>
                                 </div>
-                                <p class="text-gray-700">Automatically calculate salaries, deductions, and taxes based on employee data.</p>
+                                <p class="text-gray-700">
+                                    Automatically calculate salaries, deductions, and taxes based on employee data.
+                                </p>
                             </div>
                             <div class="bg-white shadow-md p-6 lg:px-10 lg:py-12">
                                 <div class="flex flex-col relative">
                                     <img src="assets/images/feature-icons/icon3.png" alt="Feature Icon" class="w-16 h-16 mb-6">
                                     <h3 class="text-lg font-bold">Efficient Employee Management</h3>
                                 </div>
-                                <p class="text-gray-700">Simplify and optimize employee management processes for seamless administration, from onboarding to payroll, using efficient tools and workflows.</p>
+                                <p class="text-gray-700">
+                                    Simplify and optimize employee management processes for seamless administration,
+                                    from onboarding to payroll, using efficient tools and workflows.
+                                </p>
                             </div>
                             <div class="bg-white shadow-md p-6 lg:px-10 lg:py-12">
                                 <div class="flex flex-col relative">
                                     <img src="assets/images/feature-icons/icon4.png" alt="Feature Icon" class="w-16 h-16 mb-6">
                                     <h3 class="text-lg font-bold">QR Code Time Tracking</h3>
                                 </div>
-                                <p class="text-gray-700">Streamline clock-in and clock-out processes using QR codes as a cost-effective alternative to biometrics for employee attendance tracking.</p>
+                                <p class="text-gray-700">
+                                    Streamline clock-in and clock-out processes using QR codes as a cost-effective
+                                    alternative to biometrics for employee attendance tracking.
+                                </p>
                             </div>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
@@ -165,27 +327,6 @@
                 </div>
                 <div class="flex justify-center py-16">
                     <img src="assets/images/roadmap.png" alt="Roadmap" class="max-w-full h-auto">
-                </div>
-                <div class="bg-primary py-16">
-                    <div class="container mx-auto px-4">
-                        <div class="flex flex-wrap justify-between">
-                            <div class="w-full md:w-2/5 pb-4">
-                                <h2 class="text-4xl lg:text-6xl font-bold mb-8 lg:hidden block text-white">Get to Know Us Better</h2>
-                                <div class="image-container">
-                                <img src="assets/images/overview.png" alt="Image description" class="w-full">
-                                </div>
-                            </div>
-                            <div class="w-full md:w-3/5">
-                                <div class="text-white pl-0 md:pl-12 pt-10">
-                                    <h2 class="text-4xl lg:text-6xl font-bold mb-8 hidden lg:block">Get to Know Us Better</h2>
-                                    <hr class="mb-8 border-white-300 border-t-4 w-20 hidden lg:block">
-                                    <p class="mb-8 text-lg text-lg lg:text-2xl text-justify">At Easeweldo, we understand the challenges and complexities of managing payroll for your business. We are more than just a payroll system; we are your trusted partner in simplifying the payroll process and ensuring the smooth operation of your company.</p>
-                                    <p class="mb-8 text-lg text-lg lg:text-2xl text-justify">We are dedicated to providing you with a seamless payroll management experience, saving you valuable time and effort. With Easeweldo, you can rely on our state-of-the-art technology to automate calculations, tax deductions, and benefit contributions, eliminating the need for manual tasks and reducing the risk of errors. We are committed to staying up-to-date with the latest labor laws and tax regulations, ensuring your payroll remains compliant.</p>
-                                    <p class="mb-8 text-lg text-lg lg:text-2xl text-justify">Our goal is to empower you to focus on what matters most – growing your business and nurturing your employees, while we take care of your payroll needs. Trust Easeweldo to simplify your payroll management to help your business thrive.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="container mx-auto py-16">
                     <h2 class="text-4xl lg:text-6xl text-center font-bold mb-14 text-primary">Why Us?</h2>
