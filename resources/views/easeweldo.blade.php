@@ -121,29 +121,40 @@
                         <h1 class="text-white text-5xl lg:text-8xl font-bold text-center">Discover Our Core Solutions</h2>
                     </div>
                     <div class="container mx-auto px-4">
+                        <h2 class="text-4xl lg:text-6xl text-center font-bold mb-4 text-primary">
+                            Automated Payroll Calculation
+                        </h2>
                         <div class="flex flex-wrap justify-between">
-                            <div class="w-full md:w-2/5 my-16">
+                            <div class="w-full md:w-3/5 lg:my-16 my-1">
                                 <div class="image-container">
                                     <img src="assets/images/automated.png" alt="Image description" class="w-full">
                                 </div>
                             </div>
-                            <div class="w-full md:w-3/5 my-16">
-                                <div class="pl-0 md:pl-12 pt-4">
-                                    <h3 class="text-2xl lg:text-4xl font-bold mb-8">
-                                        Automated Payroll Calculation
-                                    </h3>
-                                    <hr class="mb-8 border-gray-500 border-t-4 w-20 hidden lg:block">
-                                    <p class="text-gray-600 mt-4 text-2xl text-xl">
-                                        Our cutting-edge solution revolutionizes the payroll process,
-                                        providing you with accurate anderror-free calculations.With our
-                                        automated system, you can bid farewell to manual computations that
-                                        often lead to mistakes.
+                            <div class="w-full md:w-2/5 lg:my-16 my-1 flex items-center">
+                                <div class="pl-0 md:pl-12 pt-0">
+                                    <p class="text-gray-600 text-xl">
+                                        Our cutting-edge solution revolutionizes the payroll process, providing you with
+                                        accurate and error-free calculations. Our robust platform handles various
+                                        aspects of payroll, including the following:
                                     </p>
-                                    <p class="text-gray-600 mt-4 text-2xl">
-                                        Our robust platform handles various aspects of payroll, including
-                                        calculating salaries, deductions, contributions, and withheld taxes.
-                                        You can trust our system to accurately calculate employee compensation,
-                                        taking into account all necessary components.
+                                    <h2 class="text-lg font-semibold mt-4 mb-2">Basic Salary</h2>
+                                    <p class="mb-1">
+                                        Set a defined basic salary for both part-time and full-time employees to ensure
+                                        accurate and fair compensation consistently.
+                                    </p>
+                                    <h2 class="text-lg font-semibold mt-4 mb-2">Allowances</h2>
+                                    <p class="mb-1">
+                                        Include multiple allowances such as clothing,
+                                        travel, and other relevant categories. Employer can specify the
+                                        amounts for each category to provide additional compensation based
+                                        on employee needs and company policies..
+                                    </p>
+                                    <h2 class="text-lg font-semibold mt-4 mb-2">Deductions</h2>
+                                    <p class="mb-1">
+                                        Automatically calculate deductions from employee salaries
+                                        for taxes and mandatory contributions and ensure compliance with tax
+                                        regulations and government-mandated contributions like SSS,
+                                        PhilHealth, and Pag-IBIG.
                                     </p>
                                 </div>
                             </div>
