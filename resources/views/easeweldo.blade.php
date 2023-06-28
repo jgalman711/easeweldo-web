@@ -43,8 +43,7 @@
             <section class="hero bg-cover bg-center pt-16" style="background-image: url('assets/images/hero-2.png')">
                 <div class="container lg:mx-auto mx-1 flex items-center justify-between">
                     <div class="flex items-center md:px-12">
-                        <img src="assets/images/logo.png" alt="Easeweldo Logo" class="h-16 w-auto">
-                        <h1 class="text-4xl lg:text-4xl font-bold ml-4">Easeweldo</h1>
+                        <img src="assets/images/logo-blue.png" alt="Easeweldo Logo" class="h-16 w-auto">
                     </div>
                     <nav>
                         <ul class="flex space-x-4 hidden">
