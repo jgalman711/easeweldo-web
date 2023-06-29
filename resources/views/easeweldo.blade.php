@@ -72,14 +72,14 @@
                             What Are The Advantages?
                         </h2>
                         <p class="text-lg lg:text-2xl text-center">
-                            EaseWeldo simplifies administrative tasks, automates processes, ensures accurate
+                            Easeweldo simplifies administrative tasks, automates processes, ensures accurate
                             calculations, and facilitates compliance with legal requirements. It also saves
                             time and resources, provides transparent reporting, empowers employees with self-service
                             access, and offers scalability and flexibility for business growth.
                         </p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-14">
-                        <div class="bg-gray-100 rounded-lg p-8 flex flex-col items-center relative mt-0 lg:mt-2">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-14">
+                        <div class="bg-gray-100 rounded-lg p-12 flex flex-col items-center relative mt-0 lg:mt-2">
                             <img src="assets/images/streamline-icon.png" class="h-32 w-32 absolute top-0 left-1/8 transform -translate-y-1/2" alt="Icon" />
                             <h3 class="text-center text-2xl lg:text-4xl font-bold mb-8 mt-12">
                                 Streamlined Payroll Management
@@ -89,7 +89,7 @@
                                 Say goodbye to manual tasks and spreadsheets.
                             </p>
                         </div>
-                        <div class="bg-gray-100 rounded-lg p-8 flex flex-col items-center relative mt-14 lg:mt-2">
+                        <div class="bg-gray-100 rounded-lg p-12 flex flex-col items-center relative mt-14 lg:mt-2">
                             <img src="assets/images/accuracy-icon.png" class="h-32 w-32 absolute top-0 left-1/8 transform -translate-y-1/2" alt="Icon" />
                             <h3 class="text-center text-2xl lg:text-4xl font-bold mb-8 mt-12">
                                 Enhanced Efficiency and Accuracy
@@ -99,7 +99,7 @@
                                 entry and minimize errors, freeing up time for strategic business initiatives.
                             </p>
                         </div>
-                        <div class="bg-gray-100 rounded-lg p-8 flex flex-col items-center relative mt-14 lg:mt-2">
+                        <div class="bg-gray-100 rounded-lg p-12 flex flex-col items-center relative mt-14 lg:mt-2">
                             <img src="assets/images/compliant-icon.png" class="h-32 w-32 absolute top-0 left-1/8 transform -translate-y-1/2" alt="Icon" />
                             <h3 class="text-center text-2xl lg:text-4xl font-bold mb-8 mt-12">
                                 Compliance with Regulations
