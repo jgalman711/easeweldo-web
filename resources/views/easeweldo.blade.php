@@ -111,6 +111,150 @@
                         </div>
                     </div>
                 </div>
+                <div class="container mx-auto px-4 py-16">
+                    <div class="mb-12 mx-auto max-w-5xl">
+                        <h2 class="text-4xl lg:text-6xl text-center font-bold mb-4 text-primary">
+                            Pricing Plan
+                        </h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-14 max-w-6xl mx-auto">
+                        <div class="bg-gray-100 rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2">
+                            <div class="bg-primary rounded-2xl relative py-4 mb-6 left-0 right-0 w-full">
+                                <h3 class="text-center text-2xl font-bold text-white">
+                                    TIME & ATTENDANCE
+                                </h3>
+                            </div>
+                            <div class="text-center mb-2">
+                                <p>
+                                    <span class="line-through text-gray-500"></span>
+                                    <span class="rounded-xl bg-yellow-300 py-1 px-2 font-bold">ADD-ON</span>
+                                </p>
+                            </div>
+                            <h3 class="text-center text-5xl font-bold mb-2">
+                                P49.00
+                            </h3>
+                            <p class="text-sm text-gray-500 mb-4">
+                                per employee / month
+                            </p>
+                            <div class="flex flex-col mt-6">
+                                @php
+                                $features = [
+                                    'Salary Calculations',
+                                    'Unlimited Allowances',
+                                    'Unlimited Deductions',
+                                    'Unlimited Commissions',
+                                    'SSS Contribution',
+                                    'PhilHealth Contribution',
+                                    'PagIbig Contribution',
+                                    'Withheld Tax Computation',
+                                    'Attendance Computation',
+                                    'CSV Timesheet Integration',
+                                    'Employee Management',
+                                    'Unlimited Custom Shifts'
+                                ];
+                                @endphp
+                                @foreach($features as $feature)
+                                <div class="flex items-center">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M14.293 5.293a1 1 0 0 1 1.414 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L6 11.586l7.293-7.293a1 1 0 0 1 1.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    <p class="mb-2">{{ $feature }}</p>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2">
+                            <div class="bg-primary rounded-2xl relative py-4 mb-6 left-0 right-0 w-full">
+                                <h3 class="text-center text-2xl font-bold text-white">
+                                    PAYROLL SYSTEM
+                                </h3>
+                            </div>
+                            <div class="text-center mb-2">
+                                <p>
+                                    <span class="line-through text-gray-500">P249.00</span>
+                                    <span class="rounded-xl bg-yellow-300 py-1 px-2 font-bold">SAVE P50</span>
+                                </p>
+                            </div>
+                            <h3 class="text-center text-5xl font-bold mb-2">
+                                P199.00
+                            </h3>
+                            <p class="text-sm text-gray-500 mb-4">
+                                per employee / month
+                            </p>
+                            <div class="flex flex-col mt-6">
+                                @php
+                                $features = [
+                                    'Salary Calculations',
+                                    'Unlimited Allowances',
+                                    'Unlimited Deductions',
+                                    'Unlimited Commissions',
+                                    'SSS Contribution',
+                                    'PhilHealth Contribution',
+                                    'PagIbig Contribution',
+                                    'Withheld Tax Computation',
+                                    'Attendance Computation',
+                                    'CSV Timesheet Integration',
+                                    'Employee Management',
+                                    'Unlimited Custom Shifts'
+                                ];
+                                @endphp
+                                @foreach($features as $feature)
+                                <div class="flex items-center">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M14.293 5.293a1 1 0 0 1 1.414 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L6 11.586l7.293-7.293a1 1 0 0 1 1.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    <p class="mb-2">{{ $feature }}</p>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2">
+                            <div class="bg-primary rounded-2xl relative py-4 mb-6 left-0 right-0 w-full">
+                                <h3 class="text-center text-2xl font-bold text-white">
+                                    AUTO-DISBURSE
+                                </h3>
+                            </div>
+                            <div class="text-center mb-2">
+                                <p>
+                                    <span class="line-through text-gray-500"></span>
+                                    <span class="rounded-xl bg-yellow-300 py-1 px-2 font-bold">ADD-ON</span>
+                                </p>
+                            </div>
+                            <h3 class="text-center text-5xl font-bold mb-2">
+                                P49.00
+                            </h3>
+                            <p class="text-sm text-gray-500 mb-4">
+                                per employee / month
+                            </p>
+                            <div class="flex flex-col mt-6">
+                                @php
+                                $features = [
+                                    'Salary Calculations',
+                                    'Unlimited Allowances',
+                                    'Unlimited Deductions',
+                                    'Unlimited Commissions',
+                                    'SSS Contribution',
+                                    'PhilHealth Contribution',
+                                    'PagIbig Contribution',
+                                    'Withheld Tax Computation',
+                                    'Attendance Computation',
+                                    'CSV Timesheet Integration',
+                                    'Employee Management',
+                                    'Unlimited Custom Shifts'
+                                ];
+                                @endphp
+                                @foreach($features as $feature)
+                                <div class="flex items-center">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M14.293 5.293a1 1 0 0 1 1.414 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L6 11.586l7.293-7.293a1 1 0 0 1 1.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    <p class="mb-2">{{ $feature }}</p>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="bg-gray-100 py-16">
                     <div class="container mx-auto px-4">
                         <div class="mb-12 mx-auto max-w-6xl">
