@@ -1,59 +1,20 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.default')
 
-        <title>Easeweldo: Elevate Your Payroll Experience with Ease!</title>
-
-        <!-- Meta Tags -->
-        <meta name="description" content="Easeweldo offers an exceptional payroll experience with ease and efficiency. Streamline your payroll process with our reliable solutions.">
-        <meta name="keywords" content="payroll, payroll software, payroll management, payroll system, payroll solutions">
-        <meta name="author" content="Easeweldo Team">
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
-
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-        <meta property="og:title" content="Easeweldo: Elevate Your Payroll Experience with Ease!">
-        <meta property="og:description" content="Easeweldo offers an exceptional payroll experience with ease and efficiency. Streamline your payroll process with our reliable solutions.">
-        <meta property="og:image" content="assets/images/home.png">
-        <meta property="og:url" content="https://easeweldo.tech">
-        <meta property="og:type" content="website">
-    </head>
-    <body class="antialiased">
-        <style>
-            body {
-                font-family: 'Quicksand', sans-serif;
-            }
-            .text-primary {
-                color: #5ba5f3;
-            }
-            .bg-primary {
-                background: #5ba5f3
-            }
-        </style>
-        <main>
+@section('content')
+<main>
             <section class="hero bg-cover bg-center pt-16" style="background-image: url('assets/images/hero-2.png')">
                 <div class="container lg:mx-auto mx-1 flex items-center justify-between">
                     <div class="flex items-center md:px-12">
                         <img src="assets/images/logo-blue.png" alt="Easeweldo Logo" class="h-16 w-auto">
                     </div>
                     <nav>
-                        <ul class="flex space-x-4 hidden">
-                            <li><a href="#" class="text-lg font-medium">Home</a></li>
-                            <li><a href="#" class="text-lg font-medium">About</a></li>
-                            <li><a href="#" class="text-lg font-medium">Services</a></li>
-                            <li><a href="#" class="text-lg font-medium">Contact</a></li>
+                        <ul class="flex space-x-6">
+                            <li class="py-2"><a href="#solutions" class="text-xl font-medium">Solutions</a></li>
+                            <li class="py-2"><a href="#pricing" class="text-xl font-medium">Pricing</a></li>
+                            <li class="py-2"><a href="#about" class="text-xl font-medium">About</a></li>
+                            <li class="py-2"><a href="#roadmap" class="text-xl font-medium">Roadmap</a></li>
+                            <li class="py-2"><a href="#contact" class="text-xl font-medium">Contact</a></li>
+                            <li><a href="login" class="text-xl font-medium inline-block px-6 py-2 bg-blue-500 text-white rounded-lg">Login</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -113,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray-100 py-16">
+                <div class="bg-gray-100 py-16" id="solutions">
                     <div class="container mx-auto px-4">
                         <div class="mb-12 mx-auto max-w-6xl">
                             <h2 class="text-4xl lg:text-6xl text-center font-bold mb-4 text-primary">
@@ -224,7 +185,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray-100 py-16">
+                <div class="bg-gray-100 py-16" id="pricing">
                     <div class="container mx-auto px-4">
                         <div class="mb-12 mx-auto max-w-5xl">
                             <h2 class="text-4xl lg:text-6xl text-center font-bold mb-4 text-primary">
@@ -238,42 +199,23 @@
                             <div class="bg-white rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2">
                                 <div class="bg-primary rounded-2xl relative py-4 mb-6 left-0 right-0 w-full">
                                     <h3 class="text-center text-2xl font-bold text-white">
-                                        PAYROLL SYSTEM
+                                        {{ strtoupper($subscriptions[0]['title']) }}
                                     </h3>
                                 </div>
                                 <div class="text-center mb-2">
                                     <p>
-                                        <span class="line-through text-gray-500">P249.00</span>
-                                        <span class="rounded-xl bg-yellow-300 py-1 px-2 font-bold">SAVE P50</span>
+                                        <span class="line-through text-gray-500">P{{ $subscriptions[0]['amount'] }}</span>
+                                        <span class="rounded-xl bg-yellow-300 py-1 px-2 font-bold">SAVE P{{ $subscriptions[0]['discount'] }}</span>
                                     </p>
                                 </div>
                                 <h3 class="text-center text-5xl font-bold mb-2">
-                                    P199.00
+                                    P{{ $subscriptions[0]['discounted_amount'] }}
                                 </h3>
                                 <p class="text-sm text-gray-500 mb-4">
                                     per employee / month
                                 </p>
                                 <div class="flex flex-col mt-6">
-                                    @php
-                                    $features = [
-                                        'Unlimited Salary Calculations',
-                                        'Unlimited Special Payouts',
-                                        'Unlimited Allowances',
-                                        'Unlimited Deductions',
-                                        'Unlimited Custom Shifts',
-                                        'Customizable Salary Details',
-                                        'CSV Timesheet Integration',
-                                        'Attendance Computation',
-                                        'Payslip Generation',
-                                        'Leaves Tracking',
-                                        'Government contributions',
-                                        'Withheld Tax Computation',
-                                        'Reports Generation',
-                                        'Employee Management',
-                                        'No Minimum Employee Required',
-                                    ];
-                                    @endphp
-                                    @foreach($features as $feature)
+                                    @foreach(json_decode($subscriptions[0]['features'], true) as $feature)
                                     <div class="flex items-center">
                                         <svg class="h-4 w-4 text-green-500 mr-2 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M14.293 5.293a1 1 0 0 1 1.414 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L6 11.586l7.293-7.293a1 1 0 0 1 1.414 0z" clip-rule="evenodd" />
@@ -286,7 +228,7 @@
                             <div class="bg-white rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2">
                                 <div class="bg-green-400 rounded-2xl relative py-4 mb-6 left-0 right-0 w-full">
                                     <h3 class="text-center text-2xl font-bold text-white">
-                                        TIME & ATTENDANCE
+                                        {{ strtoupper($subscriptions[1]['title']) }}
                                     </h3>
                                 </div>
                                 <div class="text-center mb-2">
@@ -296,30 +238,13 @@
                                     </p>
                                 </div>
                                 <h3 class="text-center text-5xl font-bold mb-2">
-                                    P49.00
+                                    P{{ $subscriptions[1]['amount'] }}
                                 </h3>
                                 <p class="text-sm text-gray-500 mb-4">
                                     per employee / month
                                 </p>
                                 <div class="flex flex-col mt-6">
-                                    @php
-                                    $features = [
-                                        'Real-Time Attendance Tracking',
-                                        'Time-Off Management',
-                                        'Flexible Time Scheduling',
-                                        'Desktop as Terminal',
-                                        'Mobile Phone as Terminal',
-                                        'Tablet as Terminal',
-                                        'Clock In/Out Anywhere',
-                                        'Clock In/Out via QR',
-                                        'Clock In/Out via Biometrics',
-                                        'Overtime Calculation',
-                                        'Time-correction Requests',
-                                        'Employee Self-Service Portal',
-                                        'Reporting and Analytics'
-                                    ];
-                                    @endphp
-                                    @foreach($features as $feature)
+                                    @foreach(json_decode($subscriptions[1]['features'], true) as $feature)
                                     <div class="flex items-center">
                                         <svg class="h-4 w-4 text-green-500 mr-2 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M14.293 5.293a1 1 0 0 1 1.414 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L6 11.586l7.293-7.293a1 1 0 0 1 1.414 0z" clip-rule="evenodd" />
@@ -332,7 +257,7 @@
                             <div class="bg-white rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2">
                                 <div class="bg-purple-400 rounded-2xl relative py-4 mb-6 left-0 right-0 w-full">
                                     <h3 class="text-center text-2xl font-bold text-white">
-                                        AUTO-DISBURSE
+                                    {{ strtoupper($subscriptions[2]['title']) }}
                                     </h3>
                                 </div>
                                 <div class="text-center mb-2">
@@ -342,25 +267,13 @@
                                     </p>
                                 </div>
                                 <h3 class="text-center text-5xl font-bold mb-2">
-                                    P49.00
+                                    P{{ $subscriptions[2]['amount'] }}
                                 </h3>
                                 <p class="text-sm text-gray-500 mb-4">
                                     per employee / month
                                 </p>
                                 <div class="flex flex-col mt-6">
-                                    @php
-                                    $features = [
-                                        'Bulk Disbursement',
-                                        'Scheduled Disbursement',
-                                        'via Instapay',
-                                        'via Pesonet',
-                                        'via G-Cash',
-                                        'Transaction Monitoring',
-                                        'Security and Compliance',
-                                        'Reporting and Analytics'
-                                    ];
-                                    @endphp
-                                    @foreach($features as $feature)
+                                    @foreach(json_decode($subscriptions[2]['features'], true) as $feature)
                                     <div class="flex items-center">
                                         <svg class="h-4 w-4 text-green-500 mr-2 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M14.293 5.293a1 1 0 0 1 1.414 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L6 11.586l7.293-7.293a1 1 0 0 1 1.414 0z" clip-rule="evenodd" />
@@ -373,7 +286,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-primary py-16">
+                <div class="bg-primary py-16" id="about">
                     <div class="container mx-auto px-4">
                         <div class="flex flex-wrap justify-between">
                             <div class="w-full md:w-2/5 pb-4">
@@ -414,7 +327,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="">
+                <div id="roadmap">
                     <div class="container mx-auto px-4 py-16 max-w-6xl">
                         <h2 class="text-4xl lg:text-6xl text-center font-bold mb-8 text-primary">
                             Unveiling Our Inspiring Roadmap
@@ -430,7 +343,7 @@
                 <div class="flex justify-center px-4 py-16">
                     <img src="assets/images/timeline.png" alt="Roadmap" class="max-w-full h-auto">
                 </div>
-                <div class="bg-primary py-16">
+                <div class="bg-primary py-16" id="contact">
                     <div class="container mx-auto text-white px-4">
                         <h2 class="text-4xl lg:text-6xl font-bold mb-8">Let Us Help You</h2>
                         <p class="text-lg lg:text-2xl mb-4 max-w-4xl">
@@ -460,5 +373,4 @@
                 </div>
             </section>
         </main>
-    </body>
-</html>
+@endsection
