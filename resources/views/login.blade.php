@@ -4,19 +4,19 @@
 <body class="bg-cover bg-center bg-no-repeat bg-gray-100">
     <div class="min-h-screen flex items-center justify-center bg-gray-100">
         <div class="w-full max-w-md p-8 bg-white bg-opacity-90 rounded-lg shadow-md">
-            <h1 class="text-3xl font-semibold mb-6">Sign in to your account</h1>
+            <h1 class="text-3xl font-semibold mb-6">Sign In</h1>
             <form action="login" method="POST">
                 @csrf
                 @if($errors->any())
                     <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4">
-                        <p>{{ $errors->first() }}</p>
+                        @foreach($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                        @endforeach
                     </div>
                 @endif
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                     <input type="email" id="email" name="email_address" class="mt-1 block w-full shadow-sm sm:text-sm rounded-md p-3 border border-sky-500">
-                    <!-- <input type="password" name="password" id="password" class="border rounded px-3 py-2 w-full"> -->
-
                 </div>
                 <div class="mb-4">
                     <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
