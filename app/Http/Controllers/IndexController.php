@@ -2,22 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\HttpService;
 use Illuminate\Support\Facades\Cache;
 
 class IndexController extends Controller
 {
-    protected $httpService;
-
-    public function __construct(HttpService $httpService)
-    {
-        $this->httpService = $httpService;
-    }
-
     public function index()
     {
         $data = Cache::remember('index', 3600, function () {
-            $subscriptions = $this->httpService->get('subscriptions');
+            $response = $this->httpService->get('subscriptions');
+            if (isset($response['success']) && $response['success']) {
+                $subscriptions = $response['data'];
+            }
+
             return [
                 'subscriptions' => $subscriptions
             ];

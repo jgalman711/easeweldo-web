@@ -11,10 +11,10 @@
                         <ul class="flex space-x-6">
                             <li class="py-2"><a href="#solutions" class="text-xl font-medium">Solutions</a></li>
                             <li class="py-2"><a href="#pricing" class="text-xl font-medium">Pricing</a></li>
-                            <li class="py-2"><a href="#about" class="text-xl font-medium">About</a></li>
-                            <li class="py-2"><a href="#roadmap" class="text-xl font-medium">Roadmap</a></li>
+                            <!-- <li class="py-2"><a href="#about" class="text-xl font-medium">About</a></li>
+                            <li class="py-2"><a href="#roadmap" class="text-xl font-medium">Roadmap</a></li> -->
                             <li class="py-2"><a href="#contact" class="text-xl font-medium">Contact</a></li>
-                            <li><a href="login" class="text-xl font-medium inline-block px-6 py-2 bg-blue-500 text-white rounded-lg">Login</a></li>
+                            <li><a href="login" class="text-xl font-medium inline-block px-8 py-2 bg-blue-800 text-white rounded-full">Login</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -23,7 +23,7 @@
                     <h1 class="text-6xl lg:text-8xl font-bold mb-4">Simplified</h1>
                     <p class="text-2xl lg:text-4xl font-semibold mb-8">Elevate your payroll experience with ease.</p>
                     <div class="text-center sm:text-left py-8 lg:pt-32">
-                        <a href='{{ env("EASEWELDO_PORTAL_URL") }}/register' class="inline-block bg-primary text-white font-semibold py-4 px-6 lg:py-6 lg:px-12 rounded-full shadow-md hover:bg-blue-600 transition duration-300 mx-auto lg:text-3xl">
+                        <a href='{{ env("EASEWELDO_PORTAL_URL") }}/register' class="inline-block bg-blue-800 text-white font-semibold py-4 px-6 lg:py-6 lg:px-12 rounded-full shadow-md hover:bg-blue-600 transition duration-300 mx-auto lg:text-3xl">
                             Start 90-Days Trial Now
                         </a>
                     </div>
@@ -214,7 +214,7 @@
                                 <p class="text-sm text-gray-500 mb-4">
                                     per employee / month
                                 </p>
-                                <div class="flex flex-col mt-6">
+                                <div class="flex flex-col mt-6 flex-grow">
                                     @foreach(json_decode($subscriptions[0]['features'], true) as $feature)
                                     <div class="flex items-center">
                                         <svg class="h-4 w-4 text-green-500 mr-2 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -224,6 +224,11 @@
                                     </div>
                                     @endforeach
                                 </div>
+                                {{--
+                                <a href='{{ env("EASEWELDO_PORTAL_URL") }}/register' class="inline-block bg-blue-800 text-white font-semibold my-6 py-4 px-6 rounded-full shadow-md hover:bg-blue-600 transition duration-300 mx-auto">
+                                    Subscribe Now for FREE!
+                                </a>
+                                --}}
                             </div>
                             <div class="bg-white rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2">
                                 <div class="bg-green-400 rounded-2xl relative py-4 mb-6 left-0 right-0 w-full">
@@ -243,7 +248,7 @@
                                 <p class="text-sm text-gray-500 mb-4">
                                     per employee / month
                                 </p>
-                                <div class="flex flex-col mt-6">
+                                <div class="flex flex-col mt-6 flex-grow">
                                     @foreach(json_decode($subscriptions[1]['features'], true) as $feature)
                                     <div class="flex items-center">
                                         <svg class="h-4 w-4 text-green-500 mr-2 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -253,6 +258,11 @@
                                     </div>
                                     @endforeach
                                 </div>
+                                {{--
+                                <a href='{{ env("EASEWELDO_PORTAL_URL") }}/register' class="inline-block bg-blue-800 text-white font-semibold my-6 py-4 px-6 rounded-full shadow-md hover:bg-blue-600 transition duration-300 mx-auto">
+                                    Subscribe Now for FREE!
+                                </a>
+                                --}}
                             </div>
                             <div class="bg-white rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2">
                                 <div class="bg-purple-400 rounded-2xl relative py-4 mb-6 left-0 right-0 w-full">
@@ -272,7 +282,7 @@
                                 <p class="text-sm text-gray-500 mb-4">
                                     per employee / month
                                 </p>
-                                <div class="flex flex-col mt-6">
+                                <div class="flex flex-col mt-6 flex-grow">
                                     @foreach(json_decode($subscriptions[2]['features'], true) as $feature)
                                     <div class="flex items-center">
                                         <svg class="h-4 w-4 text-green-500 mr-2 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -282,6 +292,11 @@
                                     </div>
                                     @endforeach
                                 </div>
+                                {{--
+                                <a href='{{ env("EASEWELDO_PORTAL_URL") }}/register' class="inline-block bg-blue-800 text-white font-semibold my-6 py-4 px-6 rounded-full shadow-md hover:bg-blue-600 transition duration-300 mx-auto">
+                                    Subscribe Now for FREE!
+                                </a>
+                                --}}
                             </div>
                         </div>
                     </div>

@@ -27,7 +27,7 @@
         <meta property="og:title" content="Easeweldo: Elevate Your Payroll Experience with Ease!">
         <meta property="og:description" content="Easeweldo offers an exceptional payroll experience with ease and efficiency. Streamline your payroll process with our reliable solutions.">
         <meta property="og:image" content="assets/images/home.png">
-        <meta property="og:url" content="https://easeweldo.tech">
+        <meta property="og:url" content="https://easeweldo.com">
         <meta property="og:type" content="website">
     </head>
     <body class="antialiased">
