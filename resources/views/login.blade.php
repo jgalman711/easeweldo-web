@@ -30,17 +30,17 @@
                         </div> -->
                     </div>
                 </div>
-                <div class="flex items-center mb-4">
-                    <input type="checkbox" id="remember" name="remember" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                    <label for="remember" class="ml-2 block text-sm text-gray-900">Remember me</label>
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="remember" name="remember" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="remember" class="ml-2 block text-sm text-gray-900">Remember me</label>
+                    </div>
+                    <a href="forgotpassword" class="text-sm text-blue-600 hover:underline">Forgot your password?</a>
                 </div>
-                <div class="mb-4">
-                    <a href="forgotpassword" class="text-sm text-indigo-600 hover:underline">Forgot your password?</a>
-                </div>
-                <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Login</button>
+                <button type="submit" class="w-full bg-blue-800 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Login</button>
             </form>
             <div class="mt-4">
-                <p class="text-sm text-gray-600">Don't have an account? <a href="register" class="font-medium text-indigo-600 hover:underline">Sign up</a></p>
+                <p class="text-sm text-gray-600">Don't have an account? <a href="register" class="font-medium text-blue-600 hover:underline">Sign up</a></p>
             </div>
         </div>
     </div>
