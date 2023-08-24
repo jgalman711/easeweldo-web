@@ -13,13 +13,14 @@ class HttpService
         $this->endpoint = env('EASEWELDO_API_DOMAIN');
     }
 
-    public function get(string $uri)
+    public function get(string $uri, array $data = [])
     {
         $uri = $this->endpoint . $uri;
-        return Http::get($uri)->json();
+        $queryString = http_build_query($data);
+        return Http::get($uri, $queryString)->json();
     }
 
-    public function post(string $uri, array $data)
+    public function post(string $uri, array $data = [])
     {
         $uri = $this->endpoint . $uri;
         return Http::post($uri, $data)->json();

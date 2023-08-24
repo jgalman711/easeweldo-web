@@ -1,4 +1,7 @@
-<form action="{{ route('password.update') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+@extends('layouts.auth')
+
+@section('content')
+<form action="reset-password" method="POST">
     <h1 class="text-3xl font-semibold mb-6">Reset Your Password</h1>
     @csrf
     <input type="hidden" name="token" value="{{ $token }}">
@@ -10,8 +13,8 @@
         </div>
     @endif
     <div class="mb-4">
-        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-        <input type="email" id="email" name="email" value="{{ $email }}" class="mt-1 block w-full shadow-sm sm:text-sm rounded-md p-3 border border-sky-500" readonly>
+        <label for="email_address" class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" id="email_address" name="email_address" value="{{ $email_address }}" class="mt-1 block w-full shadow-sm sm:text-sm rounded-md p-3 border border-sky-500" readonly>
     </div>
     <div class="mb-4">
         <label for="password" class="block text-sm font-medium text-gray-700">New Password</label>
@@ -26,5 +29,6 @@
     </div>
 </form>
 <div class="text-center mt-4">
-    <a href="{{ route('login') }}" class="font-medium text-blue-600 hover:underline">Back to Login</a>
+    <a href="login" class="font-medium text-blue-600 hover:underline">Back to Login</a>
 </div>
+@endsection

@@ -4,6 +4,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,5 @@ Route::resource('/', IndexController::class)->only('index');
 Route::resource('/login', LoginController::class)->only('index', 'store');
 Route::resource('/register', RegisterController::class)->only('index', 'store');
 Route::resource('/forgot-password', ForgotPasswordController::class)->only('index', 'store');
+Route::get('reset-password', [ResetPasswordController::class, 'index']);
+Route::post('reset-password', [ResetPasswordController::class, 'store']);

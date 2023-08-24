@@ -11,6 +11,11 @@
             @endforeach
         </div>
     @endif
+    @if (session('status'))
+    <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4">
+        {{ session('status') }}
+    </div>
+    @endif
     <div class="mb-4">
         <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
         <input type="email" id="email" name="email_address" class="mt-1 block w-full shadow-sm sm:text-sm rounded-md p-3 border border-sky-500">

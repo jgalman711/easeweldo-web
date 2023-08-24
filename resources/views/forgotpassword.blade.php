@@ -2,7 +2,7 @@
 
 @section('content')
 <h1 class="text-3xl font-semibold mb-6">Forgot Your Password?</h1>
-<form action="forgotpassword" method="POST">
+<form action="forgot-password" method="POST">
     @csrf
     @if($errors->any())
         <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4">
