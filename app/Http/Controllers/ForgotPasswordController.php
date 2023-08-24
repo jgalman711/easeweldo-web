@@ -19,8 +19,8 @@ class ForgotPasswordController extends Controller
             return redirect()->back()->withErrors($errorMessage)->withInput();
         }
 
-        if (isset($response['success']) && $response['success'] && isset($response['data']['token'])) {
-            return redirect()->back()->with('status', 'Password reset email has been sent. Please check your email.');
+        if (isset($response['success']) && $response['success'] && isset($response['message'])) {
+            return redirect()->back()->with('status', $response['message']);
         }
 
         return redirect()->back()->withErrors(['Unable to send reset password link.'])->withInput();

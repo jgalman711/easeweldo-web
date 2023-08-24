@@ -20,4 +20,4 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/', IndexController::class)->only('index');
 Route::resource('/login', LoginController::class)->only('index', 'store');
 Route::resource('/register', RegisterController::class)->only('index', 'store');
-Route::resource('/forgotpassword', ForgotPasswordController::class)->only('index', 'store');
+Route::resource('/forgot-password', ForgotPasswordController::class)->only('index', 'store');
