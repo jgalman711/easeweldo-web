@@ -15,14 +15,20 @@ class HttpService
 
     public function get(string $uri, array $data = [])
     {
+        $token = session('access_token');
         $uri = $this->endpoint . $uri;
-        $queryString = http_build_query($data);
-        return Http::get($uri, $queryString)->json();
+        $query = http_build_query($data);
+        return Http::withHeaders([
+            'Authorization' => 'Bearer ' . $token,
+        ])->get($uri, $query)->json();
     }
 
     public function post(string $uri, array $data = [])
     {
+        $token = session('access_token');
         $uri = $this->endpoint . $uri;
-        return Http::post($uri, $data)->json();
+        return Http::withHeaders([
+            'Authorization' => 'Bearer ' . $token,
+        ])->post($uri, $data)->json();
     }
 }

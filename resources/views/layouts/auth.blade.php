@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Easeweldo: Elevate Your Payroll Experience with Ease!</title>
+        <title>@yield('title', 'Easeweldo: Elevate Your Payroll Experience with Ease!')</title>
         <!-- Meta Tags -->
         <meta name="description" content="Easeweldo offers an exceptional payroll experience with ease and efficiency. Streamline your payroll process with our reliable solutions.">
         <meta name="keywords" content="payroll, payroll software, payroll management, payroll system, payroll solutions">
