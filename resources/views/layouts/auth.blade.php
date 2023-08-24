@@ -30,8 +30,13 @@
         <meta property="og:url" content="https://easeweldo.com">
         <meta property="og:type" content="website">
     </head>
-    <body class="bg-cover bg-center bg-no-repeat bg-gray-100">
-        <div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <body class="bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/auth/background.png')">
+        <div class="min-h-screen flex flex-col items-center justify-start bg-gray-100 bg-opacity-50 py-16">
+            <div class="mb-8 text-left">
+                <h1 class="font-bold text-5xl">
+                    <span class="text-blue-400">EASE</span><span class="text-gray-500">WELDO</span>
+                </h1>
+            </div>
             <div class="w-full max-w-md p-8 bg-white bg-opacity-90 rounded-lg shadow-md">
                 @yield('content')
             </div>
