@@ -1,8 +1,13 @@
 @extends('layouts.auth')
 
+@section('js-top')
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('GOOGLE_RECAPTCHA_KEY') }}"></script>
+@endsection
+
 @section('content')
 <h1 class="text-3xl font-semibold mb-6">Create Account</h1>
-<form action="register" method="POST">
+<form id="register" action="register" method="POST">
     @csrf
     @if($errors->any())
         <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4">
@@ -36,4 +41,18 @@
 <div class="mt-4">
     <p class="text-sm text-gray-600">Already have an account? <a href="login" class="font-medium text-blue-600 hover:underline">Log in</a></p>
 </div>
+@endsection
+
+@section('js-bottom')
+<script type="text/javascript">
+   $('#register').submit(function(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+            grecaptcha.execute("{{ env('GOOGLE_RECAPTCHA_KEY') }}", {action: 'submit'}).then(function(token) {
+                $('#register').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+                $('#register').unbind('submit').submit();
+            });
+        });
+   });
+</script>
 @endsection

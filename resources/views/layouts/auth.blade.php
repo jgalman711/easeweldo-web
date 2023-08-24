@@ -29,6 +29,8 @@
         <meta property="og:image" content="assets/images/home.png">
         <meta property="og:url" content="https://easeweldo.com">
         <meta property="og:type" content="website">
+
+        @yield('js-top')
     </head>
     <body class="bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/auth/background.png')">
         <div class="min-h-screen flex flex-col items-center justify-start bg-gray-100 bg-opacity-50 py-16">
@@ -41,5 +43,6 @@
                 @yield('content')
             </div>
         </div>
+        @yield('js-bottom')
     </body>
 </html>
