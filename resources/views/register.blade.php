@@ -1,5 +1,18 @@
 @extends('layouts.auth')
 
+@section('seo')
+<title>Easeweldo: Register for an Account</title>
+<meta name="description" content="Register for an Easeweldo account. Simplify your payroll management process with our user-friendly solutions.">
+<meta name="keywords" content="payroll, payroll software, payroll management, employee registration">
+<meta name="author" content="Easeweldo Team">
+
+<meta property="og:title" content="Easeweldo: Register for an Account">
+<meta property="og:description" content="Register for an Easeweldo account. Simplify your payroll management process with our user-friendly solutions.">
+<meta property="og:image" content="assets/images/register.png">
+<meta property="og:url" content="https://easeweldo.com/register">
+<meta property="og:type" content="website">
+@endsection
+
 @section('js-top')
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js?render={{ env('GOOGLE_RECAPTCHA_KEY') }}"></script>

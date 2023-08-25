@@ -1,5 +1,18 @@
 @extends('layouts.auth')
 
+@section('seo')
+<title>Easeweldo: Log in to Your Account</title>
+<meta name="description" content="Log in to your Easeweldo account. Manage your payroll with ease and efficiency.">
+<meta name="keywords" content="payroll, payroll software, payroll management, payroll system, employee login">
+<meta name="author" content="Easeweldo Team">
+
+<meta property="og:title" content="Easeweldo: Log in to Your Account">
+<meta property="og:description" content="Log in to your Easeweldo account. Manage your payroll with ease and efficiency.">
+<meta property="og:image" content="assets/images/home.png">
+<meta property="og:url" content="https://easeweldo.com/login">
+<meta property="og:type" content="website">
+@endsection
+
 @section('content')
 <h1 class="text-3xl font-semibold mb-6">Sign In</h1>
 <form action="login" method="POST">

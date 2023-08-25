@@ -1,5 +1,18 @@
 @extends('layouts.auth')
 
+@section('seo')
+<title>Easeweldo: Forgot Password</title>
+<meta name="description" content="Forgot your Easeweldo account password? Recover it by following the steps to reset your password.">
+<meta name="keywords" content="payroll, payroll software, forgot password, password recovery">
+<meta name="author" content="Easeweldo Team">
+
+<meta property="og:title" content="Easeweldo: Forgot Password">
+<meta property="og:description" content="Forgot your Easeweldo account password? Recover it by following the steps to reset your password.">
+<meta property="og:image" content="assets/images/forgot-password.png">
+<meta property="og:url" content="https://easeweldo.com/forgot-password">
+<meta property="og:type" content="website">
+@endsection
+
 @section('content')
 <h1 class="text-3xl font-semibold mb-6">Forgot Your Password?</h1>
 <form action="forgot-password" method="POST">
