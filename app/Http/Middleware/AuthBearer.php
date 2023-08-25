@@ -12,7 +12,7 @@ class AuthBearer
     {
         $token = session('access_token');
         if (!$token) {
-            return response()->json(['message' => 'Unauthorized'], 401);
+            return redirect('login');
         }
         return $next($request);
     }

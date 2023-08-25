@@ -32,7 +32,6 @@ class LoginController extends Controller
                 Session::forget('company_slug');
             }
             return view('under-construction')->with('message', "Welcome back!");
-            // return redirect(env('EASEWELDO_PORTAL_URL'))->with('token', $response['data']['token']);
         }
 
         return redirect()->back()->withErrors(['Login failed.']);
