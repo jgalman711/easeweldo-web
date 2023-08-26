@@ -1,5 +1,18 @@
 @extends('layouts.cart')
 
+@section('seo')
+<title>Easeweldo: Select Subscription Plan</title>
+<meta name="description" content="Select a subscription plan that fits your needs. Log in to your Easeweldo account and manage your payroll with ease and efficiency.">
+<meta name="keywords" content="payroll, subscription plan, payroll software, payroll management, payroll system, employee login">
+<meta name="author" content="Easeweldo Team">
+
+<meta property="og:title" content="Easeweldo: Select Subscription Plan">
+<meta property="og:description" content="Select a subscription plan that fits your needs. Log in to your Easeweldo account and manage your payroll with ease and efficiency.">
+<meta property="og:image" content="assets/images/home.png">
+<meta property="og:url" content="https://easeweldo.com/select-plan">
+<meta property="og:type" content="website">
+@endsection
+
 @section('content')
 <div class="container mx-auto mt-8 max-w-6xl px-4">
     <h1 class="text-4xl font-semibold mb-4">You're almost there! Complete your subscription</h1>
