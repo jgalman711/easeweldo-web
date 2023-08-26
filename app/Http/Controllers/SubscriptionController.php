@@ -36,7 +36,7 @@ class SubscriptionController extends Controller
 
             $response = $this->httpService->get("companies/{$this->company}/employees");
 
-            $employeeCount = count($response['data']);
+            $employeeCount = isset($response['data']) && $response['data'] ? count($response['data']) : 1;
             $totalAmount = $employeeCount * $cheapestPlan['price_per_employee'] * $cheapestPlan['months'];
 
             if (isset($response['success']) && $response['success'] && isset($response['data'])) {
