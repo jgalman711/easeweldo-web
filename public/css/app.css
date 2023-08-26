@@ -34,3 +34,16 @@ body {
 .overlay {
     background-color: rgba(255, 255, 255, 0.9);
 }
+
+.selected-card {
+    border: 2px solid #007bff;
+}
+
+.selected-oval {
+    background-color: rgb(0, 123, 255) !important;
+    color: white;
+}
+
+.es-navbar {
+    max-width: 1920px;
+}

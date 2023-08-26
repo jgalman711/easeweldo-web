@@ -3,19 +3,55 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class SubscriptionController extends Controller
 {
+    protected $company;
+
     public function index(Request $request)
     {
+        $this->company = session('company_slug');
+        $request->validate([
+            'subscription_id' => 'required'
+        ]);
+        $response = $this->httpService->get("subscriptions/{$request->subscription_id}");
+        if (isset($response['success']) && $response['success']) {
+            $subscription = $response['data'];
+            $subscriptionPrices = new Collection($subscription['subscription_prices']);
 
+            $cheapestPlan = $subscriptionPrices->first(function ($price) {
+                return $price['months'] == 36;
+            });
+
+            $originalPlan = $subscriptionPrices->first(function ($price) {
+                return $price['months'] == 1;
+            });
+
+            foreach ($subscription['subscription_prices'] as $key => $plan) {
+                $subscription['subscription_prices'][$key]['savings']
+                    = ($originalPlan['price_per_employee'] * $plan['months'])
+                    - ($plan['price_per_employee'] * $plan['months']);
+            }
+
+            $response = $this->httpService->get("companies/{$this->company}/employees");
+
+            $employeeCount = count($response['data']);
+            $totalAmount = $employeeCount * $cheapestPlan['price_per_employee'] * $cheapestPlan['months'];
+
+            if (isset($response['success']) && $response['success'] && isset($response['data'])) {
+                return view('cart', [
+                    'subscription' => $subscription,
+                    'employee_count' => $employeeCount,
+                    'total_amount' => $totalAmount
+                ]);
+            }
+        }
+        // redirect to subscription plans selection page
     }
+
     public function store(Request $request)
     {
-        $request->validate([
-            'company_id' => 'required',
-            'subscriptions' => 'required|array',
-        ]);
-        $response = $this->httpService->post("{$request->company_id}/subscriptions", $request->all());
+        return view('under-construction')->with('message', 'Thank you for subscribing to Easeweldo!');
     }
 }

@@ -1,6 +1,6 @@
 @if ($subscriptions)
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-    <div class="bg-white rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2 transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
+    <div class="bg-white border-gray-300 border rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2 transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
         <div class="bg-primary rounded-2xl relative py-4 mb-6 left-0 right-0 w-full">
             <h3 class="text-center text-2xl font-bold text-white">
                 {{ strtoupper($subscriptions[0]['title']) }}
@@ -28,13 +28,11 @@
             </div>
             @endforeach
         </div>
-        <form id="subscriptionForm" action="subscriptions" method="POST">
-            @csrf
-            <input type="hidden" name="subscriptions[]" value="{{ $subscriptions[0]['id'] }}">
-            <button type="submit" class="inline-block bg-blue-800 text-white font-semibold my-6 py-4 px-6 rounded-full shadow-md hover:bg-blue-600 transition duration-300 mx-auto">Get Started</button>
-        </form>
+        <a href="{{ route('subscriptions.index', ['subscription_id' => 1]) }}" class="inline-block bg-blue-800 text-white font-semibold my-6 py-4 px-6 rounded-full shadow-md hover:bg-blue-600 transition duration-300 mx-auto">
+            Get Started
+        </a>
     </div>
-    <div class="bg-white rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2 transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
+    <div class="bg-white border-gray-300 border rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2 transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
         <div class="bg-green-400 rounded-2xl relative py-4 mb-6 left-0 right-0 w-full">
             <h3 class="text-center text-2xl font-bold text-white">
                 {{ strtoupper($subscriptions[1]['title']) }}
@@ -68,7 +66,7 @@
             <button type="submit" class="inline-block bg-blue-800 text-white font-semibold my-6 py-4 px-6 rounded-full shadow-md hover:bg-blue-600 transition duration-300 mx-auto">Get Started</button>
         </form>
     </div>
-    <div class="bg-white rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2 transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
+    <div class="bg-white border-gray-300 border rounded-3xl p-4 flex flex-col items-center relative mt-0 lg:mt-2 transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
         <div class="bg-purple-400 rounded-2xl relative py-4 mb-6 left-0 right-0 w-full">
             <h3 class="text-center text-2xl font-bold text-white">
                 {{ strtoupper($subscriptions[2]['title']) }}
