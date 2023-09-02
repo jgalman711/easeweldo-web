@@ -18,14 +18,14 @@
 <form action="forgot-password" method="POST">
     @csrf
     @if($errors->any())
-        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4">
+        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-3 mb-4 text-sm">
             @foreach($errors->all() as $error)
             <p>{{ $error }}</p>
             @endforeach
         </div>
     @endif
     @if (session('status'))
-    <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4">
+    <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4 text-sm">
         {{ session('status') }}
     </div>
     @endif

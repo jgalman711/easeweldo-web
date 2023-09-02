@@ -23,9 +23,9 @@
 <form id="register" action="register" method="POST">
     @csrf
     @if($errors->any())
-        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4">
+    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-3 mb-4 text-sm">
         @foreach($errors->all() as $error)
-            <p class="text-sm">{{ $error }}</p>
+            <p>{{ $error }}</p>
             @endforeach
         </div>
     @endif

@@ -15,15 +15,22 @@ class RegisterController extends Controller
     {
         $response = $this->httpService->post('register', $request->all());
 
-        if (isset($response['success']) && !$response['success']) {
-            return redirect()->back()->withErrors($response['errors'])->withInput();
+        if ($response->isFailed()) {
+            return redirect()->back()->withErrors($response->getErrors())->withInput();
         }
 
-        if (isset($response['success']) && $response['success'] && isset($response['data']['token'])) {
-            return view('under-construction')->with('message', 'Thank you for your registration!');
-            // return redirect(env('EASEWELDO_PORTAL_URL'))->with('token', $response['data']['token']);
+        if ($response->isSuccess() ) {
+            $data = $response->getData();
+            $token = $data['token'];
+            $company = $data['company'];
+            session(['access_token' => $token]);
+            session(['company_slug' => $company['slug']]);
+            $response = $this->httpService->get("companies/{$company['slug']}/subscriptions");
+            if ($response->isDataEmpty()) {
+                return redirect('subscriptions?subscription_id=2');
+            }
+            return view('under-construction')->with('message', "Thank you for your registration!");
         }
-
         return redirect()->back()->withErrors(['Registration failed.']);
     }
 }

@@ -10,30 +10,24 @@ class ResetPasswordController extends Controller
     {
         $response = $this->httpService->get('reset-password', $request->all());
 
-        if (isset($response['success']) && !$response['success']) {
-            $errorMessage = $response['errors'] ?? [$response['message']];
-            return redirect('login')->withErrors($errorMessage)->withInput();
+        if ($response->isSuccess()) {
+            return view('resetpassword', [
+                'token' => $request->token,
+                'email_address' => $request->email_address
+            ]);
         }
-
-        return view('resetpassword', [
-            'token' => $request->token,
-            'email_address' => $request->email_address
-        ]);
+        return redirect('login')->withErrors($response->getErrors())->withInput();
     }
 
     public function store(Request $request)
     {
         $response = $this->httpService->post('reset-password', $request->all());
 
-        if (isset($response['success']) && !$response['success']) {
-            $errorMessage = $response['errors'] ?? [$response['message']];
-            return redirect()->back()->withErrors($errorMessage)->withInput();
+        if ($response->isSuccess()) {
+            return redirect('login')->with('status', $response->getMessage());
+        } elseif ($response->isFailed()) {
+            return redirect()->back()->withErrors($response->getErrors())->withInput();
         }
-
-        if (isset($response['success']) && $response['success'] && isset($response['message'])) {
-            return redirect('login')->with('status', $response['message']);
-        }
-
         return redirect()->back()->withErrors(['Reset password failed.']);
     }
 }

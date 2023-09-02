@@ -15,6 +15,25 @@
         @yield('js-top')
     </head>
     <body class="antialiased">
+        <header class="bg-white shadow">
+            <div class="mx-auto flex items-center justify-between p-10 es-navbar">
+                <div class="flex items-center">
+                    <img src="assets/images/easeweldo-logo.png" alt="Easeweldo Logo" class="h-8 w-auto">
+                </div>
+                <nav>
+                    <ul class="flex space-x-12">
+                        <li class="py-2"><a href="#pricing" class="text-xl font-medium">Pricing</a></li>
+                        <li class="py-2"><a href="#solutions" class="text-xl font-medium">Solutions</a></li>
+                        <li class="py-2"><a href="#contact" class="text-xl font-medium">Contact</a></li>
+                        @if (session()->has('access_token'))
+                        <li><a href="logout" class="text-xl font-medium inline-block px-8 py-2 bg-blue-800 text-white rounded-full">Logout</a></li>
+                        @else
+                        <li><a href="login" class="text-xl font-medium inline-block px-8 py-2 bg-blue-800 text-white rounded-full">Login</a></li>
+                        @endif
+                    </ul>
+                </nav>
+            </div>
+        </header>
         @yield('content')
     </body>
 </html>

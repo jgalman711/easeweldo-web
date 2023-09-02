@@ -2,21 +2,6 @@
 
 @section('content')
 <main>
-<header class="bg-white shadow">
-        <div class="mx-auto flex items-center justify-between p-10 es-navbar">
-            <div class="flex items-center">
-                <img src="assets/images/easeweldo-logo.png" alt="Easeweldo Logo" class="h-8 w-auto">
-            </div>
-            <nav>
-                <ul class="flex space-x-12">
-                    <li class="py-2"><a href="#pricing" class="text-xl font-medium">Pricing</a></li>
-                    <li class="py-2"><a href="#solutions" class="text-xl font-medium">Solutions</a></li>
-                    <li class="py-2"><a href="#contact" class="text-xl font-medium">Contact</a></li>
-                    <li><a href="login" class="text-xl font-medium inline-block px-8 py-2 bg-blue-800 text-white rounded-full">Login</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
     <section class="bg-gray-100 pt-16">
         <div class="container mx-auto md:flex items-center justify-between pl-6">
             <div class="md:w-1/2">
@@ -268,7 +253,7 @@
                     ready to assist you and answer any questions.
                 </p>
                 <p class="text-lg lg:text-2xl mb-12 max-w-4xl">
-                    Click <a href="{{ env('EASEWELDO_PORTAL_URL') }}/register" target="_blank" class="text-blue-900 font-semibold hover:text-blue-600">here</a>
+                    Click <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}" target="_blank" class="text-blue-900 font-semibold hover:text-blue-600">here</a>
                     to take advantage of our free 90-days trial and experience streamlined payroll
                     processes firsthand.
                 </p>

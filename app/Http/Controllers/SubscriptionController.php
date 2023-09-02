@@ -16,14 +16,14 @@ class SubscriptionController extends Controller
             'subscription_id' => 'required'
         ]);
         $response = $this->httpService->get("subscriptions/{$request->subscription_id}");
-        if (isset($response['success']) && $response['success']) {
-            $subscription = $response['data'];
+
+        if ($response->isSuccess()) {
+            $subscription = $response->getData();
             $subscriptionPrices = new Collection($subscription['subscription_prices']);
 
             $cheapestPlan = $subscriptionPrices->first(function ($price) {
                 return $price['months'] == 36;
             });
-
             $originalPlan = $subscriptionPrices->first(function ($price) {
                 return $price['months'] == 1;
             });
@@ -36,10 +36,10 @@ class SubscriptionController extends Controller
 
             $response = $this->httpService->get("companies/{$this->company}/employees");
 
-            $employeeCount = isset($response['data']) && $response['data'] ? count($response['data']) : 1;
-            $totalAmount = $employeeCount * $cheapestPlan['price_per_employee'] * $cheapestPlan['months'];
-
-            if (isset($response['success']) && $response['success'] && isset($response['data'])) {
+            if ($response->isSuccess()) {
+                $employees = $response->getData();
+                $employeeCount = $employees ? count($employees) : 1;
+                $totalAmount = $employeeCount * $cheapestPlan['price_per_employee'] * $cheapestPlan['months'];
                 return view('cart', [
                     'subscription' => $subscription,
                     'employee_count' => $employeeCount,

@@ -17,23 +17,24 @@ class LoginController extends Controller
     {
         $response = $this->httpService->post('login', $request->all());
 
-        if (isset($response['success']) && !$response['success']) {
-            $errorMessage = 'Email address or password is incorrect.';
-            return redirect()->back()->withErrors([$errorMessage]);
+        if ($response->isFailed()) {
+            return redirect()->back()->withErrors($response->getErrors());
         }
 
-        if (isset($response['success']) && $response['success'] && isset($response['data']['token'])) {
-            $token = $response['data']['token'];
+        try {
+            $data = $response->getData();
+            $token = $data['token'];
+            $company = $data['user']['companies'][0];
             session(['access_token' => $token]);
-            try {
-                $company = $response['data']['user']['companies'][0];
-                session(['company_slug' => $company['slug']]);
-            } catch (Exception) {
-                Session::forget('company_slug');
+            session(['company_slug' => $company['slug']]);
+
+            $response = $this->httpService->get("companies/{$company['slug']}/subscriptions");
+            if ($response->isDataEmpty()) {
+                return redirect('subscriptions?subscription_id=2');
             }
             return view('under-construction')->with('message', "Welcome back!");
+        } catch (Exception) {
+            return redirect()->back()->withErrors(['Login failed.']);
         }
-
-        return redirect()->back()->withErrors(['Login failed.']);
     }
 }
