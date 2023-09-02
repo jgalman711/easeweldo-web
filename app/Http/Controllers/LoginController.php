@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -27,7 +26,6 @@ class LoginController extends Controller
             $company = $data['user']['companies'][0];
             session(['access_token' => $token]);
             session(['company_slug' => $company['slug']]);
-
             $response = $this->httpService->get("companies/{$company['slug']}/subscriptions");
             if ($response->isDataEmpty()) {
                 return redirect('subscriptions?subscription_id=2');

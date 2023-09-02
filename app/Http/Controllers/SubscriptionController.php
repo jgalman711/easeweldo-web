@@ -7,11 +7,9 @@ use Illuminate\Support\Collection;
 
 class SubscriptionController extends Controller
 {
-    protected $company;
-
     public function index(Request $request)
     {
-        $this->company = session('company_slug');
+        $company = session('company_slug');
         $request->validate([
             'subscription_id' => 'required'
         ]);
@@ -34,7 +32,7 @@ class SubscriptionController extends Controller
                     - ($plan['price_per_employee'] * $plan['months']);
             }
 
-            $response = $this->httpService->get("companies/{$this->company}/employees");
+            $response = $this->httpService->get("companies/{$company}/employees");
 
             if ($response->isSuccess()) {
                 $employees = $response->getData();
@@ -52,6 +50,12 @@ class SubscriptionController extends Controller
 
     public function store(Request $request)
     {
-        return view('subscribed');
+        $company = session('company_slug');
+        $response = $this->httpService->post("companies/{$company}/subscriptions", $request->all());
+        if ($response->isSuccess()) {
+            return view('subscribed');
+        } else {
+            return redirect()->back()->withErrors($response->getErrors());
+        }
     }
 }
