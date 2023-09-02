@@ -52,6 +52,6 @@ class SubscriptionController extends Controller
 
     public function store(Request $request)
     {
-        return view('under-construction')->with('message', 'Thank you for subscribing to Easeweldo!');
+        return view('subscribed');
     }
 }
