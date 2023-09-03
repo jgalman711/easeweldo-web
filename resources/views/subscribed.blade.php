@@ -1,5 +1,18 @@
 @extends('layouts.cart')
 
+@section('seo')
+<title>Subscription Successful</title>
+<meta name="description" content="Congratulations! Your subscription to Easeweldo is successful. Manage your payroll with ease and efficiency.">
+<meta name="keywords" content="Easeweldo, subscription successful, payroll, payroll software, payroll management, payroll system, employee login">
+<meta name="author" content="Easeweldo Team">
+
+<meta property="og:title" content="Easeweldo: Subscription Successful">
+<meta property="og:description" content="Congratulations! Your subscription to Easeweldo is successful. Manage your payroll with ease and efficiency.">
+<meta property="og:image" content="assets/images/subscription_success.png">
+<meta property="og:url" content="https://easeweldo.com/successful-subscription">
+<meta property="og:type" content="website">
+@endsection
+
 @section('content')
 <div class="py-4 md:py-8 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
