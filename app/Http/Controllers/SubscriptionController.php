@@ -53,7 +53,7 @@ class SubscriptionController extends Controller
         $company = session('company_slug');
         $response = $this->httpService->post("companies/{$company}/subscriptions", $request->all());
         if ($response->isSuccess()) {
-            return view('subscribed');
+            return view('subscribed', $response->getData());
         } else {
             return redirect()->back()->withErrors($response->getErrors());
         }

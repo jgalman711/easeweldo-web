@@ -34,7 +34,7 @@
                 @endif
                 <label class="cursor-pointer">
                     <input type="radio" name="months" value="{{ $details['months'] }}" class="hidden" @if($details['months'] == 36) checked @endif/>
-                    <div class="card bg-white rounded-lg p-6 border border-gray-300 hover:border-blue-500 transition duration-300 @if($details['months'] == 36) selected-card @endif">
+                    <div class="card bg-white rounded-lg p-6 border border-gray-300 hover:border-blue-500 transition duration-300 @if($details['months'] == 36) selected-card @endif" data-month="{{ $details['months'] }}" data-price="{{ $details['price_per_employee'] }}">
                         <p class="text-md font-semibold text-gray-500 mt-6 mb-8">{{ $details['months'] }} Month</p>
                         <h3 class="text-5xl font-semibold mb-2 text-blue-800">P{{ $details['price_per_employee'] }}</h3>
                         <p class="text-gray-500 font-semibold mb-4">user / month</p>
@@ -45,36 +45,11 @@
             @endforeach
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md my-14">
-            <p class="text-2xl font-semibold mb-6">Total Amount: <span id="total-amount" class="text-3xl text-blue-800">P{{ number_format($total_amount, 2) }}</span></p>
+            <p class="text-xl font-semibold mb-6">Total Amount: <span id="total-amount" class="text-3xl text-blue-800">P{{ number_format($total_amount, 2) }}</span></p>
             <p class="text-gray-800 mb-4 text-lg">
                 Please deposit the calculated amount to one of the provided bank accounts:
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
-                    <div class="mr-4">
-                        <img src="assets/images/payments/bpi-logo.png" alt="BPI Logo" class="h-12 mb-6">
-                    </div>
-                    <p class="text-gray-600 mb-1">Account Number: 1234567890</p>
-                    <p class="text-gray-600 mb-1">Account Name: Jermaine Galman</p>
-                </div>
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
-                    <div class="mr-4 pt-2">
-                        <img src="assets/images/payments/bdo-logo.png" alt="BPI Logo" class="h-8 mb-8">
-                    </div>
-                    <p class="text-gray-600 mb-1">Account Number: 1234567890</p>
-                    <p class="text-gray-600 mb-1">Account Name: Jermaine Galman</p>
-                </div>
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
-                    <div class="mr-4 pt-2">
-                        <img src="assets/images/payments/gcash-logo.png" alt="BPI Logo" class="h-8 mb-8">
-                    </div>
-                    <p class="text-gray-600 mb-1">Account Number: 1234567890</p>
-                    <p class="text-gray-600 mb-1">Account Name: Jermaine Galman</p>
-                </div>
-            </div>
-            <p class="text-blue-500 mt-4 text-sm">
-                *Once we receive the payment, we will set your company's account subscription accordingly.
-            </p>
+            @include('partials.payment-options')
             <input type="text" name="subscription_id" id="subscription_id-count" value="{{ $subscription['id'] }}" class="hidden" min="1">
             <button type="submit" class="bg-blue-800 text-white text-xl font-semibold px-6 py-4 mt-6 rounded-full hover:bg-blue-600 transition duration-300">Subscribe</button>
         </div>
@@ -85,21 +60,48 @@
 
 @section('js-bottom')
 <script type="text/javascript">
+    const totalAmountSpan = document.getElementById('total-amount');
+    const employeeCountInput = document.getElementById('employee-count');
+
     const cards = document.querySelectorAll('.card');
     const ovals = document.querySelectorAll('.oval');
+
+    let selectedCard = document.querySelector('.selected-card');
+
+    function calculate(card) {
+        if (!card) {
+            return;
+        }
+        const dataMonth = card.getAttribute('data-month');
+        const dataPrice = card.getAttribute('data-price');
+        const months = parseInt(dataMonth, 10);
+        const price = parseFloat(dataPrice, 10);
+        const employeeCount = parseInt(employeeCountInput.value, 10);
+        const totalAmount = months * employeeCount * price;
+        totalAmountSpan.textContent = totalAmount;
+
+        const formattedTotalAmount = 'P' + totalAmount.toLocaleString('en-PH', { minimumFractionDigits: 2 });
+        totalAmountSpan.textContent = formattedTotalAmount;
+    }
+
     cards.forEach(card => {
         card.addEventListener('click', () => {
             cards.forEach(c => c.classList.remove('selected-card'));
             ovals.forEach(o => o.classList.remove('selected-oval'));
             card.classList.add('selected-card');
+            selectedCard = card;
             const oval = card.closest('.relative').querySelector('.oval');
-        
             if (oval) {
                 cards.forEach(c => c.classList.remove('selected-card'));
                 oval.classList.add('selected-oval');
                 card.classList.add('selected-card');
             }
+            calculate(card);
         });
+    });
+
+    employeeCountInput.addEventListener('input', () => {
+        calculate(selectedCard);
     });
 </script>
 @endsection
