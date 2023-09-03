@@ -45,7 +45,8 @@
             @endforeach
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md my-14">
-            <p class="text-xl font-semibold mb-6">Total Amount: <span id="total-amount" class="text-3xl text-blue-800">P{{ number_format($total_amount, 2) }}</span></p>
+            <p class="text-xl font-semibold">Total Amount: <span id="total-amount" class="text-3xl text-blue-800">P{{ number_format($total_amount, 2) }}</span></p>
+            <p class="text-gray-800 text-md font-semibold mb-6">You saved: <span id="total-saved" class="text-lg text-green-600">P{{ number_format($total_saved, 2) }}</span></p>
             <p class="text-gray-800 mb-4 text-lg">
                 Please deposit the calculated amount to one of the provided bank accounts:
             </p>
@@ -55,12 +56,12 @@
         </div>
     </form>
 </div>
-
 @endsection
 
 @section('js-bottom')
 <script type="text/javascript">
     const totalAmountSpan = document.getElementById('total-amount');
+    const totalSavedSpan = document.getElementById('total-saved');
     const employeeCountInput = document.getElementById('employee-count');
 
     const cards = document.querySelectorAll('.card');
@@ -78,10 +79,12 @@
         const price = parseFloat(dataPrice, 10);
         const employeeCount = parseInt(employeeCountInput.value, 10);
         const totalAmount = months * employeeCount * price;
-        totalAmountSpan.textContent = totalAmount;
-
+        const originalAmount = months * employeeCount * parseFloat('{{ $original_plan["price_per_employee"] }}');
+        const totalSaved = originalAmount - totalAmount;
+        const formattedTotalSaved = 'P' + totalSaved.toLocaleString('en-PH', { minimumFractionDigits: 2 });
         const formattedTotalAmount = 'P' + totalAmount.toLocaleString('en-PH', { minimumFractionDigits: 2 });
         totalAmountSpan.textContent = formattedTotalAmount;
+        totalSavedSpan.textContent = formattedTotalSaved;
     }
 
     cards.forEach(card => {

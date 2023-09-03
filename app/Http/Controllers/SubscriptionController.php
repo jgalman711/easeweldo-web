@@ -38,10 +38,18 @@ class SubscriptionController extends Controller
                 $employees = $response->getData();
                 $employeeCount = $employees ? count($employees) : 1;
                 $totalAmount = $employeeCount * $cheapestPlan['price_per_employee'] * $cheapestPlan['months'];
+
+                $totalSaved = $originalPlan['price_per_employee']
+                    * $cheapestPlan['months']
+                    * $employeeCount
+                    - $totalAmount;
+
                 return view('cart', [
+                    'original_plan' => $originalPlan,
                     'subscription' => $subscription,
                     'employee_count' => $employeeCount,
-                    'total_amount' => $totalAmount
+                    'total_amount' => $totalAmount,
+                    'total_saved' => $totalSaved
                 ]);
             }
         }
