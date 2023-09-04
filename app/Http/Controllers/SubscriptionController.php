@@ -53,7 +53,7 @@ class SubscriptionController extends Controller
                 ]);
             }
         }
-        // redirect to subscription plans selection page
+        return redirect()->back()->withErrors($response->getErrors());
     }
 
     public function store(Request $request)
