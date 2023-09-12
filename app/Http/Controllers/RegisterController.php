@@ -19,7 +19,7 @@ class RegisterController extends Controller
             return redirect()->back()->withErrors($response->getErrors())->withInput();
         }
 
-        if ($response->isSuccess() ) {
+        if ($response->isSuccess()) {
             $data = $response->getData();
             $token = $data['token'];
             $company = $data['company'];

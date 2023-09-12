@@ -58,9 +58,13 @@ class SubscriptionController extends Controller
 
     public function store(Request $request)
     {
+        if (session()->has('subscribed')) {
+            return redirect(env('EASEWELDO_PORTAL_URL'));
+        }
         $company = session('company_slug');
         $response = $this->httpService->post("companies/{$company}/subscriptions", $request->all());
         if ($response->isSuccess()) {
+            session()->put('subscribed', true);
             return view('subscribed', $response->getData());
         } else {
             return redirect()->back()->withErrors($response->getErrors());

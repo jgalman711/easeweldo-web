@@ -26,8 +26,9 @@
     <div class="container mx-auto mt-8 max-w-6xl px-4">
         @include('partials.payment-options')
     </div>
-    <div class="max-w-4xl mx-auto mt-6">
+    <div class="max-w-4xl mx-auto flex flex-col items-center">
         <img src="{{ asset('assets/images/subscribed.png') }}" alt="Subscription Image" class="w-full h-auto">
+        <a href="{{ env('EASEWELDO_PORTAL_URL') }}" class="text-white bg-blue-800 hover:bg-blue-600 py-2 px-4 rounded-full text-lg font-semibold mt-8 inline-block transition duration-300">Go to Portal</a>
     </div>
 </div>
 @endsection

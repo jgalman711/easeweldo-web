@@ -15,7 +15,8 @@
 
 @section('content')
 <div class="container mx-auto mt-8 max-w-6xl px-4">
-    <h1 class="text-4xl font-semibold mb-4">You're almost there! Complete your subscription</h1>
+    <h1 class="text-4xl font-semibold mb-4">You're almost there!</h1>
+    <h1 class="text-xl font-semibold mb-4">We're excited to offer you a 60-day free trial, where you can explore our powerful features without any cost.</h1>
     <p class="text-gray-500 text-lg mb-6">Selected plan: <span class="font-semibold">{{ $subscription['title'] }}</span></p>
     <form action="subscriptions" method="POST">
         @csrf
@@ -38,7 +39,7 @@
                         <p class="text-md font-semibold text-gray-500 mt-6 mb-8">{{ $details['months'] }} Month</p>
                         <h3 class="text-5xl font-semibold mb-2 text-blue-800">P{{ $details['price_per_employee'] }}</h3>
                         <p class="text-gray-500 font-semibold mb-4">user / month</p>
-                        <p class="text-gray-500">Plan renews at {{ $details['months'] }} month after today.</p>
+                        <p class="text-gray-500">Plan renews at {{ $details['months'] }} month after the <span class="text-blue-800">60-day trial</span></p>
                     </div>
                 </label>
             </div>
@@ -53,6 +54,7 @@
             @include('partials.payment-options')
             <input type="text" name="subscription_id" id="subscription_id-count" value="{{ $subscription['id'] }}" class="hidden" min="1">
             <button type="submit" class="bg-blue-800 text-white text-xl font-semibold px-6 py-4 mt-6 rounded-full hover:bg-blue-600 transition duration-300">Subscribe</button>
+            <a href="{{ env('EASEWELDO_PORTAL_URL') }}" class="text-gray-600 text-lg ml-4 underline">Do it later</a>
         </div>
     </form>
 </div>

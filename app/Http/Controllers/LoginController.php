@@ -23,13 +23,15 @@ class LoginController extends Controller
         try {
             $data = $response->getData();
             $token = $data['token'];
-            $company = $data['user']['companies'][0];
-            session(['access_token' => $token]);
-            session(['company_slug' => $company['slug']]);
-            $response = $this->httpService->get("companies/{$company['slug']}/subscriptions");
-            if ($response->isDataEmpty()) {
-                return redirect('subscriptions?subscription_id=2');
+            $company = $data['user']['companies'][0] ?? null;
+            if ($company) {
+                session(['company_slug' => $company['slug']]);
+                $response = $this->httpService->get("companies/{$company['slug']}/subscriptions");
+                if ($response->isDataEmpty()) {
+                    return redirect('subscriptions?subscription_id=2');
+                }
             }
+            session(['access_token' => $token]);
             return view('under-construction')->with('message', "Welcome back!");
         } catch (Exception) {
             return redirect()->back()->withErrors(['Login failed.']);

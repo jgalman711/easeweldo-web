@@ -23,6 +23,6 @@
         </div>
     </div>
     <p class="text-blue-500 mt-4 text-sm">
-        *Once we receive the payment, we will set your company's account subscription accordingly.
+        *Once we receive the payment, we will set your company's account subscription accordingly. Don't worry, you can continue to enjoy the full 60-day trial period before any charges apply.
     </p>
 </div>
