@@ -29,7 +29,7 @@ class RegisterController extends Controller
             if ($response->isDataEmpty()) {
                 return redirect('subscriptions?subscription_id=2');
             }
-            return view('under-construction')->with('message', "Thank you for your registration!");
+            return view('trial-subscribed');
         }
         return redirect()->back()->withErrors(['Registration failed.']);
     }
