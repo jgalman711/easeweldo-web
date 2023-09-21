@@ -30,7 +30,7 @@
                         Choose the perfect plan that fits your needs and budget.
                     </p>
                 </div>
-                @include('partials.subscription-cards', ['subscriptions' => $subscriptions])
+                @include('partials.subscription-cards-2', ['subscriptions' => $subscriptions])
             </div>
         </div>
         <div class="bg-gray-100 py-16" id="solutions">

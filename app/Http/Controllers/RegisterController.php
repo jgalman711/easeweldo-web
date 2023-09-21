@@ -31,6 +31,6 @@ class RegisterController extends Controller
             }
             return view('trial-subscribed');
         }
-        return redirect()->back()->withErrors(['Registration failed.']);
+        return redirect()->back()->withErrors(['Registration failed.'])->withInput();
     }
 }

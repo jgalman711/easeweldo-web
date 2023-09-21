@@ -10,12 +10,12 @@ class IndexController extends Controller
     {
         $data = Cache::remember('index', 3600, function () {
             $response = $this->httpService->get('subscription-prices', ['search' => 36]);
-            $colorClasses = [
-                'bg-primary',
-                'bg-green-400',
-                'bg-purple-400'
-            ];
             if ($response->isSuccess()) {
+                $colorClasses = [
+                    'bg-primary',
+                    'bg-green-400',
+                    'bg-purple-400'
+                ];
                 return [
                     'subscriptions' => $response->getData(),
                     'color_classes' => $colorClasses
