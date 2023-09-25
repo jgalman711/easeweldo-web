@@ -8,7 +8,7 @@ class ForgotPasswordController extends Controller
 {
     public function index()
     {
-        return view('forgotpassword');
+        return view('pages.business.auth.forgotpassword');
     }
 
     public function store(Request $request)

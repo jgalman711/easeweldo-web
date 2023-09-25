@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('login');
+        return view('pages.business.auth.login');
     }
 
     public function store(Request $request)

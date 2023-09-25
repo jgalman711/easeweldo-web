@@ -49,6 +49,6 @@
     <button type="submit" class="w-full bg-blue-800 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Login</button>
 </form>
 <div class="mt-4">
-    <p class="text-sm text-gray-600">Don't have an account? <a href="register" class="font-medium text-blue-600 hover:underline">Sign up</a></p>
+    <p class="text-sm text-gray-600">New Company? <a href="register" class="font-medium text-blue-600 hover:underline">Sign up</a></p>
 </div>
 @endsection

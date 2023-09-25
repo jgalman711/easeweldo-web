@@ -8,7 +8,7 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('register');
+        return view('pages.business.auth.register');
     }
 
     public function store(Request $request)

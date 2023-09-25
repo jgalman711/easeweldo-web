@@ -8,7 +8,7 @@ class ResetPasswordController extends Controller
 {
     public function index(Request $request)
     {
-        $response = $this->httpService->get('reset-password', $request->all());
+        $response = $this->httpService->get('pages.business.auth.reset-password', $request->all());
 
         if ($response->isSuccess()) {
             return view('resetpassword', [
