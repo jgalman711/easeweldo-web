@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@yield('title', 'Easeweldo')</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+            integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    </head>
+    <body class="bg-cover bg-center bg-no-repeat h-screen flex justify-center bg-gray-100">
+        <div class="max-w-md w-full">
+            <header class="bg-blue-400 text-white p-4">
+                @yield('header')
+            </header>
+            <div class="content">
+                @yield('content')
+            </div>
+            <div class="py-8"></div>
+            <a href="dashboard">
+                <div class="fixed bottom-0 left-0 right-0 bg-blue-400 flex justify-around p-1.5">
+                    <div class="text-white text-center p-1">
+                        <img src="../assets/images/personal/menu/1.png" alt="Home Icon" class="w-auto h-6 mb-2 mx-auto">
+                        <p class="text-xs">Home</p>
+                    </div>
+                    <div class="text-white text-center p-1">
+                        <img src="../assets/images/personal/menu/2.png" alt="QR Scan Icon" class="w-auto h-6 mb-2 mx-auto">
+                        <p class="text-xs">QR Scan</p>
+                    </div>
+                    <div class="text-white text-center p-1">
+                        <img src="../assets/images/personal/menu/3.png" alt="Profile Icon" class="w-auto h-6 mb-2 mx-auto">
+                        <p class="text-xs">Profile</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        @yield('js-bottom')
+    </body>
+</html>
