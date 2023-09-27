@@ -27,7 +27,11 @@
             </div>
             <div class="mb-4">
                 <p class="text-sm font-semibold">{{ $work_today['day'] }}</p>
+                @if ($work_today['expected_clock_in'] &&  $work_today['expected_clock_out'])
                 <p class="text-sm">{{ $work_today['expected_clock_in'] }} - {{ $work_today['expected_clock_out'] }}</p>
+                @else
+                <p class="text-sm">Rest Day</p>
+                @endif
             </div>
             <div class="mb-4 pl-2 border-l-2 border-gray-200">
                 <p class="text-sm text-gray-600">
@@ -41,7 +45,7 @@
             </div>
         </div>
         <div class="text-center">
-            <button class="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">
+            <button id="clock-in-out" class="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">
                 Clock In / Clock Out
             </button>
         </div>
@@ -88,4 +92,28 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js-bottom')
+<script>
+$(document).ready(function() {
+    $("#clock-in-out").click(function() {
+        const token = "{{ $token }}";
+        $.ajax({
+            url: "{{ $clock_in_url }}",
+            method: "POST",
+            headers: {
+                'Authorization': 'Bearer ' + token,
+            },
+            dataType: "json",
+            success: function(response) {
+                console.log("Clock In / Clock Out successful");
+            },
+            error: function(xhr, status, error) {
+                console.error("Clock In / Clock Out failed:", error);
+            }
+        });
+    });
+});
+</script>
 @endsection

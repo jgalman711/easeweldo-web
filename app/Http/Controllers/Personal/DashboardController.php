@@ -23,7 +23,9 @@ class DashboardController extends Controller
             'employee' => $employee,
             'company' => $company,
             'work_today' => $data['work_today'],
-            'schedule' => $data['schedule']
+            'schedule' => $data['schedule'],
+            'token' => session('access_token'),
+            'clock_in_url' => env('EASEWELDO_API_DOMAIN') . "companies/{$company['slug']}/employees/{$employee['id']}/clock"
         ]);
     }
 }
