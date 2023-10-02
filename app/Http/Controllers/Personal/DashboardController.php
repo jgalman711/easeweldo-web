@@ -20,11 +20,11 @@ class DashboardController extends Controller
             $data = $response->getData();
         }
         return view('pages.personal.dashboard', [
+            'token' => session('access_token'),
             'employee' => $employee,
             'company' => $company,
-            'work_today' => $data['work_today'],
-            'schedule' => $data['schedule'],
-            'token' => session('access_token'),
+            'work_today' => $data['work_today'] ?? null,
+            'schedule' => $data['schedule'] ?? null,
             'clock_in_url' => env('EASEWELDO_API_DOMAIN') . "companies/{$company['slug']}/employees/{$employee['id']}/clock"
         ]);
     }
