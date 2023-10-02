@@ -18,20 +18,25 @@
                 @yield('content')
             </div>
             <div class="py-8"></div>
-            <a href="dashboard">
                 <div class="fixed bottom-0 left-0 right-0 bg-blue-400 flex justify-around p-1.5">
-                    <div class="text-white text-center p-1">
-                        <img src="../assets/images/personal/menu/1.png" alt="Home Icon" class="w-auto h-6 mb-2 mx-auto">
-                        <p class="text-xs">Home</p>
-                    </div>
-                    <div class="text-white text-center p-1">
-                        <img src="../assets/images/personal/menu/2.png" alt="QR Scan Icon" class="w-auto h-6 mb-2 mx-auto">
-                        <p class="text-xs">QR Scan</p>
-                    </div>
-                    <div class="text-white text-center p-1">
-                        <img src="../assets/images/personal/menu/3.png" alt="Profile Icon" class="w-auto h-6 mb-2 mx-auto">
-                        <p class="text-xs">Profile</p>
-                    </div>
+                    <a href="dashboard">
+                        <div class="text-white text-center p-1">
+                            <img src="{{ url('assets/images/personal/menu/1.png') }}" alt="Home Icon" class="w-auto h-6 mb-2 mx-auto">
+                            <p class="text-xs">Home</p>
+                        </div>
+                    </a>
+                    <a href="dashboard">
+                        <div class="text-white text-center p-1">
+                            <img src="{{ url('assets/images/personal/menu/2.png') }}" alt="QR Scan Icon" class="w-auto h-6 mb-2 mx-auto">
+                            <p class="text-xs">QR Scan</p>
+                        </div>
+                    </a>
+                    <a href="dashboard">
+                        <div class="text-white text-center p-1">
+                            <img src="{{ url('assets/images/personal/menu/3.png') }}" alt="Profile Icon" class="w-auto h-6 mb-2 mx-auto">
+                            <p class="text-xs">Profile</p>
+                        </div>
+                    </a>
                 </div>
             </a>
         </div>
