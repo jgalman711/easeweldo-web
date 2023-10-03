@@ -1,75 +1,27 @@
 @extends('layouts.personal.default')
 
 @section('title')
-    Dashboard
+    Payrolls
 @endsection
 
+@section('back_url', url('personal/dashboard'))
+
 @section('header')
-<div class="flex items-center">
-    <img src="{{ 'http://api-sahodna.test/' . $employee['profile_picture'] }}" alt="Profile Picture" class="w-24 h-24 rounded-full mr-6">
-    <div class="text-lg">
-        <h1 class="font-bold"></h1>
-        <p class="text-gray-200 text-xl">{{ $employee['full_name'] }}</p>
-        <p class="text-gray-200 text-sm">{{ $employee['job_title'] }}</p>
-        <p class="text-gray-200 text-sm">{{ $employee['department'] }}</p>
-        <p class="text-gray-200 text-md mt-2">{{ $company['name'] }}</p>
-    </div>
-</div>
+<h1 class="text-2xl font-semibold text-center">Timesheet</h1>
 @endsection
 
 @section('content')
 @include('partials.personal.modal')
 <div class="px-2 my-4">
-    <h2 class="text-2xl mb-2">Today's Work</h2>
     @include('partials.personal.clock-in-out')
 </div>
-<div class="px-2 my-4">
-    <h2 class="text-2xl mb-2">Shift This Week</h2>
-    <div class="grid grid-cols-7 gap-1">
-        @if (isset($schedule) && $schedule)
-            @foreach($schedule as $day)
-            <div class="bg-white shadow p-1 rounded text-center">
-                <div class="{{ $day['is_today'] ? 'text-blue-400' : 'text-gray-500' }}">{{ $day['day'] }}</div>
-                <div class="text-sm">{{ $day['clock_in'] ?? 'REST' }}</div>
-                <div class="text-sm">{{ $day['clock_out'] ?? 'DAY' }}</div>
-            </div>
-            @endforeach
-        @endif
+
+@foreach ($timesheet as $timeRecord)
+    <div class="px-2 my-4">
+        @include('partials.personal.timerecord')
     </div>
-</div>
-<div class="px-2 my-4">
-    <h2 class="text-2xl mb-2">Categories</h2>
-    <div class="grid grid-cols-3 gap-4">
-        <a href="payrolls">
-            <div class="text-center p-4 bg-white rounded-lg shadow-md">
-                <img src="../assets/images/personal/categories/1.png" alt="Payroll Icon" class="mx-auto w-auto h-14">
-                <p class="mt-2 text-sm">Payrolls</p>
-            </div>
-        </a>
-        <a href="timesheets">
-            <div class="text-center p-4 bg-white rounded-lg shadow-md">
-                <img src="../assets/images/personal/categories/2.png" alt="Timesheet Icon" class="mx-auto w-auto h-14">
-                <p class="mt-2 text-sm">Timesheet</p>
-            </div>
-        </a>
-        <a href="leaves">
-            <div class="text-center p-4 bg-white rounded-lg shadow-md">
-                <img src="../assets/images/personal/categories/3.png" alt="Leaves Icon" class="mx-auto w-auto h-14">
-                <p class="mt-2 text-sm">Leaves</p>
-            </div>
-        </a>
-        {{--
-        <div class="text-center p-4 bg-white rounded-lg shadow-md">
-            <img src="../assets/images/personal/categories/4.png" alt="Corrections Icon" class="mx-auto w-auto h-14">
-            <p class="mt-2 text-sm">Corrections</p>
-        </div>
-        <div class="text-center p-4 bg-white rounded-lg shadow-md">
-            <img src="../assets/images/personal/categories/5.png" alt="Overtimes Icon" class="mx-auto w-auto h-14">
-            <p class="mt-2 text-sm">Overtimes</p>
-        </div>
-        --}}
-    </div>
-</div>
+@endforeach
+
 @endsection
 
 @section('js-bottom')
