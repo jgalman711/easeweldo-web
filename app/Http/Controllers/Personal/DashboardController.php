@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers\Personal;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class DashboardController extends BaseController
 {
     public function index(Request $request)
     {
-        $data = $request->session()->get('data');
-        $employee = optional(optional($data['user'])['employee']);
-        $company = optional(optional($data['user'])['companies'])[0];
-
-        $url = "companies/{$company['slug']}/employees/{$employee['id']}/dashboard";
+        parent::init($request);
+        $url = $this->baseUrl . "/dashboard";
         $response = $this->httpService->get($url);
 
         if ($response->isSuccess()) {
@@ -21,11 +17,11 @@ class DashboardController extends Controller
         }
         return view('pages.personal.dashboard', [
             'token' => session('access_token'),
-            'employee' => $employee,
-            'company' => $company,
+            'employee' => $this->employee,
+            'company' => $this->company,
             'work_today' => $data['work_today'] ?? null,
             'schedule' => $data['schedule'] ?? null,
-            'clock_in_url' => env('EASEWELDO_API_DOMAIN') . "companies/{$company['slug']}/employees/{$employee['id']}/clock"
+            'clock_in_url' => config('app.api_endpoint') . $this->baseUrl . "/clock"
         ]);
     }
 }

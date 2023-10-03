@@ -185,4 +185,5 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    'api_endpoint' => env('EASEWELDO_API_DOMAIN', 'http://localhost'),
 ];

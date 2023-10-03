@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Personal;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TimesheetController extends Controller
+class TimesheetController extends BaseController
 {
-    public function store(Request $request)
+    public function index(Request $request)
     {
-        
+        parent::init($request);
     }
 }

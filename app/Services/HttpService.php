@@ -12,7 +12,7 @@ class HttpService
 
     public function __construct()
     {
-        $this->endpoint = env('EASEWELDO_API_DOMAIN');
+        $this->endpoint = config('app.api_endpoint');
     }
 
     public function get(string $uri, array $data = []): self
