@@ -12,7 +12,16 @@
     <body class="bg-cover bg-center bg-no-repeat h-screen flex justify-center bg-gray-100">
         <div class="max-w-md w-full">
             <header class="bg-blue-400 text-white p-4">
-                @yield('header')
+                <div class="flex items-center">
+                    @if(View::hasSection('back_url'))
+                    <a href="@yield('back_url')" class="pt-1 absolute text-white hover:underline">
+                        < back
+                    </a>
+                    @endif
+                    <div class="text-center flex-grow">
+                        @yield('header')
+                    </div>
+                </div>
             </header>
             <div class="content">
                 @yield('content')

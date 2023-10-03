@@ -1,5 +1,7 @@
 @extends('layouts.personal.default')
 
+@section('back_url', url()->previous('/personal/payrolls'))
+
 @section('title')
     Payrolls
 @endsection
