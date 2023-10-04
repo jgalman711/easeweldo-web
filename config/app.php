@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Manila',
 
     /*
     |--------------------------------------------------------------------------
@@ -186,4 +186,5 @@ return [
     ])->toArray(),
 
     'api_endpoint' => env('EASEWELDO_API_DOMAIN', 'http://localhost'),
+    'easeweldo_assets' => env('EASEWELDO_ASSETS', 'http://localhost')
 ];

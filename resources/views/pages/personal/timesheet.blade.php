@@ -16,11 +16,13 @@
     @include('partials.personal.clock-in-out')
 </div>
 
+@if ($timesheet)
 @foreach ($timesheet as $timeRecord)
     <div class="px-2 my-4">
         @include('partials.personal.timerecord')
     </div>
 @endforeach
+@endif
 
 @endsection
 

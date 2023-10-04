@@ -25,24 +25,25 @@ class TimesheetController extends BaseController
             'date_from' => $startOfMonth->toDateString(),
             'date_to' => $endOfMonth->toDateString(),
         ]);
-
         if ($response->isSuccess()) {
             $timesheet = $response->getData();
-            $formattedTimesheet = [];
-            foreach ($timesheet as $timeRecord) {
-                $formattedTimeRecord = $timesheetService->formatTimesheet($timeRecord);
-                if ($timesheetService->isToday($timeRecord)) {
-                    $formattedWorkToday = $formattedTimeRecord;
-                } else {
-                    $formattedTimesheet[] = $formattedTimeRecord;
+            if ($timesheet) {
+                $formattedTimesheet = [];
+                foreach ($timesheet as $timeRecord) {
+                    $formattedTimeRecord = $timesheetService->formatTimesheet($timeRecord);
+                    if ($timesheetService->isToday($timeRecord)) {
+                        $formattedWorkToday = $formattedTimeRecord;
+                    } else {
+                        $formattedTimesheet[] = $formattedTimeRecord;
+                    }
                 }
             }
-            return view('pages.personal.timesheet', [
-                'token' => session('access_token'),
-                'timesheet' => $formattedTimesheet,
-                'work_today' => $formattedWorkToday ?? null,
-                'clock_in_url' => config('app.api_endpoint') . $this->baseUrl . "/clock"
-            ]);
         }
+        return view('pages.personal.timesheet', [
+            'token' => session('access_token'),
+            'timesheet' => $formattedTimesheet ?? null,
+            'work_today' => $formattedWorkToday ?? null,
+            'clock_in_url' => config('app.api_endpoint') . $this->baseUrl . "/clock"
+        ]);
     }
 }
