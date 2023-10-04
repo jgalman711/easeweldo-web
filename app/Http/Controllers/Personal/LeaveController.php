@@ -26,8 +26,8 @@ class LeaveController extends BaseController
         }
 
         return view('pages.personal.leaves', [
-            'leaves' => $leaves,
-            'salary_compuation' => $salaryComputation
+            'leaves' => $leaves ?? null,
+            'salary_compuation' => $salaryComputation ?? null
         ]);
     }
 }
