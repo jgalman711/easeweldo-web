@@ -14,10 +14,10 @@ class PayrollController extends BaseController
 
         if ($response->isSuccess()) {
             $data = $response->getData();
-            return view('pages.personal.payrolls', [
-                'payrolls' => $data
-            ]);
         }
+        return view('pages.personal.payrolls', [
+            'payrolls' => $data ?? null
+        ]);
     }
 
     public function show(Request $request, int $payrollId)
