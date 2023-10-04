@@ -14,17 +14,7 @@
 <div class="px-2 my-4">
     @foreach($payrolls as $payroll)
     <a href="{{ url('personal/payrolls') . '/' . $payroll['id'] }}">
-        @if ($payroll['status'] == 'to-pay')
-            @php $borderColor = 'border-yellow-400' @endphp
-            @php $status = 'Pending' @endphp
-        @elseif ($payroll['status'] == 'paid')
-            @php $borderColor = 'border-green-400' @endphp
-            @php $status = 'Paid' @endphp
-        @else
-            @php $borderColor = 'border-red-400' @endphp
-            @php $status = 'Canceled' @endphp
-        @endif
-        <div class="mt-2 bg-white shadow px-4 py-3 border-l-4 {{ $borderColor }}">
+        <div class="mt-2 bg-white shadow px-4 py-3 border-l-4 border-{{ getStatusColor($payroll['status']) }}-400">
             @if (isset($payroll['period']) && $payroll['period'])
             <p class="text-xl font-semibold">Period {{ $payroll['period_id'] }} <span class="font-normal text-xs">({{ $payroll['period_duration'] }})</span></p>
             @else
@@ -39,7 +29,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
                 </svg>
-                <h2 class="ml-1 text-sm text-gray-800">{{ $payroll['type'] == "regular" ? "Salary Disbursement" : "Special Disbursement" }} - {{ $status }}</h2>
+                <h2 class="ml-1 text-sm text-gray-800">{{ $payroll['type'] == "regular" ? "Salary Disbursement" : "Special Disbursement" }} - {{ ucwords(str_replace('-', ' ', $payroll['status'])) }}</h2>
             </div>
         </div>
         @endforeach

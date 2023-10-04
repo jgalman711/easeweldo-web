@@ -46,7 +46,7 @@
                 <p class="mt-2 text-sm">Payrolls</p>
             </div>
         </a>
-        <a href="timesheets">
+        <a href="timesheet">
             <div class="text-center p-4 bg-white rounded-lg shadow-md">
                 <img src="../assets/images/personal/categories/2.png" alt="Timesheet Icon" class="mx-auto w-auto h-14">
                 <p class="mt-2 text-sm">Timesheet</p>

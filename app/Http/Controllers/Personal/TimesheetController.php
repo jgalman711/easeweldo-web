@@ -10,8 +10,8 @@ class TimesheetController extends BaseController
 {
     public function index(Request $request)
     {
-        $timesheetService = app()->make(TimesheetService::class);
         parent::init($request);
+        $timesheetService = app()->make(TimesheetService::class);
         $url = $this->baseUrl . "/time-records";
         if (!request()->has('month')) {
             $currentMonth = Carbon::now();

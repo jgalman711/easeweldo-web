@@ -1,11 +1,4 @@
-@if ($timeRecord['attendance_status'] == 'on-time')
-    @php $border = 'green' @endphp
-@elseif ($timeRecord['attendance_status'] == 'late')
-    @php $border = 'yellow' @endphp
-@else
-    @php $border = 'red' @endphp
-@endif
-<div class="mt-2 bg-white shadow px-2 py-4 border-l-4 border-{{ $border }}-500">
+<div class="mt-2 bg-white shadow px-2 py-4 border-l-4 border-{{ getStatusColor($timeRecord['attendance_status']) }}-500">
     <div class="flex items-center">
         <div class="mr-2">
             <p class="text-3xl">{{ $timeRecord['date'] ?? now()->format('d') }}</p>
