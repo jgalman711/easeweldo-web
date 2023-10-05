@@ -6,6 +6,8 @@
 
 @section('back_url', url('personal/dashboard'))
 
+@section('add_url', url('personal/leaves/create'))
+
 @section('header')
 <h1 class="text-2xl font-semibold text-center">Leaves</h1>
 @endsection

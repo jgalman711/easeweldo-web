@@ -30,4 +30,25 @@ class LeaveController extends BaseController
             'salary_compuation' => $salaryComputation ?? null
         ]);
     }
+
+    public function create()
+    {
+        return view('pages.personal.leaves-apply');
+    }
+
+    public function store(Request $request)
+    {
+        parent::init($request);
+        $url = $this->baseUrl . "/leaves";
+        $response = $this->httpService->post($url, $request->all());
+
+        if ($response->isFailed()) {
+            return redirect()->back()->withInput()->withErrors(['error' => $response->getErrors()]);
+        }
+
+        if ($response->isSuccess()) {
+            return redirect()->back()->with('success', 'Leave application has been submitted successfully.');
+        }
+        return redirect()->back()->withInput();
+    }
 }

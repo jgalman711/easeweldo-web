@@ -7,7 +7,7 @@
 @section('header')
 <div class="flex items-center mx-4">
     @if(isset($employee['profile_picture']) && $employee['profile_picture'])
-    <img src="{{ config('app.easeweldo_assets') . $employee['profile_picture'] }}" alt="Profile Picture" class="w-24 h-24 rounded-full mr-6">
+    <img src="{{ config('app.easeweldo_assets') . '/' . $employee['profile_picture'] }}" alt="Profile Picture" class="w-24 h-24 rounded-full mr-6">
     @else
     <img src="{{ url('assets/images/personal/default-dp.png') }}" alt="Profile Picture" class="w-24 h-24 rounded-full mr-8">
     @endif

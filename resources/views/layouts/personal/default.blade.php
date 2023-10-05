@@ -12,15 +12,20 @@
     <body class="bg-cover bg-center bg-no-repeat h-screen flex justify-center bg-gray-100">
         <div class="max-w-md w-full">
             <header class="bg-blue-400 text-white p-4">
-                <div class="flex items-center">
+                <div class="flex items-center relative">
                     @if(View::hasSection('back_url'))
                     <a href="@yield('back_url')" class="pt-1 absolute text-white hover:underline">
-                        < back
+                        <img src="{{ asset('assets/images/personal/menu/back.png') }}" alt="Back Icon" class="h-6">
                     </a>
                     @endif
                     <div class="text-center flex-grow">
                         @yield('header')
                     </div>
+                    @if(View::hasSection('add_url'))
+                    <a href="@yield('add_url')" class="pt-1 absolute text-white hover:underline right-0">
+                        <img src="{{ asset('assets/images/personal/menu/add.png') }}" alt="Back Icon" class="h-6">
+                    </a>
+                    @endif
                 </div>
             </header>
             <div class="content">

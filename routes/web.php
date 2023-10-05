@@ -51,6 +51,6 @@ Route::prefix('personal')->group(function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('personal-dashboard');
         Route::get('timesheet', [TimesheetController::class, 'index'])->name('personal-timesheet');
         Route::resource('/payrolls', PayrollController::class)->only('index', 'show');
-        Route::resource('/leaves', LeaveController::class)->only('index', 'store');
+        Route::resource('/leaves', LeaveController::class)->only('index', 'show', 'create');
     });
 });
