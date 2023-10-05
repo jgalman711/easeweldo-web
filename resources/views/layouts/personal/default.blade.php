@@ -39,7 +39,7 @@
                             <p class="text-xs">Home</p>
                         </div>
                     </a>
-                    <a href="dashboard">
+                    <a href="scan-qr">
                         <div class="text-white text-center p-1">
                             <img src="{{ url('assets/images/personal/menu/2.png') }}" alt="QR Scan Icon" class="w-auto h-6 mb-2 mx-auto">
                             <p class="text-xs">QR Scan</p>
