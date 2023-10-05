@@ -23,7 +23,7 @@
                     </div>
                     @if(View::hasSection('add_url'))
                     <a href="@yield('add_url')" class="pt-1 absolute text-white hover:underline right-0">
-                        <img src="{{ asset('assets/images/personal/menu/add.png') }}" alt="Back Icon" class="h-6">
+                        <img src="{{ asset('assets/images/personal/menu/add.png') }}" alt="Add Icon" class="h-6">
                     </a>
                     @endif
                 </div>
@@ -45,7 +45,7 @@
                             <p class="text-xs">QR Scan</p>
                         </div>
                     </a>
-                    <a href="dashboard">
+                    <a href="profile">
                         <div class="text-white text-center p-1">
                             <img src="{{ url('assets/images/personal/menu/3.png') }}" alt="Profile Icon" class="w-auto h-6 mb-2 mx-auto">
                             <p class="text-xs">Profile</p>

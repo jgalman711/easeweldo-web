@@ -8,6 +8,7 @@ use App\Http\Controllers\Personal\DashboardController;
 use App\Http\Controllers\Personal\LeaveController;
 use App\Http\Controllers\Personal\LoginController as PersonalLoginController;
 use App\Http\Controllers\Personal\PayrollController;
+use App\Http\Controllers\Personal\ProfileController;
 use App\Http\Controllers\Personal\TimesheetController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetPasswordController;
@@ -50,7 +51,8 @@ Route::prefix('personal')->group(function () {
     Route::group(['middleware' => 'auth.bearer'], function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('personal-dashboard');
         Route::get('timesheet', [TimesheetController::class, 'index'])->name('personal-timesheet');
+        Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+        Route::resource('/leaves', LeaveController::class)->only('index', 'store', 'create');
         Route::resource('/payrolls', PayrollController::class)->only('index', 'show');
-        Route::resource('/leaves', LeaveController::class)->only('index', 'show', 'create');
     });
 });
