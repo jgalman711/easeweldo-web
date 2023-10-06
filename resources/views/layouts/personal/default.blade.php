@@ -11,10 +11,10 @@
     </head>
     <body class="bg-cover bg-center bg-no-repeat h-screen flex justify-center bg-gray-100">
         <div class="max-w-md w-full">
-            <header class="bg-blue-400 text-white p-4">
+            <header class="bg-blue-400 text-white px-2 py-4">
                 <div class="flex items-center relative">
                     @if(View::hasSection('back_url'))
-                    <a href="@yield('back_url')" class="pt-1 absolute text-white hover:underline">
+                    <a href="@yield('back_url')" class="pl-2 absolute text-white hover:underline">
                         <img src="{{ asset('assets/images/personal/menu/back.png') }}" alt="Back Icon" class="h-6">
                     </a>
                     @endif

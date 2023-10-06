@@ -52,6 +52,8 @@ Route::prefix('personal')->group(function () {
     Route::group(['middleware' => 'auth.bearer'], function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('personal-dashboard');
         Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+        Route::get('profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
         Route::get('scan-qr', [QrController::class, 'index'])->name('profile');
         Route::get('timesheet', [TimesheetController::class, 'index'])->name('personal-timesheet');
         Route::resource('/leaves', LeaveController::class)->only('index', 'store', 'create');

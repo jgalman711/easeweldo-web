@@ -5,18 +5,16 @@
 @endsection
 
 @section('header')
-<div class="flex items-center mx-4">
+<div class="flex items-center ml-2">
     @if(isset($employee['profile_picture']) && $employee['profile_picture'])
-    <img src="{{ config('app.easeweldo_assets') . '/' . $employee['profile_picture'] }}" alt="Profile Picture" class="w-24 h-24 rounded-full mr-6">
+    <img src="{{ config('app.easeweldo_assets') . '/' . $employee['profile_picture'] }}" alt="Profile Picture" class="w-24 h-24 rounded-full mr-4">
     @else
-    <img src="{{ url('assets/images/personal/default-dp.png') }}" alt="Profile Picture" class="w-24 h-24 rounded-full mr-8">
+    <img src="{{ url('assets/images/personal/default-dp.png') }}" alt="Profile Picture" class="w-24 h-24 rounded-full mr-4">
     @endif
-    <div class="text-lg text-left">
-        <h1 class="font-bold"></h1>
-        <p class="text-gray-200 text-xl">{{ $employee['full_name'] }}</p>
+    <div class="text-left">
+        <p class="text-white text-md font-semibold">{{ $employee['full_name'] }}</p>
+        <p class="text-gray-200 text-sm">{{ $company['name'] }}</p>
         <p class="text-gray-200 text-sm">{{ $employee['job_title'] }}</p>
-        <p class="text-gray-200 text-sm">{{ $employee['department'] }}</p>
-        <p class="text-gray-200 text-md mt-2">{{ $company['name'] }}</p>
     </div>
 </div>
 @endsection

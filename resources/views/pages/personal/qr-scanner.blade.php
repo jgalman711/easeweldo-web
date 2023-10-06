@@ -19,13 +19,15 @@
 @section('js-bottom')
 <script src="{{ asset('js/html5-qrcode.min.js') }}"></script>
 <script>
-function onScanSuccess(decodedText, decodedResult) {
-    // Handle on success condition with the decoded text or result.
-    html5QrcodeScanner.clear();
-}
+    function onScanSuccess(decodedText, decodedResult) {
+        html5QrcodeScanner.clear();
 
-var html5QrcodeScanner = new Html5QrcodeScanner(
-	"reader", { fps: 10, qrbox: 250 });
-html5QrcodeScanner.render(onScanSuccess);
+        // send an ajax request to clock in or clock out
+        // after successful ajax request show a success message and a link to redirect back to home
+    }
+
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", { fps: 10, qrbox: 250 });
+    html5QrcodeScanner.render(onScanSuccess);
 </script>
 @endsection

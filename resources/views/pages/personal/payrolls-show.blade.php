@@ -7,7 +7,7 @@
 @endsection
 
 @section('header')
-<h1 class="text-2xl font-semibold text-center">Period 11</h1>
+<h1 class="text-xl font-medium text-center">{{ $payroll['period_id'] ? 'Period ' . $payroll['period_id'] : 'Special Payroll' }}</h1>
 @endsection
 
 @section('content')

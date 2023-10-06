@@ -36,6 +36,17 @@ class HttpService
         return $this;
     }
 
+    public function patch(string $uri, array $data = []): self
+    {
+        $token = session('access_token');
+        $uri = $this->endpoint . $uri;
+        $this->response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $token,
+        ])->patch($uri, $data)->json();
+        return $this;
+    }
+
+
     public function isSuccess(): bool
     {
         return isset($this->response['success']) && $this->response['success'];
