@@ -12,7 +12,6 @@
 
 @section('content')
 <div class="max-w-xl mx-auto py-4 px-2">
-    <!-- Profile Picture -->
     <div class="flex items-center px-2 py-4 bg-white mb-2 shadow-md mb-4">
         @if(isset($user['profile_picture']) && $user['profile_picture'])
         <img src="{{ config('app.easeweldo_assets') . '/' . $user['profile_picture'] }}" alt="Profile Picture" class="w-24 h-24 rounded-full mr-4">

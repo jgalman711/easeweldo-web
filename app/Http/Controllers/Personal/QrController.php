@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 
 class QrController extends BaseController
 {
-    public function index()
+    public function index(Request $request)
     {
+        parent::init($request);
         return view('pages.personal.qr-scanner', [
-            'clock_in_url' => config('app.api_endpoint') . $this->baseUrl . "/clock"
+            'es_api' => config('app.api_endpoint')
         ]);
     }
 }

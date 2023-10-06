@@ -23,7 +23,7 @@
     function onScanSuccess(decodedText, decodedResult) {
         html5QrcodeScanner.clear();
 
-        const url = "{{ $clock_in_url }}/" + decodedText;
+        const url = "{{ $es_api }}/" + decodedText;
 
         alert(url);
         // send an ajax request to clock in or clock out
