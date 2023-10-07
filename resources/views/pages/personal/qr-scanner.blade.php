@@ -21,7 +21,7 @@
 <script src="{{ asset('js/html5-qrcode.min.js') }}"></script>
 <script>
     function onScanSuccess(decodedText, decodedResult) {
-        html5QrcodeScanner.clear();
+        // html5QrcodeScanner.clear();
         const url = "{{ $es_api }}" + decodedText + "{{ $params }}";
 
         clockIn(url);
