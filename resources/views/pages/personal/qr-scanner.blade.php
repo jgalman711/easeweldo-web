@@ -22,11 +22,8 @@
 <script>
     function onScanSuccess(decodedText, decodedResult) {
         html5QrcodeScanner.clear();
-
         const url = "{{ $es_api }}" + decodedText + "{{ $params }}";
 
-        alert(url);
-        // send an ajax request to clock in or clock out
         $.ajax({
             url: url,
             method: "POST",
@@ -36,6 +33,7 @@
             dataType: "json",
             success: function(response) {
                 setTimeout(function() {
+                    alert('success');
                     modal.style.display = "block";
                     backdrop.style.display = "block";
 
@@ -52,6 +50,7 @@
             },
             error: function(xhr, status, error) {
                 setTimeout(function() {
+                    alert('failed');
                     modal.style.display = "block";
                     backdrop.style.display = "block";
 
