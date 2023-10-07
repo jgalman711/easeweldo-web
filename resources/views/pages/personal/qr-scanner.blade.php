@@ -24,6 +24,14 @@
         html5QrcodeScanner.clear();
         const url = "{{ $es_api }}" + decodedText + "{{ $params }}";
 
+        clockIn(url);
+    }
+
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", { fps: 10, qrbox: 250 });
+    html5QrcodeScanner.render(onScanSuccess);
+
+    function clockIn(url) {
         $.ajax({
             url: url,
             method: "POST",
@@ -63,10 +71,8 @@
                 requestInProgress = false;
             }
         });
+        alert('end');
     }
-
-    var html5QrcodeScanner = new Html5QrcodeScanner(
-        "reader", { fps: 10, qrbox: 250 });
-    html5QrcodeScanner.render(onScanSuccess);
+    
 </script>
 @endsection
