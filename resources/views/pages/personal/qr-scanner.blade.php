@@ -32,46 +32,49 @@
     html5QrcodeScanner.render(onScanSuccess);
 
     function clockIn(url) {
-        $.ajax({
-            url: url,
-            method: "POST",
-            headers: {
-                'Authorization': 'Bearer ' + token,
-            },
-            dataType: "json",
-            success: function(response) {
-                setTimeout(function() {
-                    alert('success');
-                    modal.style.display = "block";
-                    backdrop.style.display = "block";
+        alert ('clock in: ' + url);
+        $(document).ready(function() {
+            $.ajax({
+                url: url,
+                method: "POST",
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                },
+                dataType: "json",
+                success: function(response) {
+                    setTimeout(function() {
+                        alert('success');
+                        modal.style.display = "block";
+                        backdrop.style.display = "block";
 
-                    const nextAction = response.data.next_action;
-                    const sentences = response.message.split('. ');
-                    const firstSentence = sentences[0];
-                    const secondSentence = sentences.length > 1 ? sentences[1] : '';
+                        const nextAction = response.data.next_action;
+                        const sentences = response.message.split('. ');
+                        const firstSentence = sentences[0];
+                        const secondSentence = sentences.length > 1 ? sentences[1] : '';
 
-                    $('#modal-title').text(firstSentence);
-                    $('#modal-description').text(secondSentence);
+                        $('#modal-title').text(firstSentence);
+                        $('#modal-description').text(secondSentence);
 
-                requestInProgress = false;
-                }, 1000);
-            },
-            error: function(xhr, status, error) {
-                setTimeout(function() {
-                    alert('failed');
-                    modal.style.display = "block";
-                    backdrop.style.display = "block";
+                    requestInProgress = false;
+                    }, 1000);
+                },
+                error: function(xhr, status, error) {
+                    setTimeout(function() {
+                        alert('failed');
+                        modal.style.display = "block";
+                        backdrop.style.display = "block";
 
-                    const sentences = xhr.responseJSON.message.split('. ');
-                    const firstSentence = sentences[0];
-                    const secondSentence = sentences.length > 1 ? sentences[1] : '';
-                    $('#modal-title').text(firstSentence);
-                    $('#modal-description').text(secondSentence);
-                }, 1000);
-                requestInProgress = false;
-            }
-        });
+                        const sentences = xhr.responseJSON.message.split('. ');
+                        const firstSentence = sentences[0];
+                        const secondSentence = sentences.length > 1 ? sentences[1] : '';
+                        $('#modal-title').text(firstSentence);
+                        $('#modal-description').text(secondSentence);
+                    }, 1000);
+                    requestInProgress = false;
+                }
+            });
         alert('end');
+        });
     }
     
 </script>
