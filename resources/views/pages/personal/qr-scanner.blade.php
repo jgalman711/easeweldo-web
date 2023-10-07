@@ -51,7 +51,8 @@
             },
             error: function(xhr, status, error) {
                 setTimeout(function() {
-                    alert('failed');
+                    alert(xhr.responseJSON.message);
+                    alert(status);
                     modal.style.display = "block";
                     backdrop.style.display = "block";
 
