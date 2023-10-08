@@ -20,11 +20,14 @@
 @section('js-bottom')
 <script src="{{ asset('js/html5-qrcode.min.js') }}"></script>
 <script>
+    let backdrop = document.getElementById("my-modal-backdrop");
+    let modal = document.getElementById("my-modal");
+    let button = document.getElementById("ok-btn");
+
     function onScanSuccess(decodedText, decodedResult) {
-        html5QrcodeScanner.clear();
         const url = "{{ $es_api }}" + decodedText + "{{ $params }}";
         const token = "{{ $token }}";
-        // ajax request
+
         $.ajax({
             url: url,
             method: "POST",
@@ -33,34 +36,17 @@
             },
             dataType: "json",
             success: function(response) {
-                setTimeout(function() {
-                    alert('success');
-                    modal.style.display = "block";
-                    backdrop.style.display = "block";
-
-                    const nextAction = response.data.next_action;
-                    const sentences = response.message.split('. ');
-                    const firstSentence = sentences[0];
-                    const secondSentence = sentences.length > 1 ? sentences[1] : '';
-
-                    $('#modal-title').text(firstSentence);
-                    $('#modal-description').text(secondSentence);
-
+                setTimeout(function(response) {
+                    showModal(response);
+                    html5QrcodeScanner.clear();
                 requestInProgress = false;
                 }, 1000);
             },
             error: function(xhr, status, error) {
                 setTimeout(function() {
-                    alert(xhr.responseJSON.message);
-                    alert(status);
-                    modal.style.display = "block";
-                    backdrop.style.display = "block";
-
-                    const sentences = xhr.responseJSON.message.split('. ');
-                    const firstSentence = sentences[0];
-                    const secondSentence = sentences.length > 1 ? sentences[1] : '';
-                    $('#modal-title').text(firstSentence);
-                    $('#modal-description').text(secondSentence);
+                    response = xhr.responseJSON;
+                    showModal(response);
+                    html5QrcodeScanner.clear();
                 }, 1000);
                 requestInProgress = false;
             }
@@ -71,6 +57,21 @@
         "reader", { fps: 10, qrbox: 250 });
     html5QrcodeScanner.render(onScanSuccess);
 
-    
+    function showModal(response)
+    {z
+        modal.style.display = "block";
+        backdrop.style.display = "block";
+        const sentences = response.message.split('. ');
+        const firstSentence = sentences[0];
+        const secondSentence = sentences.length > 1 ? sentences[1] : '';
+
+        $('#modal-title').text(firstSentence);
+        $('#modal-description').text(secondSentence);
+    }
+
+    button.onclick = function(event) {
+        modal.style.display = "none";
+        backdrop.style.display = "none";
+    }
 </script>
 @endsection
