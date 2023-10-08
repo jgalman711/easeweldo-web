@@ -27,6 +27,7 @@
     function onScanSuccess(decodedText, decodedResult) {
         const url = "{{ $es_api }}" + decodedText + "{{ $params }}";
         const token = "{{ $token }}";
+        html5QrcodeScanner.clear();
 
         $.ajax({
             url: url,
@@ -36,19 +37,11 @@
             },
             dataType: "json",
             success: function(response) {
-                setTimeout(function(response) {
-                    showModal(response);
-                    html5QrcodeScanner.clear();
-                requestInProgress = false;
-                }, 1000);
+                showModal(response);
             },
             error: function(xhr, status, error) {
-                setTimeout(function() {
-                    response = xhr.responseJSON;
-                    showModal(response);
-                    html5QrcodeScanner.clear();
-                }, 1000);
-                requestInProgress = false;
+                response = xhr.responseJSON;
+                showModal(response);
             }
         });
     }
