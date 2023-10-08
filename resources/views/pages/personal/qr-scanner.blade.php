@@ -58,7 +58,7 @@
     html5QrcodeScanner.render(onScanSuccess);
 
     function showModal(response)
-    {z
+    {
         modal.style.display = "block";
         backdrop.style.display = "block";
         const sentences = response.message.split('. ');
