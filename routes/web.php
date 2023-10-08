@@ -54,7 +54,8 @@ Route::prefix('personal')->group(function () {
         Route::get('profile', [ProfileController::class, 'index'])->name('profile');
         Route::get('profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
-        Route::get('scan-qr', [QrController::class, 'index'])->name('profile');
+        Route::get('scan-qr', [QrController::class, 'index'])->name('scan-qr');
+        Route::get('create-qr', [QrController::class, 'create'])->name('create-qr');
         Route::get('timesheet', [TimesheetController::class, 'index'])->name('personal-timesheet');
         Route::resource('/leaves', LeaveController::class)->only('index', 'store', 'create');
         Route::resource('/payrolls', PayrollController::class)->only('index', 'show');

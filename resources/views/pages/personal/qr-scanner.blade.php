@@ -15,6 +15,12 @@
 <div class="px-2 my-4">
     <div class="w-full" id="reader"></div>
 </div>
+<div class="px-2 my-4">
+    <p class="text-center my-2">OR</p>
+    <p class="text-center">
+        <a href="{{ route('create-qr') }}" class="text-blue-500 hover:underline">Generate Unique QR Code</a>
+    </p>
+</div>
 @endsection
 
 @section('js-bottom')

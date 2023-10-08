@@ -10,6 +10,8 @@ class HttpService
 
     protected $response;
 
+    protected $jsonResponse;
+
     public function __construct()
     {
         $this->endpoint = config('app.api_endpoint');
@@ -22,7 +24,8 @@ class HttpService
         $query = http_build_query($data);
         $this->response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get($uri, $query)->json();
+        ])->get($uri, $query);
+        $this->jsonResponse = $this->response->json();
         return $this;
     }
 
@@ -32,7 +35,8 @@ class HttpService
         $uri = $this->endpoint . $uri;
         $this->response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->post($uri, $data)->json();
+        ])->post($uri, $data);
+        $this->jsonResponse = $this->response->json();
         return $this;
     }
 
@@ -42,19 +46,20 @@ class HttpService
         $uri = $this->endpoint . $uri;
         $this->response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->patch($uri, $data)->json();
+        ])->patch($uri, $data);
+        $this->jsonResponse = $this->response->json();
         return $this;
     }
 
 
     public function isSuccess(): bool
     {
-        return isset($this->response['success']) && $this->response['success'];
+        return isset($this->jsonResponse['success']) && $this->jsonResponse['success'];
     }
 
     public function isFailed(): bool
     {
-        return isset($this->response['success']) && !$this->response['success'];
+        return isset($this->jsonResponse['success']) && !$this->jsonResponse['success'];
     }
 
     public function isDataEmpty(): bool
@@ -72,16 +77,16 @@ class HttpService
 
     public function getData()
     {
-        if (isset($this->response['data']) && $this->response['data']) {
-            return $this->response['data'];
+        if (isset($this->jsonResponse['data']) && $this->jsonResponse['data']) {
+            return $this->jsonResponse['data'];
         }
         return null;
     }
 
     public function getMessage()
     {
-        if (isset($this->response['message']) && $this->response['message']) {
-            return $this->response['message'];
+        if (isset($this->jsonResponse['message']) && $this->jsonResponse['message']) {
+            return $this->jsonResponse['message'];
         }
         return null;
     }
@@ -89,8 +94,13 @@ class HttpService
     public function getErrors()
     {
         if ($this->isFailed()) {
-            return $this->response['errors'] ?? [$this->response['message']];
+            return $this->jsonResponse['errors'] ?? [$this->jsonResponse['message']];
         }
         return null;
+    }
+
+    public function getBody()
+    {
+        return $this->response->body();
     }
 }

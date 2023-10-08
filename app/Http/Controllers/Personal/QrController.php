@@ -6,6 +6,14 @@ use Illuminate\Http\Request;
 
 class QrController extends BaseController
 {
+    public function create(Request $request)
+    {
+        parent::init($request);
+        $url = $this->baseUrl . "/qrcode";
+        $response = $this->httpService->get($url);
+        return view('pages.personal.qr', ['qr' => $response->getBody()]);
+    }
+
     public function index(Request $request)
     {
         parent::init($request);
