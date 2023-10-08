@@ -13,7 +13,7 @@ class QrController extends BaseController
         $params = "?employee_id={$this->employee['id']}&geo={$geolocation}";
         return view('pages.personal.qr-scanner', [
             'token' => session('access_token'),
-            'es_api' => config('app.api_endpoint'),
+            'clock_in_url' => config('app.api_endpoint') . $this->baseUrl . "/qrcode?",
             'params' => $params
         ]);
     }

@@ -25,7 +25,7 @@
     let button = document.getElementById("ok-btn");
 
     function onScanSuccess(decodedText, decodedResult) {
-        const url = "{{ $es_api }}" + decodedText + "{{ $params }}";
+        const url = "{{ $clock_in_url }}" + decodedText;
         const token = "{{ $token }}";
         html5QrcodeScanner.clear();
 
@@ -60,11 +60,13 @@
 
         $('#modal-title').text(firstSentence);
         $('#modal-description').text(secondSentence);
+
     }
 
     button.onclick = function(event) {
         modal.style.display = "none";
         backdrop.style.display = "none";
+        html5QrcodeScanner.render(onScanSuccess);
     }
 </script>
 @endsection
