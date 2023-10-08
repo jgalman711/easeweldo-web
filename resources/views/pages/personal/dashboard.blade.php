@@ -21,8 +21,8 @@
 
 @section('content')
 @include('partials.personal.modal')
-<div class="px-2 my-4">
-    <h2 class="text-2xl mb-2">Today's Work</h2>
+<div class="my-4">
+    <h2 class="text-2xl mb-2 px-2">Today's Work</h2>
     @include('partials.personal.clock-in-out')
 </div>
 @if (isset($schedule) && $schedule)
@@ -37,6 +37,11 @@
         </div>
         @endforeach
     </div>
+</div>
+@else
+<div class="p-4 my-4 bg-white shadow ">
+    <h1 class="text-lg text-center">No Work Schedule Found</h1>
+    <p class="mt-2 text-sm text-center">Kindly notify the HR department to set your work shift.</p>
 </div>
 @endif
 <div class="px-2 my-4">

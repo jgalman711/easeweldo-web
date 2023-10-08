@@ -1,4 +1,4 @@
-<div class="mt-2 bg-white shadow px-2 py-4 border-l-4 border-yellow-500">
+<div class="mt-2 bg-white shadow px-2 py-4">
     <div class="flex items-center">
         <div class="mb-4 mr-2">
             <p class="text-3xl">{{ $work_today['date'] ?? now()->format('d') }}</p>
