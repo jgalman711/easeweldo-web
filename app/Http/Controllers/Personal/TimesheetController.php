@@ -14,16 +14,24 @@ class TimesheetController extends BaseController
         $timesheetService = app()->make(TimesheetService::class);
         $url = $this->baseUrl . "/time-records";
         if (!request()->has('month')) {
-            $currentMonth = Carbon::now();
-            $url .= '?month=' . $currentMonth->format('F');
+            $isCurrentMonth = true;
+            $date = Carbon::now();
+            $currentMonth = $date->copy()->format('F');
+            $currentYear = $date->copy()->format('Y');
+        } else {
+            $isCurrentMonth = false;
+            $date = Carbon::parse(request('month'));
+            $currentMonth = $date->copy()->format('F');
+            $currentYear = $date->copy()->format('Y');
         }
 
-        $startOfMonth = Carbon::parse(request('month'))->startOfMonth();
-        $endOfMonth = Carbon::parse(request('month'))->endOfMonth();
+        $startOfMonth = $date->copy()->startOfMonth();
+        $endOfMonth = $date->copy()->endOfMonth();
 
         $response = $this->httpService->get($url, [
             'date_from' => $startOfMonth->toDateString(),
             'date_to' => $endOfMonth->toDateString(),
+            'sort' => '-id',
         ]);
         if ($response->isSuccess()) {
             $timesheet = $response->getData();
@@ -39,7 +47,15 @@ class TimesheetController extends BaseController
                 }
             }
         }
+
+        $prevMonth = date('F', strtotime('-1 month', strtotime("$currentYear-$currentMonth-01")));
+        $nextMonth = date('F', strtotime('+1 month', strtotime("$currentYear-$currentMonth-01")));
+
         return view('pages.personal.timesheet', [
+            'previous_month' => $prevMonth,
+            'next_month' => $nextMonth,
+            'current_month' => "{$currentMonth} {$currentYear}",
+            'is_current_month' => $isCurrentMonth,
             'token' => session('access_token'),
             'timesheet' => $formattedTimesheet ?? null,
             'work_today' => $formattedWorkToday ?? null,

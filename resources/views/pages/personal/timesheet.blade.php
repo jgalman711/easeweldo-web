@@ -11,9 +11,22 @@
 @endsection
 
 @section('content')
+
 @include('partials.personal.modal')
+
 <div class="px-2 my-2">
-    @include('partials.personal.clock-in-out')
+    <div class="px-2 my-4 flex justify-center gap-4">
+        <a href="{{ route('personal-timesheet', ['month' => $previous_month]) }}" class="p-2 text-blue-500 hover:underline flex items-center">
+            <img src="{{ asset('assets/images/personal/timesheet/back.png') }}" alt="Back Icon" class="h-3">
+        </a>
+        <span class="text-gray-600 flex items-center text-lg">{{ $current_month }}</span>
+        <a href="{{ route('personal-timesheet', ['month' => $next_month]) }}" class="p-2 text-blue-500 hover:underline flex items-center">
+            <img src="{{ asset('assets/images/personal/timesheet/next.png') }}" alt="Back Icon" class="h-3">
+        </a>
+    </div>
+    @if ($is_current_month)
+        @include('partials.personal.clock-in-out')
+    @endif
 </div>
 
 @if ($timesheet)
@@ -22,6 +35,8 @@
         @include('partials.personal.timerecord')
     </div>
 @endforeach
+@else
+<h1 class="text-lg text-center">No Time Records Found</h1>
 @endif
 
 @endsection
