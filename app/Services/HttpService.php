@@ -24,6 +24,7 @@ class HttpService
         $query = http_build_query($data);
         $this->response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
+            'Accept' => 'application/json'
         ])->get($uri, $query);
         $this->jsonResponse = $this->response->json();
         return $this;
@@ -35,6 +36,7 @@ class HttpService
         $uri = $this->endpoint . $uri;
         $this->response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
+            'Accept' => 'application/json'
         ])->post($uri, $data);
         $this->jsonResponse = $this->response->json();
         return $this;
@@ -46,6 +48,7 @@ class HttpService
         $uri = $this->endpoint . $uri;
         $this->response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
+            'Accept' => 'application/json'
         ])->patch($uri, $data);
         $this->jsonResponse = $this->response->json();
         return $this;

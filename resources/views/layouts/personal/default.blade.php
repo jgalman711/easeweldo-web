@@ -26,6 +26,7 @@
                         <img src="{{ asset('assets/images/personal/menu/add.png') }}" alt="Add Icon" class="h-6">
                     </a>
                     @endif
+                    @yield('right_icon')
                 </div>
             </header>
             <div class="content">

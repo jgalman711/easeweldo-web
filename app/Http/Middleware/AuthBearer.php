@@ -13,9 +13,9 @@ class AuthBearer
     {
         $token = session('access_token');
         if (!$token) {
-            $previousUrl = url()->previous();
-            if (Str::contains($previousUrl, 'personal')) {
-                return redirect()->route('personal-login');
+            $url = url()->current();
+            if (Str::contains($url, 'personal')) {
+                return redirect()->route('personal.login');
             } else {
                 return redirect('login');
             }

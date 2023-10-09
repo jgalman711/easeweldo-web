@@ -10,6 +10,13 @@
 <h1 class="text-xl font-medium text-center">Profile</h1>
 @endsection
 
+@section('right_icon')
+<a href="logout" class="absolute text-white hover:underline right-0 mr-2">
+    <!-- Logout -->
+    <img src="{{ asset('assets/images/personal/menu/logout.png') }}" alt="Add Icon" class="h-6">
+</a>
+@endsection
+
 @section('content')
 <div class="max-w-xl mx-auto py-4 px-2">
     <div class="flex items-center px-2 py-4 bg-white mb-2 shadow-md mb-4">

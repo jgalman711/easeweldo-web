@@ -35,4 +35,11 @@ class LoginController extends Controller
             return redirect()->back()->withInput()->withErrors(['Login failed.']);
         }
     }
+
+    public function logout(Request $request)
+    {
+        $this->httpService->post('logout');
+        $request->session()->forget(['company_slug', 'access_token', 'data']);
+        return redirect()->route('personal.login');
+    }
 }
