@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Response;
 
 class AuthBearer
@@ -12,7 +13,12 @@ class AuthBearer
     {
         $token = session('access_token');
         if (!$token) {
-            return redirect('login');
+            $previousUrl = url()->previous();
+            if (Str::contains($previousUrl, 'personal')) {
+                return redirect()->route('personal-login');
+            } else {
+                return redirect('login');
+            }
         }
         return $next($request);
     }

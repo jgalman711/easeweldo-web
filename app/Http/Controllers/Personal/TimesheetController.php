@@ -19,8 +19,8 @@ class TimesheetController extends BaseController
             $currentMonth = $date->copy()->format('F');
             $currentYear = $date->copy()->format('Y');
         } else {
-            $isCurrentMonth = false;
             $date = Carbon::parse(request('month'));
+            $isCurrentMonth = $date->copy()->format('Y-m') === Carbon::now()->format('Y-m');
             $currentMonth = $date->copy()->format('F');
             $currentYear = $date->copy()->format('Y');
         }

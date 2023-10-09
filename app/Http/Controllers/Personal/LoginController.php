@@ -30,7 +30,7 @@ class LoginController extends Controller
             }
             session(['access_token' => $token]);
             $request->session()->put('data', $data);
-            return redirect()->route('personal-dashboard');
+            return redirect()->route('personal.dashboard');
         } catch (Exception) {
             return redirect()->back()->withInput()->withErrors(['Login failed.']);
         }
