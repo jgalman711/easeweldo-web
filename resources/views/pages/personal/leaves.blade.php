@@ -9,7 +9,7 @@
 @section('add_url', url('personal/leaves/create'))
 
 @section('header')
-<h1 class="text-2xl font-semibold text-center">Leaves</h1>
+<h1 class="text-xl font-medium text-center">Leaves</h1>
 @endsection
 
 @section('content')

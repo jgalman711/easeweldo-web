@@ -7,18 +7,18 @@
 @section('back_url', url('personal/dashboard'))
 
 @section('header')
-<h1 class="text-2xl font-semibold text-center">Timesheet</h1>
+<h1 class="text-xl font-medium text-center">Timesheet</h1>
 @endsection
 
 @section('content')
 @include('partials.personal.modal')
-<div class="px-2 my-4">
+<div class="px-2 my-2">
     @include('partials.personal.clock-in-out')
 </div>
 
 @if ($timesheet)
 @foreach ($timesheet as $timeRecord)
-    <div class="px-2 my-4">
+    <div class="px-2 my-2">
         @include('partials.personal.timerecord')
     </div>
 @endforeach

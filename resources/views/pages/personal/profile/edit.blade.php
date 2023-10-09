@@ -1,7 +1,7 @@
 @extends('layouts.personal.default')
 
 @section('title')
-    Profile
+    Change Password
 @endsection
 
 @section('back_url', url('personal/profile'))

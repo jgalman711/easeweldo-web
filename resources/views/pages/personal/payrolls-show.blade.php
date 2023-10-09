@@ -3,7 +3,7 @@
 @section('back_url', url()->previous('/personal/payrolls'))
 
 @section('title')
-    Payrolls
+    {{ $payroll['period_id'] ? 'Period ' . $payroll['period_id'] : 'Special Payroll' }}
 @endsection
 
 @section('header')
@@ -14,22 +14,23 @@
 <div class="px-2 my-4">
     <div class="grid grid-cols-2 gap-4 mt-2 bg-white shadow px-4 py-3">
         <div>
-            <!-- Canvas -->
+            <div class="px-4">
+                <canvas id="myChart"></canvas>
+            </div>
+            <p class="mt-2 text-xs text-center">Gross Income: P{{ number_format($payroll['gross_income'], 2, '.', ',') }}</p>
         </div>
         <div>
-            <div class="mb-4">
+            <div class="mb-2">
                 <p class="text-green-400 text-sm">Net Income:</p>
-                <p class="text-lg font-semibold">P{{ number_format($payroll['net_income'], 2, '.', ',') }}</p>
+                <p class="text-md font-semibold">P{{ number_format($payroll['net_income'], 2, '.', ',') }}</p>
             </div>
-
-            <div class="mb-4">
+            <div class="mb-2">
                 <p class="text-yellow-400 text-sm">Contributions:</p>
-                <p class="text-lg font-semibold">P{{ number_format($payroll['total_contributions'], 2, '.', ',') }}</p>
+                <p class="text-md font-semibold">P{{ number_format($payroll['total_contributions'], 2, '.', ',') }}</p>
             </div>
-
             <div>
                 <p class="text-blue-400 text-sm">Withheld Tax:</p>
-                <p class="text-lg font-semibold">P{{ number_format($payroll['withheld_tax'], 2, '.', ',') }}</p>
+                <p class="text-md font-semibold">P{{ number_format($payroll['withheld_tax'], 2, '.', ',') }}</p>
             </div>
         </div>
     </div>
@@ -163,4 +164,31 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js-bottom')
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('myChart');
+    const net = "{{ $payroll['net_income'] }}"
+    const contributions = "{{ $payroll['total_contributions'] }}"
+    const withheld_tax = "{{ $payroll['withheld_tax'] }}"
+
+    data = {
+        datasets: [{
+            label: 'Payroll',
+            data: [net, contributions, withheld_tax],
+            backgroundColor: [
+                'rgb(52, 211, 153)',
+                'rgb(251, 191, 36)',
+                'rgb(96, 165, 250)'
+            ],
+            hoverOffset: 4
+        }]
+    };
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: data,
+    });
+</script>
 @endsection
