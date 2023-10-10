@@ -2,12 +2,15 @@
 
 @section('content')
 <main>
-    <section class="bg-gray-100 pt-16">
+    <section class="bg-gray-100 pt-24">
         <div class="container mx-auto md:flex items-center justify-between pl-6">
             <div class="md:w-1/2">
-                <h1 class="text-7xl font-bold mb-4">Effortless Payroll,</h1>
-                <h1 class="text-7xl font-bold mb-4">Simplified</h1>
-                <p class="text-lg lg:text-3xl font-semibold mb-8">Elevate your payroll experience with ease.</p>
+                <h1 class="text-2xl lg:text-6xl font-bold mb-1 md:mb-4">Experience the future of</h1>
+                <h1 class="text-2xl lg:text-6xl font-bold mb-1 md:mb-4">Payroll Management</h1>
+                <p class="text-md lg:text-xl my-4 md:my-8">
+                    Streamline processes, ensure accuracy, and embrace ease in every aspect of payroll
+                    administration with our <span class="text-blue-800 font-semibold"> AI-Powered Solution</span>.
+                </p>
                 <div class="text-center sm:text-left py-8 lg:pt-32">
                     <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}" class="inline-block bg-blue-800 text-white font-semibold py-4 px-6 lg:py-6 lg:px-12 rounded-full shadow-md hover:bg-blue-600 transition duration-300 mx-auto lg:text-xl">
                         Start 90-Days Trial Now
@@ -44,7 +47,7 @@
                     <div class="bg-white shadow-md p-6 lg:py-6 lg:px-10 row-span-3">
                         <div class="flex flex-col relative">
                             <img src="assets/images/feature-icons/icon2.png" alt="Feature Icon" class="w-16 h-16 mb-6">
-                            <h3 class="text-lg font-bold mb-4">Automated Payroll Calculation</h3>
+                            <h3 class="text-lg font-bold mb-4">AI Accuracy</h3>
                         </div>
                         <p class="text-gray-700 mb-4 text-justify">
                             Our cutting-edge solution revolutionizes the payroll process, providing you
@@ -115,18 +118,18 @@
         <div class="container mx-auto px-4 py-16">
             <div class="mb-12 mx-auto max-w-5xl">
                 <h2 class="text-4xl text-center font-bold mb-4 text-blue-800">
-                    What Are The Advantages?
+                    Discover the Benefits
                 </h2>
                 <p class="text-lg lg:text-xl text-center">
-                    Easeweldo simplifies administrative tasks, automates processes, ensures accurate
-                    calculations, and facilitates compliance with legal requirements. It also saves
-                    time and resources, and provides transparent reporting.
+                    At Easeweldo, we're revolutionizing the way businesses manage their payroll processes.
+                    Our cutting-edge AI technology simplifies timekeeping and payroll management,
+                    making it effortless and error-free.
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-14">
                 <div class="bg-gray-100 rounded-lg p-12 flex flex-col items-center relative mt-0 lg:mt-2">
                     <img src="assets/images/streamline-icon.png" class="h-32 w-32 absolute top-0 left-1/8 transform -translate-y-1/2" alt="Icon" />
-                    <h3 class="text-center text-2xl lg:text-4xl font-semibold mb-8 mt-12">
+                    <h3 class="text-center sm:text-md md:text-lg lg:text-4xl font-semibold mb-8 mt-12">
                         Streamlined Payroll Management
                     </h3>
                     <p class="text-gray-700 text-center text-xl">Simplify payroll management with Easeweldo.
@@ -136,7 +139,7 @@
                 </div>
                 <div class="bg-gray-100 rounded-lg p-12 flex flex-col items-center relative mt-14 lg:mt-2">
                     <img src="assets/images/accuracy-icon.png" class="h-32 w-32 absolute top-0 left-1/8 transform -translate-y-1/2" alt="Icon" />
-                    <h3 class="text-center text-2xl lg:text-4xl font-semibold mb-8 mt-12">
+                    <h3 class="text-center sm:text-sm md:text-md lg:text-4xl font-semibold mb-8 mt-12">
                         Enhanced Efficiency and Accuracy
                     </h3>
                     <p class="text-gray-700 text-center text-xl">
@@ -146,7 +149,7 @@
                 </div>
                 <div class="bg-gray-100 rounded-lg p-12 flex flex-col items-center relative mt-14 lg:mt-2">
                     <img src="assets/images/compliant-icon.png" class="h-32 w-32 absolute top-0 left-1/8 transform -translate-y-1/2" alt="Icon" />
-                    <h3 class="text-center text-2xl lg:text-4xl font-semibold mb-8 mt-12">
+                    <h3 class="text-center sm:text-sm md:text-md lg:text-4xl font-semibold mb-8 mt-12">
                         Compliance with Regulations
                     </h3>
                     <p class="text-gray-700 text-center text-xl">Stay compliant effortlessly. Easeweldo
