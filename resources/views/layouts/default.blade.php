@@ -37,7 +37,7 @@
                     </button>
                 </div>
                 <div class="items-center justify-between hidden w-full md:flex md:w-auto" id="navbar-sticky">
-                    <ul class="text-lg flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-4 lg:space-x-12 md:mt-0 md:border-0">
+                    <ul class="bg-gray-100 text-lg flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-4 lg:space-x-12 md:mt-0 md:border-0">
                         <li>
                             <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 text-sm md:text-sm lg:text-lg" aria-current="page">Home</a>
                         </li>

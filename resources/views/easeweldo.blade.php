@@ -3,10 +3,10 @@
 @section('content')
 <main>
     <section class="pt-24">
-        <div class="container mx-auto md:flex items-center justify-between pl-6">
-            <div class="md:w-1/2">
-                <h1 class="text-2xl lg:text-6xl font-bold mb-1 md:mb-4">Experience the future of</h1>
-                <h1 class="text-2xl lg:text-6xl font-bold mb-1 md:mb-4">Payroll Management</h1>
+        <div class="container mx-auto lg:flex items-center justify-between pl-6">
+            <div class="lg:w-1/2">
+                <h1 class="text-4xl lg:text-6xl font-bold mb-1 md:mb-4">Experience the future of</h1>
+                <h1 class="text-4xl lg:text-6xl font-bold mb-1 md:mb-4">Payroll Management</h1>
                 <p class="text-md lg:text-xl my-4 md:my-8">
                     Streamline processes, ensure accuracy, and embrace ease in every aspect of payroll
                     administration with our <span class="text-blue-800 font-semibold"> AI-Powered Solution</span>.
@@ -17,14 +17,14 @@
                     </a>
                 </div>
             </div>
-            <div class="md:w-1/2">
+            <div class="hidden lg:block lg:w-1/2">
                 <img src="assets/images/hero-right-3.png" alt="Your Image" class="w-full h-auto max-h-full">
             </div>
         </div>
     </section>
     <section class="bg-white">
         <div class="bg-blue-100">
-            <div class="md:flex item-center container mx-auto px-4 py-8 md:py-16">
+            <div class="lg:flex item-center container mx-auto px-4 py-8 md:py-16">
                 <div class="lg:w-1/2 p-8 flex flex-wrap items-center">
                     <img src="{{ asset('assets/images/what-is.png') }}" alt="Image or Video" class="w-full h-auto">
                 </div>
@@ -62,7 +62,7 @@
                     making it effortless and error-free.
                 </p>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
                 <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a class="p-5">
                         <img
