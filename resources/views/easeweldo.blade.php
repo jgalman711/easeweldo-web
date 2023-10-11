@@ -2,7 +2,7 @@
 
 @section('content')
 <main>
-    <section class="bg-gray-100 pt-24">
+    <section class="pt-24">
         <div class="container mx-auto md:flex items-center justify-between pl-6">
             <div class="md:w-1/2">
                 <h1 class="text-2xl lg:text-6xl font-bold mb-1 md:mb-4">Experience the future of</h1>
@@ -12,7 +12,7 @@
                     administration with our <span class="text-blue-800 font-semibold"> AI-Powered Solution</span>.
                 </p>
                 <div class="text-center sm:text-left py-8 lg:pt-32">
-                    <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}" class="inline-block bg-blue-800 text-white font-semibold py-4 px-6 lg:py-6 lg:px-12 rounded-full shadow-md hover:bg-blue-600 transition duration-300 mx-auto lg:text-xl">
+                    <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}" class="inline-block bg-blue-800 text-white font-semibold py-4 px-6 lg:py-6 lg:px-12 rounded-xl shadow-md hover:bg-blue-600 transition duration-300 mx-auto lg:text-xl">
                         Start 90-Days Trial Now
                     </a>
                 </div>
@@ -23,6 +23,233 @@
         </div>
     </section>
     <section class="bg-white">
+        <div class="bg-blue-100">
+            <div class="md:flex item-center container mx-auto px-4 py-8 md:py-16">
+                <div class="lg:w-1/2 p-8 flex flex-wrap items-center">
+                    <img src="{{ asset('assets/images/what-is.png') }}" alt="Image or Video" class="w-full h-auto">
+                </div>
+                <div class="lg:w-1/2 text-gray-800 md:p-8">
+                    <h2 class="text-4xl font-bold mb-4 text-blue-800">
+                        What is Easeweldo?
+                    </h2>
+                    <p class="mb-4 text-md md:text-lg">
+                        Easeweldo is your trusted partner in modern workforce management. We provide a suite
+                        of cutting-edge solutions to simplify payroll, optimize HR processes, and enhance employee
+                        management. With a commitment to efficiency and compliance, Easeweldo empowers businesses
+                        to save time, reduce errors, and achieve more.
+                    </p>
+                    <p class="mb-4 text-md md:text-lg">
+                        Discover how we can transform your HR operations and propel your business forward.
+                    </p>
+                    <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}"
+                        class="text-lg inline-flex items-center py-4 px-6 font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Start Free Trial Now
+                        <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 py-16" id="benefits">
+            <div class="mb-16 mx-auto max-w-6xl">
+                <h2 class="text-4xl text-center font-bold mb-4 text-blue-800">
+                    Discover the Benefits
+                </h2>
+                <p class="text-lg lg:text-xl text-center">
+                    At Easeweldo, we're revolutionizing the way businesses manage their payroll processes.
+                    Our cutting-edge AI technology simplifies timekeeping and payroll management,
+                    making it effortless and error-free.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <a class="p-5">
+                        <img
+                            class="rounded-t-lg px-4"
+                            src="{{ asset('assets/images/benefits/error-free.png') }}"
+                            alt=""
+                        />
+                    </a>
+                    <div class="p-5">
+                        <a>
+                            <h5 class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                Double-Checked Accuracy
+                            </h5>
+                        </a>
+                        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">
+                            Our advanced AI algorithms ensure that your tasks are executed with
+                            unparalleled precision. By reducing the reliance on manual inputs, we eliminate the
+                            risk of human error, making your work smoother and more reliable.
+                        </p>
+                        {{-- HIDE THIS BUTTON FOR AWHILE
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Read more
+                            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                        --}}
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <a class="p-5">
+                        <img class="rounded-t-lg px-4" src="{{ asset('assets/images/benefits/time-saving.png') }}" alt="" />
+                    </a>
+                    <div class="p-5">
+                        <a>
+                            <h5 class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                Maximizing Productivity
+                            </h5>
+                        </a>
+                        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">
+                            Our streamlined processes are designed to automate time-consuming tasks and allows you
+                            to allocate your resources where they matter most – growing your business and focusing
+                            on strategic initiatives.
+                        </p>
+                        {{-- HIDE THIS BUTTON FOR AWHILE
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Read more
+                            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                        --}}
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <a class="p-5">
+                        <img class="rounded-t-lg px-4" src="{{ asset('assets/images/benefits/compliant.png') }}" alt="" />
+                    </a>
+                    <div class="p-5">
+                        <a>
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                Effortless Tax Management
+                            </h5>
+                        </a>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            We leverage advanced software and AI to streamline tax calculations, deductions,
+                            and reporting, making sure your business meets its tax obligations without the headaches
+                            and ensures that your taxes are filed accurately and promptly
+                        </p>
+                        {{-- HIDE BUTTON
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Read more
+                            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                        --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-100 py-16" id="solutions">
+            <div class="container mx-auto px-4">
+                <div class="mb-16 mx-auto max-w-6xl">
+                    <h2 class="text-4xl text-center font-bold mb-4 text-blue-800">
+                        Our Core Solutions
+                    </h2>
+                    <p class="text-lg lg:text-xl text-center">
+                        Explore our range of comprehensive solutions designed to streamline your operations,
+                        enhance efficiency, and boost productivity. Learn how our tailored solutions can address
+                        your unique challenges and empower you to achieve more.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+                    <div class="bg-white shadow-md p-8 row-span-2">
+                        <div class="flex items-center mt-4 mb-8">
+                            <img src="assets/images/feature-icons/employee-management.png" alt="Feature Icon" class="w-auto h-16 mr-4">
+                            <h3 class="text-xl font-bold text-gray-700">Streamline HR Operations</h3>
+                        </div>
+                        <p class="text-gray-700">
+                            Effortlessly manage your workforce, from onboarding to retirement, ensuring smooth HR operations.
+                        </p>
+                        <div class="my-4 pt-4 border-t-2 border-gray-200">
+                            <h3 class="text-gray-700 font-semibold">Popular Features:</h3>
+                            <ul role="list" class="space-y-5 my-7">
+                                <li class="flex space-x-3 items-center">
+                                    <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                    </svg>
+                                    <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+                                        Employee Management
+                                    </span>
+                                </li>
+                                <li class="flex space-x-3">
+                                    <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                    </svg>
+                                    <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+                                        Company Settings
+                                    </span>
+                                </li>
+                                <li class="flex space-x-3">
+                                    <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                    </svg>
+                                    <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration help</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-white shadow-md p-8">
+                        <div class="flex items-center mt-4 mb-8">
+                            <img src="assets/images/feature-icons/customize.png" alt="Feature Icon" class="w-auto h-16 mr-4">
+                            <h3 class="text-xl font-bold text-gray-700">Tailored Compensation</h3>
+                        </div>
+                        <p class="text-gray-700">
+                            Customize employee pay structures with precision, offering flexibility in allowances and deductions.
+                        </p>
+                    </div>
+                    <div class="bg-white shadow-md p-8">
+                        <div class="flex items-center mt-4 mb-8">
+                            <img src="assets/images/feature-icons/bonus.png" alt="Feature Icon" class="w-auto h-16 mr-4">
+                            <h3 class="text-xl font-bold text-gray-700 mb-">Fulfilling Extra Compensation</h3>
+                        </div>
+                        <p class="text-gray-700">
+                            Easily handle 13th-month payments and special payrolls to keep your workforce happy.
+                        </p>
+                    </div>
+                    <div class="bg-white shadow-md p-8">
+                        <div class="flex items-center mt-4 mb-8">
+                            <img src="assets/images/feature-icons/schedule.png" alt="Feature Icon" class="w-auto h-16 mr-4">
+                            <h3 class="text-xl font-bold text-gray-700">Flexible Work Arrangements</h3>
+                        </div>
+                        <p class="text-gray-700">
+                            Adapt work schedules to fit your business needs and employee preferences seamlessly.
+                        </p>
+                    </div>
+                    <div class="bg-white shadow-md p-8">
+                        <div class="flex items-center mt-4 mb-8">
+                            <img src="assets/images/feature-icons/qr.png" alt="Feature Icon" class="w-auto h-16 mr-4">
+                            <h3 class="text-xl font-bold text-gray-700">Efficient Time Tracking</h3>
+                        </div>
+                        <p class="text-gray-700">
+                            Enable quick and accurate time tracking with QR code-based clock-in and clock-out.
+                        </p>
+                    </div>
+                    <div class="bg-white shadow-md p-8">
+                        <div class="flex items-center mt-4 mb-8">
+                            <img src="assets/images/feature-icons/payslip.png" alt="Feature Icon" class="w-auto h-16 mr-4">
+                            <h3 class="text-xl font-bold text-gray-700">Simplified Payroll Records</h3>
+                        </div>
+                        <p class="text-gray-700">
+                            Provide employees with clear, digital payslips for easy access and reference.
+                        </p>
+                    </div>
+                    <div class="bg-white shadow-md p-8">
+                        <div class="flex items-center mt-4 mb-8">
+                            <img src="assets/images/feature-icons/reports.png" alt="Feature Icon" class="w-auto h-16 mr-4">
+                            <h3 class="text-xl font-bold text-gray-700">Insightful Analytics</h3>
+                        </div>
+                        <p class="text-gray-700">
+                            Generate comprehensive reports for data-driven decision-making and payroll transparency.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="py-16" id="pricing">
             <div class="container mx-auto px-4">
                 <div class="mb-12 mx-auto max-w-5xl">
@@ -36,233 +263,26 @@
                 @include('partials.subscription-cards-2', ['subscriptions' => $subscriptions])
             </div>
         </div>
+        {{--
         <div class="bg-gray-100 py-16" id="solutions">
-            <div class="container mx-auto px-4">
-                <div class="mb-12 mx-auto max-w-6xl">
-                    <h2 class="text-4xl text-center font-bold mb-4 text-blue-800">
-                        Our Core Solutions
-                    </h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-white shadow-md p-6 lg:py-6 lg:px-10 row-span-3">
-                        <div class="flex flex-col relative">
-                            <img src="assets/images/feature-icons/icon2.png" alt="Feature Icon" class="w-16 h-16 mb-6">
-                            <h3 class="text-lg font-bold mb-4">AI Accuracy</h3>
-                        </div>
-                        <p class="text-gray-700 mb-4 text-justify">
-                            Our cutting-edge solution revolutionizes the payroll process, providing you
-                            with accurate and error-free calculations. With our automated system, you can
-                            bid farewell to manual computations that often lead to mistakes.
-                        </p>
-                        <p class="text-gray-700 mb-4 text-justify">
-                            Our robust platform handles various aspects of payroll, including calculating
-                            salaries, deductions, contributions, and withheld taxes. You can trust our
-                            system to accurately calculate employee compensation, taking into account
-                            all necessary components.
-                        </p>
-                    </div>
-                    <div class="bg-white shadow-md p-6 lg:p-6">
-                        <div class="flex flex-col relative">
-                            <img src="assets/images/feature-icons/icon5.png" alt="Feature Icon" class="w-16 h-16 mb-4">
-                            <h3 class="text-lg font-bold mb-4">Flexible Shift Management</h3>
-                        </div>
-                        <p class="text-gray-700 mb-2 text-justify">
-                            Create and manage multiple schedules to be assigned to their employees
-                        </p>
-                        <p class="text-gray-700 mb-2 text-justify">
-                            With this system in place, businesses have the ability to adapt to accommodate
-                            various work arrangements.
-                        </p>
-                    </div>
-                    <div class="bg-white shadow-md p-6 lg:p-6">
-                        <div class="flex flex-col relative">
-                            <img src="assets/images/feature-icons/icon9.png" alt="Feature Icon" class="w-16 h-16 mb-4">
-                            <h3 class="text-lg font-bold mb-4">Integration of Existing Biometrics</h3>
-                        </div>
-                        <p class="text-gray-700 mb-2 text-justify">
-                            Incorporate an organization's existing biometric systems into a unified and
-                            centralized framework.
-                        </p>
-                        <p class="text-gray-700 mb-2 text-justify">
-                            Allow seamless authentication using biometric data such as fingerprints or
-                            facial recognition.
-                        </p>
-                    </div>
-                    <div class="bg-white shadow-md p-6 lg:p-6 row-span-2">
-                        <div class="flex flex-col relative">
-                            <img src="assets/images/feature-icons/icon6.png" alt="Feature Icon" class="w-16 h-16 mb-4">
-                            <h3 class="text-lg font-bold mb-4">Customizable Deductions and Benefits</h3>
-                        </div>
-                        <p class="text-gray-700 mb-2 text-justify">
-                            Provide flexibility in defining employee deductions, such as taxes, contributions,
-                            and other withholdings.
-                        </p>
-                        <p class="text-gray-700 mb-2 text-justify">
-                            Additionally, enable customization of employee benefits, including health
-                            insurance, bonuses, and more.
-                        </p>
-                    </div>
-                    <div class="bg-white shadow-md p-6 lg:p-6 row-span-2">
-                        <div class="flex flex-col relative">
-                            <img src="assets/images/feature-icons/icon7.png" alt="Feature Icon" class="w-16 h-16 mb-4">
-                            <h3 class="text-lg font-bold mb-4">Comprehensive Reporting</h3>
-                        </div>
-                        <p class="text-gray-700 mb-2 text-justify">
-                            Track employer contributions and withheld taxes, and access vital reports for
-                            financial analysis and compliance purposes.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            What's next to easeweldo
         </div>
-        <div class="container mx-auto px-4 py-16">
-            <div class="mb-12 mx-auto max-w-5xl">
-                <h2 class="text-4xl text-center font-bold mb-4 text-blue-800">
-                    Discover the Benefits
-                </h2>
-                <p class="text-lg lg:text-xl text-center">
-                    At Easeweldo, we're revolutionizing the way businesses manage their payroll processes.
-                    Our cutting-edge AI technology simplifies timekeeping and payroll management,
-                    making it effortless and error-free.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-14">
-                <div class="bg-gray-100 rounded-lg p-12 flex flex-col items-center relative mt-0 lg:mt-2">
-                    <img src="assets/images/streamline-icon.png" class="h-32 w-32 absolute top-0 left-1/8 transform -translate-y-1/2" alt="Icon" />
-                    <h3 class="text-center sm:text-md md:text-lg lg:text-4xl font-semibold mb-8 mt-12">
-                        Streamlined Payroll Management
-                    </h3>
-                    <p class="text-gray-700 text-center text-xl">Simplify payroll management with Easeweldo.
-                        Automate calculations, tax deductions, and benefits to save time and reduce errors.
-                        Say goodbye to manual tasks and spreadsheets.
-                    </p>
-                </div>
-                <div class="bg-gray-100 rounded-lg p-12 flex flex-col items-center relative mt-14 lg:mt-2">
-                    <img src="assets/images/accuracy-icon.png" class="h-32 w-32 absolute top-0 left-1/8 transform -translate-y-1/2" alt="Icon" />
-                    <h3 class="text-center sm:text-sm md:text-md lg:text-4xl font-semibold mb-8 mt-12">
-                        Enhanced Efficiency and Accuracy
-                    </h3>
-                    <p class="text-gray-700 text-center text-xl">
-                        Ensure accurate and efficient payroll processing with Easeweldo. Eliminate manual
-                        entry and minimize errors, freeing up time for strategic business initiatives.
-                    </p>
-                </div>
-                <div class="bg-gray-100 rounded-lg p-12 flex flex-col items-center relative mt-14 lg:mt-2">
-                    <img src="assets/images/compliant-icon.png" class="h-32 w-32 absolute top-0 left-1/8 transform -translate-y-1/2" alt="Icon" />
-                    <h3 class="text-center sm:text-sm md:text-md lg:text-4xl font-semibold mb-8 mt-12">
-                        Compliance with Regulations
-                    </h3>
-                    <p class="text-gray-700 text-center text-xl">Stay compliant effortlessly. Easeweldo
-                        keeps you up-to-date with labor laws and tax regulations. Our system automates
-                        calculations, ensuring payroll compliance and minimizing penalties.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container mx-auto py-16">
-            <h2 class="text-4xl text-center font-bold mb-14 text-blue-800">Why Us?</h2>
-            <div class="flex flex-wrap -mx-4">
-                <div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-8 my-10">
-                    <div class="rounded-lg flex flex-col items-center relative mt-0 lg:mt-2">
-                        <img src="assets/images/reliability.png" alt="Reliability" class="w-56 h-56">
-                        <h3 class="text-3xl font-bold my-7">Reliability</h3>
-                        <p class="text-xl font-semibold text-center w-64">
-                            Count on us to deliver consistent and accurate results.
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-8 my-10">
-                    <div class="rounded-lg flex flex-col items-center relative mt-0 lg:mt-2">
-                        <img src="assets/images/simplicity.png" alt="Simplicity" class="w-56 h-56">
-                        <h3 class="text-3xl font-bold my-7">Simplicity</h3>
-                        <p class="text-xl font-semibold text-center w-64">
-                            Driven to create an intuitive and user-friendly payroll system.
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-8 my-10">
-                    <div class="rounded-lg flex flex-col items-center relative mt-0 lg:mt-2">
-                        <img src="assets/images/partnership.png" alt="Partnership" class="w-56 h-56">
-                        <h3 class="text-3xl font-bold my-7">Partnership</h3>
-                        <p class="text-xl font-semibold text-center w-64">
-                            We see ourselves as more than just a service provider; we are your trusted partner.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-primary py-16" id="about">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-wrap justify-between">
-                    <div class="w-full md:w-2/5 pb-4">
-                        <h2 class="text-4xl lg:text-6xl font-bold mb-8 lg:hidden block text-white">
-                            Get to Know Us Better
-                        </h2>
-                        <div class="image-container">
-                        <img src="assets/images/overview.png" alt="Image description" class="w-full">
-                        </div>
-                    </div>
-                    <div class="w-full md:w-3/5">
-                        <div class="text-white pl-0 md:pl-12 pt-10">
-                            <h2 class="text-4xl font-bold mb-8 hidden lg:block">
-                                Get to Know Us Better
-                            </h2>
-                            <hr class="mb-8 border-white-300 border-t-4 w-20 hidden lg:block">
-                            <p class="mb-8 text-lg text-lg lg:text-xl text-justify">
-                                At Easeweldo, we understand the challenges and complexities of managing payroll
-                                for your business. We are more than just a payroll system; we are your trusted
-                                partner in simplifying the payroll process and ensuring the smooth operation of
-                                your company.
-                            </p>
-                            <p class="mb-8 text-lg text-lg lg:text-2xl text-justify">
-                                We are dedicated to providing you with a seamless payroll management experience,
-                                saving you valuable time and effort. With Easeweldo, you can rely on our
-                                state-of-the-art technology to automate calculations, tax deductions, and
-                                benefit contributions, eliminating the need for manual tasks and reducing the
-                                risk of errors. We are committed to staying up-to-date with the latest labor
-                                laws and tax regulations, ensuring your payroll remains compliant.
-                            </p>
-                            <p class="mb-8 text-lg text-lg lg:text-2xl text-justify">
-                                Our goal is to empower you to focus on what matters most – growing your business
-                                and nurturing your employees, while we take care of your payroll needs. Trust
-                                Easeweldo to simplify your payroll management to help your business thrive.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="roadmap">
-            <div class="container mx-auto px-4 py-16 max-w-6xl">
-                <h2 class="text-4xl text-center font-bold mb-8 text-blue-800">
-                    Unveiling Our Inspiring Roadmap
-                </h2>
-                <p class="text-lg lg:text-xl text-center">
-                    We're excited to present our roadmap, filled with groundbreaking advancements, innovative
-                    solutions,and transformative experiences. Each milestone brings us closer to empowering you
-                    and revolutionizing the way you work, thrive, and succeed. Get ready to embrace the
-                    extraordinary as we celebrate the journey ahead, unlocking a world of endless possibilities.
-                </p>
-            </div>
-        </div>
-        <div class="flex justify-center px-4 py-16">
-            <img src="assets/images/timeline.png" alt="Roadmap" class="max-w-full h-auto">
-        </div>
-        <div class="bg-primary py-16" id="contact">
-            <div class="container mx-auto text-white px-4">
+        --}}
+        <div class="bg-gray-800 py-10 px-4" id="contact">
+            <div class="mx-auto text-white w-full mx-auto max-w-screen-2xl">
                 <h2 class="text-4xl font-bold mb-8">Let Us Help You</h2>
-                <p class="text-lg lg:text-xl mb-4 max-w-4xl">
+                <p class="text-lg mb-4 max-w-4xl">
                     Contact us today to unlock the power of Easeweldo for effortless payroll management. We are
                     ready to assist you and answer any questions.
                 </p>
-                <p class="text-lg lg:text-2xl mb-12 max-w-4xl">
-                    Click <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}" target="_blank" class="text-blue-900 font-semibold hover:text-blue-600">here</a>
+                <p class="text-lg mb-12 max-w-4xl">
+                    Click <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}" target="_blank" class="text-blue-500 font-semibold hover:text-blue-400">here</a>
                     to take advantage of our free 90-days trial and experience streamlined payroll
                     processes firsthand.
                 </p>
                 <div class="flex items-center mb-4">
                     <img src="assets/images/phone-icon.png" alt="Phone" class="w-10 h-10 mr-4">
-                    <p class="text-lg lg:text-xl font-semibold">
+                    <p class="text-lg">
                         <a href="tel:{{ env('EASEWELDO_CONTACT_NUMBER') }}">
                             {{ env('EASEWELDO_CONTACT_NUMBER') }}
                         </a>
@@ -270,7 +290,7 @@
                 </div>
                 <div class="flex items-center">
                     <img src="assets/images/email-icon.png" alt="Email" class="w-10 h-10 mr-4">
-                    <p class="text-lg lg:text-xl font-semibold">
+                    <p class="text-lg">
                         <a href="mailto:{{ env('EASEWELDO_EMAIL') }}">{{ env('EASEWELDO_EMAIL') }}</a>
                     </p>
                 </div>
@@ -279,3 +299,4 @@
     </section>
 </main>
 @endsection
+                                                                                                                         

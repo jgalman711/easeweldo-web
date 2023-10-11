@@ -39,9 +39,11 @@
             </div>
             @endforeach
         </div>
-        <a href="{{ route('subscriptions.index', ['subscription_id' => $subscription['subscription_id']]) }}" class="inline-block bg-blue-800 text-white font-semibold my-6 py-4 px-6 rounded-full shadow-md hover:bg-blue-600 transition duration-300 mx-auto">
-            Get Started
-        </a>
+        <div class="w-full px-8">
+            <a href="{{ route('subscriptions.index', ['subscription_id' => $subscription['subscription_id']]) }}" class="w-full text-center inline-block bg-blue-800 text-white font-semibold my-6 py-4 px-6 rounded-md shadow-md hover:bg-blue-600 transition duration-300">
+                Get Started
+            </a>
+        </div>
     </div>
     @endforeach
 </div>
