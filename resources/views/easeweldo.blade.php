@@ -263,11 +263,32 @@
                 @include('partials.subscription-cards-2', ['subscriptions' => $subscriptions])
             </div>
         </div>
-        {{--
-        <div class="bg-gray-100 py-16" id="solutions">
-            What's next to easeweldo
+        <div class="bg-blue-100">
+            <div class="md:flex item-center container mx-auto px-4 py-8 md:py-16">
+                <div class="lg:w-1/2 p-8 flex flex-wrap items-center">
+                    <img src="{{ asset('assets/images/digital-banking.png') }}" alt="Image or Video" class="w-full h-auto">
+                </div>
+                <div class="lg:w-1/2 text-gray-800 md:p-8 flex flex-wrap items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-8 text-blue-800">
+                            What's Next at Easeweldo?
+                        </h2>
+                        <p class="mb-8 text-md md:text-lg">
+                        Exciting developments are on the horizon at Easeweldo! By Q1 of 2024, our dedicated team will
+                        be hard at work, gearing up to implement the highly anticipated feature of auto disbursement.
+                        </p>
+                        <p class="mb-8 text-md md:text-lg">
+                            With this enhancement, employee salaries will be sent directly to their bank accounts
+                            following payroll generation, providing you with even more convenience and efficiency.
+                        </p>
+                        <p class="mb-8 text-md md:text-lg">
+                            Stay tuned for these upcoming innovations that will take Easeweldo to the next level
+                            in workforce management.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        --}}
         <div class="bg-gray-800 py-10 px-4" id="contact">
             <div class="mx-auto text-white w-full mx-auto max-w-screen-2xl">
                 <h2 class="text-4xl font-bold mb-8">Let Us Help You</h2>
