@@ -52,6 +52,7 @@ class TimesheetController extends BaseController
         $nextMonth = date('F', strtotime('+1 month', strtotime("$currentYear-$currentMonth-01")));
 
         return view('pages.personal.timesheet', [
+            'employee' => $this->employee,
             'previous_month' => $prevMonth,
             'next_month' => $nextMonth,
             'current_month' => "{$currentMonth} {$currentYear}",

@@ -17,7 +17,8 @@ class ProfileController extends BaseController
         }
 
         return view('pages.personal.profile.index', [
-            'user' => $user ?? null
+            'user' => $user ?? null,
+            'employee' => $this->employee,
         ]);
     }
 

@@ -26,14 +26,18 @@ class LeaveController extends BaseController
         }
 
         return view('pages.personal.leaves', [
+            'employee' => $this->employee,
             'leaves' => $leaves ?? null,
             'salary_compuation' => $salaryComputation ?? null
         ]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return view('pages.personal.leaves-apply');
+        parent::init($request);
+        return view('pages.personal.leaves-apply', [
+            'employee' => $this->employee
+        ]);
     }
 
     public function store(Request $request)

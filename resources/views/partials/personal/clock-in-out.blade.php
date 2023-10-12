@@ -1,7 +1,7 @@
 <div class="mt-2 bg-white shadow px-2 py-4">
     <div class="flex items-center">
-        <div class="mb-4 mr-2">
-            <p class="text-3xl">{{ $work_today['date'] ?? now()->format('d') }}</p>
+        <div class="mb-4 mr-2 md:mr-6 text-3xl md:text-4xl">
+            <p class="">{{ $work_today['date'] ?? now()->format('d') }}</p>
         </div>
         <div class="mb-4 flex-auto">
             <p class="text-sm font-semibold">{{ $work_today['day'] ?? now()->format('l') }}</p>
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="text-center">
-        <button id="clock-in-out" class="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">
+        <button id="clock-in-out" class="w-full px-4 py-2 bg-green-400 text-white rounded hover:bg-green-500 focus:outline-none focus:ring focus:ring-green-300">
             {{ $work_today['next_action'] ?? 'Clock In' }}
         </button>
     </div>

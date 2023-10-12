@@ -16,6 +16,7 @@ class PayrollController extends BaseController
             $data = $response->getData();
         }
         return view('pages.personal.payrolls', [
+            'employee' => $this->employee,
             'payrolls' => $data ?? null
         ]);
     }
@@ -28,6 +29,7 @@ class PayrollController extends BaseController
         if ($response->isSuccess()) {
             $payroll = $response->getData();
             return view('pages.personal.payrolls-show', [
+                'employee' => $this->employee,
                 'payroll' => $payroll
             ]);
         }
