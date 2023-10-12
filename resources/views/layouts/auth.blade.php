@@ -13,16 +13,9 @@
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
         @yield('js-top')
     </head>
-    <body class="bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/auth/background.png')">
+    <body class="bg-white">
         <div class="min-h-screen flex flex-col items-center justify-start bg-gray-100 bg-opacity-50 py-16">
-            <div class="mb-8 text-left">
-                <h1 class="font-bold text-5xl">
-                    <a href="/"><img src="assets/images/easeweldo-logo.png" alt="Easeweldo Logo" class="h-8 w-auto"></a>
-                </h1>
-            </div>
-            <div class="w-full max-w-md p-8 bg-white bg-opacity-90 rounded-lg shadow-md">
-                @yield('content')
-            </div>
+            @yield('content')
         </div>
         @yield('js-bottom')
     </body>

@@ -47,8 +47,10 @@ Route::group(['middleware' => 'auth.bearer'], function () {
 });
 
 Route::prefix('personal')->group(function () {
-    Route::get('/login', [PersonalLoginController::class, 'index'])->name('personal.login');
-    Route::post('/login', [PersonalLoginController::class, 'store']);
+    Route::group(['middleware' => 'auth.redirect'], function () {
+        Route::get('/login', [PersonalLoginController::class, 'index'])->name('personal.login');
+        Route::post('/login', [PersonalLoginController::class, 'store']);
+    });
     Route::get('/logout', [PersonalLoginController::class, 'logout']);
     Route::group(['middleware' => 'auth.bearer'], function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('personal.dashboard');

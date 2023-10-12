@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Response;
 
 class ApiAuthRedirectMiddleware
@@ -16,7 +17,13 @@ class ApiAuthRedirectMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (session()->has('access_token')) {
-            return redirect('/dashboard');
+            $url = url()->current();
+            if (Str::contains($url, 'personal')) {
+                return redirect()->route('personal.dashboard');
+            } else {
+                return redirect('dashboard');
+            }
+            return redirect('dashboard');
         }
         return $next($request);
     }
