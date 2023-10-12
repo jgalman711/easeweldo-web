@@ -23,28 +23,30 @@
 @include('partials.personal.modal')
 <div class="container flex flex-wrap mx-auto">
     <div class="my-4 w-full lg:w-1/3">
-        <h2 class="text-2xl mb-2 px-2">Today's Work</h2>
-        @include('partials.personal.clock-in-out')
-    </div>
-    @if (isset($schedule) && $schedule)
-    <div class="px-2 my-4 w-full lg:w-2/3">
-        <h2 class="text-2xl mb-2">Shift This Week</h2>
-        <div class="grid grid-cols-7 gap-1">
-            @foreach($schedule as $day)
-            <div class="bg-white shadow p-1 rounded text-center">
-                <div class="{{ $day['is_today'] ? 'text-blue-400' : 'text-gray-500' }}">{{ $day['day'] }}</div>
-                <div class="text-sm">{{ $day['clock_in'] ?? 'REST' }}</div>
-                <div class="text-sm">{{ $day['clock_out'] ?? 'DAY' }}</div>
-            </div>
-            @endforeach
+        <div class="my-4 w-full">
+            <h2 class="text-2xl mb-2 px-2">Today's Work</h2>
+            @include('partials.personal.clock-in-out')
         </div>
+        @if (isset($schedule) && $schedule)
+        <div class="px-2 my-4 w-full">
+            <h2 class="text-2xl mb-2">Shift This Week</h2>
+            <div class="grid grid-cols-7 gap-1">
+                @foreach($schedule as $day)
+                <div class="bg-white shadow p-1 rounded text-center">
+                    <div class="{{ $day['is_today'] ? 'text-blue-400' : 'text-gray-500' }}">{{ $day['day'] }}</div>
+                    <div class="text-sm">{{ $day['clock_in'] ?? 'REST' }}</div>
+                    <div class="text-sm">{{ $day['clock_out'] ?? 'DAY' }}</div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        @else
+        <div class="p-4 my-4 bg-white shadow w-1/2">
+            <h1 class="text-lg text-center">No Work Schedule Found</h1>
+            <p class="mt-2 text-sm text-center">Kindly notify the HR department to set your work shift.</p>
+        </div>
+        @endif
     </div>
-    @else
-    <div class="p-4 my-4 bg-white shadow w-1/2">
-        <h1 class="text-lg text-center">No Work Schedule Found</h1>
-        <p class="mt-2 text-sm text-center">Kindly notify the HR department to set your work shift.</p>
-    </div>
-    @endif
 </div>
 
 <div class="px-2 my-4 lg:hidden">

@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 
 class ForgotPasswordController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('pages.business.auth.forgotpassword');
+        $type = $request->has('type') ? $request->type : 'business';
+        return view('pages.business.auth.forgotpassword', [
+            'type' => $type
+        ]);
     }
 
     public function store(Request $request)

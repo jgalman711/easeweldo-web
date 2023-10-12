@@ -7,7 +7,7 @@
     </h1>
 </div>
 <div class="w-full max-w-md p-8 bg-white bg-opacity-90 rounded-lg shadow-md">
-    <h1 class="text-3xl font-semibold mb-1">Login</h1>
+    <h1 class="text-3xl font-semibold mb-1 text-gray-700">Login</h1>
     <p class="text-sm text-gray-700 mb-6">Enter your personal email and password.</p>
     <form class="mt-4" action="login" method="POST">
         @csrf
@@ -33,9 +33,9 @@
                 <input type="checkbox" id="remember" name="remember" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
                 <label for="remember" class="ml-2 block text-sm text-gray-900">Remember me</label>
             </div>
-            {{--
-            <a href="forgot-password" class="text-sm text-blue-600 hover:underline">Forgot your password?</a>
-            --}}
+            <a href="{{ url('forgot-password?type=personal') }}" class="text-sm text-blue-600 hover:underline">
+                Forgot your password?
+            </a>
         </div>
         <button type="submit" class="w-full bg-green-500 text-white p-2.5 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600">
             Login
