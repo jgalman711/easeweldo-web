@@ -15,7 +15,8 @@ class LoginController extends Controller
 
     public function store(Request $request)
     {
-        $response = $this->httpService->post('login', $request->all());
+        $data = $request->all();
+        $response = $this->httpService->post('personal/login', $data);
 
         if ($response->isFailed()) {
             return redirect()->back()->withInput()->withErrors($response->getErrors());
@@ -23,17 +24,21 @@ class LoginController extends Controller
 
         try {
             $data = $response->getData();
-            $token = $data['token'];
-            $company = $data['user']['companies'][0] ?? null;
-            if ($company) {
-                session(['company_slug' => $company['slug']]);
+            if ($response->isSuccess()) {
+                $token = $data['token'];
+                $company = $data['user']['companies'][0] ?? null;
+                if ($company) {
+                    session(['company_slug' => $company['slug']]);
+                }
+                session(['access_token' => $token]);
+                $request->session()->put('data', $data);
+                return redirect()->route('personal.dashboard');
             }
-            session(['access_token' => $token]);
-            $request->session()->put('data', $data);
-            return redirect()->route('personal.dashboard');
         } catch (Exception) {
             return redirect()->back()->withInput()->withErrors(['Login failed.']);
         }
+        return redirect()->back()->withInput()->withErrors(['Login failed.']);
+
     }
 
     public function logout(Request $request)

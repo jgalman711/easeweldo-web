@@ -15,7 +15,7 @@
             <nav class="hidden lg:block bg-green-400 border-gray-200 dark:bg-gray-900">
                 <div class="container flex flex-wrap items-center justify-between mx-auto p-4">
                     <a href="{{ url('personal/dashboard') }}" class="flex items-center">
-                        <img src="{{ asset('assets/images/logo-negative.png') }}" class="h-6 mr-3" alt="Easeweldo Logo" />
+                        <img src="{{ asset('assets/images/easeweldo-negative.png') }}" class="h-6 mr-3" alt="Easeweldo Logo" />
                     </a>
                     <div class="flex items-center md:order-2">
                         <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
