@@ -18,7 +18,8 @@
         <nav class="bg-gray-100 dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 shadow">
             <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="/" class="flex items-center">
-                    <img src="{{ asset('assets/images/easeweldo-logo.png') }}" class="md:h-6 h-4 mr-3" alt="Easeweldo Logo">
+                    <img src="{{ asset('assets/images/easeweldo-logo.png') }}" class="hidden md:block h-8 mr-3" alt="Easeweldo Logo">
+                    <img src="{{ asset('assets/images/easeweldo-icon.png') }}" class="md:hidden h-9 mr-3" alt="Easeweldo Logo">
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
                 </a>
                 <div class="flex md:order-2">

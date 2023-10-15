@@ -264,7 +264,7 @@
             </div>
         </div>
         <div class="bg-blue-100">
-            <div class="md:flex item-center container mx-auto px-4 py-8 md:py-16">
+            <div class="lg:flex item-center container mx-auto px-4 py-8 md:py-16">
                 <div class="lg:w-1/2 p-8 flex flex-wrap items-center">
                     <img src="{{ asset('assets/images/digital-banking.png') }}" alt="Image or Video" class="w-full h-auto">
                 </div>
