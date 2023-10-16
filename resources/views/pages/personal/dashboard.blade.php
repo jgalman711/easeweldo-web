@@ -141,7 +141,7 @@ $(document).ready(function() {
 
                     element.text(formattedTime);
                 requestInProgress = false;
-                }, 1000);
+                }, 500);
             },
             error: function(xhr, status, error) {
                 setTimeout(function() {
@@ -154,7 +154,7 @@ $(document).ready(function() {
                     $('#modal-title').text(firstSentence);
                     $('#modal-description').text(secondSentence);
                     $("#clock-in-out").html(prev);
-                }, 1000);
+                }, 500);
                 requestInProgress = false;
             }
         });

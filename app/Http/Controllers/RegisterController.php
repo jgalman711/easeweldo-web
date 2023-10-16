@@ -25,11 +25,7 @@ class RegisterController extends Controller
             $company = $data['company'];
             session(['access_token' => $token]);
             session(['company_slug' => $company['slug']]);
-            $response = $this->httpService->get("companies/{$company['slug']}/subscriptions");
-            if ($response->isDataEmpty()) {
-                return redirect('subscriptions?subscription_id=2');
-            }
-            return view('trial-subscribed');
+            return redirect('company');
         }
         return redirect()->back()->withErrors(['Registration failed.'])->withInput();
     }

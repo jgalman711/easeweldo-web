@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\DashboardController as CompanyDashboardController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
@@ -40,9 +42,9 @@ Route::group(['middleware' => 'auth.redirect'], function () {
 
 Route::group(['middleware' => 'auth.bearer'], function () {
     Route::get('/logout', [LogoutController::class, 'index']);
-    Route::get('dashboard', function () {
-        return view('under-construction')->with('message', "Welcome back!");
-    });
+    Route::get('company', [CompanyController::class, 'edit'])->name('company.edit');
+    Route::get('company/complete-registration', [CompanyController::class, 'complete'])->name('company.complete');
+    Route::get('dashboard', [CompanyDashboardController::class, 'index'])->name('company.dashboard');
     Route::resource('/subscriptions', SubscriptionController::class)->only('index', 'store');
 });
 

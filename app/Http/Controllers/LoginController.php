@@ -14,27 +14,26 @@ class LoginController extends Controller
 
     public function store(Request $request)
     {
-        $response = $this->httpService->post('login', $request->all());
-
-        if ($response->isFailed()) {
-            return redirect()->back()->withErrors($response->getErrors());
-        }
-
         try {
-            $data = $response->getData();
-            $token = $data['token'];
-            $company = $data['user']['companies'][0] ?? null;
-            if ($company) {
-                session(['company_slug' => $company['slug']]);
-                $response = $this->httpService->get("companies/{$company['slug']}/subscriptions");
-                if ($response->isDataEmpty()) {
-                    return redirect('subscriptions?subscription_id=2');
+            $response = $this->httpService->post('login', $request->all());
+            if ($response->isSuccess()) {
+                $data = $response->getData();
+                $token = $data['token'];
+                $company = $data['user']['companies'][0] ?? null;
+                if ($company) {
+                    session(['company_slug' => $company['slug']]);
                 }
+                session(['access_token' => $token]);
+                $request->session()->put('data', $data);
+                $next = redirect()->route('dashboard');
+            } elseif ($response->isFailed()) {
+                $next = redirect()->back()->withErrors($response->getErrors());
+            } else {
+                $next = redirect()->back()->withErrors(['Login failed.']);
             }
-            session(['access_token' => $token]);
-            return view('under-construction')->with('message', "Welcome back!");
         } catch (Exception) {
-            return redirect()->back()->withErrors(['Login failed.']);
+            $next = redirect()->back()->withErrors(['Login failed.']);
         }
+        return $next;
     }
 }
