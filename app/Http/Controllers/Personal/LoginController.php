@@ -16,7 +16,7 @@ class LoginController extends Controller
     public function store(Request $request)
     {
         try {
-            $response = $this->httpService->post('login', $request->all());
+            $response = $this->httpService->post('personal/login', $request->all());
             if ($response->isSuccess()) {
                 $data = $response->getData();
                 $token = $data['token'];
