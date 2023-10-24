@@ -19,19 +19,40 @@
         <p class="text-sm text-gray-500 mb-4">
             per employee / month
         </p>
-        <div class="flex flex-col mt-6 flex-grow">
-            @foreach(json_decode($subscription['subscription']['features'], true) as $feature)
-            <div class="flex items-center">
-                <svg class="h-4 w-4 text-green-500 mr-2 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M14.293 5.293a1 1 0 0 1 1.414 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L6 11.586l7.293-7.293a1 1 0 0 1 1.414 0z" clip-rule="evenodd" />
-                </svg>
-                <p class="mb-2">{{ $feature }}</p>
-            </div>
+        <div class="flex flex-col flex-grow">
+            <ul role="list" class="space-y-5 my-7">
+            @foreach(json_decode($subscription['subscription']['features'], true) as $feature => $value)
+                @if ($value === "title")
+                <p class="mb-4 mt-2 font-semibold text-xl">{{ $feature }}</p>
+                @else
+                    @if ($value === true)
+                    <li class="flex space-x-3">
+                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                        </svg>
+                        <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+                            {{ $feature }}
+                        </span>
+                    </li>
+                    @else
+                    <li class="flex space-x-3 line-through decoration-gray-500">
+                        <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                        </svg>
+                        <span class="text-base font-normal leading-tight text-gray-500">
+                            {{ $feature }}
+                        </span>
+                    </li>
+                    @endif
+                @endif
             @endforeach
+            </ul>
         </div>
-        <a href="{{ route('subscriptions.index', ['subscription_id' => $subscription['subscription_id']]) }}" class="inline-block bg-blue-800 text-white font-semibold my-6 py-4 px-6 rounded-full shadow-md hover:bg-blue-600 transition duration-300 mx-auto">
-            Get Started
-        </a>
+        <div class="w-full px-4">
+            <a href="{{ route('subscriptions.index', ['subscription_id' => $subscription['subscription_id']]) }}" class="w-full text-center inline-block bg-blue-800 text-white font-semibold my-6 py-4 px-6 rounded-md shadow-md hover:bg-blue-600 transition duration-300">
+                Choose Plan
+            </a>
+        </div>
     </div>
     @endforeach
 </div>

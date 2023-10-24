@@ -13,7 +13,7 @@
                 </p>
                 <div class="text-center sm:text-left py-8 lg:pt-32">
                     <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}" class="inline-block bg-blue-800 text-white font-semibold py-4 px-6 lg:py-6 lg:px-12 rounded-xl shadow-md hover:bg-blue-600 transition duration-300 mx-auto lg:text-xl">
-                        Start 90-Days Trial Now
+                        Start 60-days Trial Now
                     </a>
                 </div>
             </div>
@@ -257,10 +257,12 @@
                         Our Subscription Plans
                     </h2>
                     <p class="text-lg lg:text-xl text-center">
-                        Choose the perfect plan that fits your needs and budget.
+                        Choose the perfect plan that fits your needs and budget. All our subscription plans come with
+                        a generous 60-day free trial. Find the plan that's right for you and experience the benefits
+                        for two full months without any cost or obligation.
                     </p>
                 </div>
-                @include('partials.subscription-cards-2', ['subscriptions' => $subscriptions])
+                @include('partials.subscription-cards', ['subscriptions' => $subscriptions])
             </div>
         </div>
         <div class="bg-blue-100">
@@ -298,7 +300,7 @@
                 </p>
                 <p class="text-lg mb-12 max-w-4xl">
                     Click <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}" target="_blank" class="text-blue-500 font-semibold hover:text-blue-400">here</a>
-                    to take advantage of our free 90-days trial and experience streamlined payroll
+                    to take advantage of our free 60-days trial and experience streamlined payroll
                     processes firsthand.
                 </p>
                 <div class="flex items-center mb-4">
@@ -320,4 +322,3 @@
     </section>
 </main>
 @endsection
-                                                                                                                         
