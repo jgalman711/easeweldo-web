@@ -23,9 +23,10 @@ class RegisterController extends Controller
             $data = $response->getData();
             $token = $data['token'];
             $company = $data['company'];
-            session(['access_token' => $token]);
-            session(['company_slug' => $company['slug']]);
-            $request->session()->put('data', $data);
+            session([
+                'access_token' => $token,
+                'company_slug' => $company['slug']
+            ]);
             return redirect('company');
         }
         return redirect()->back()->withErrors(['Registration failed.'])->withInput();

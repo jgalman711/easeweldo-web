@@ -4,13 +4,12 @@ namespace App\Http\Controllers\Personal;
 
 use App\Services\TimesheetService;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class TimesheetController extends BaseController
 {
-    public function index(Request $request)
+    public function index()
     {
-        parent::init($request);
+        parent::init();
         $timesheetService = app()->make(TimesheetService::class);
         $url = $this->baseUrl . "/time-records";
         if (!request()->has('month')) {

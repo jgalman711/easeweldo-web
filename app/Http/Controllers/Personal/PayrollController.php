@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Personal;
 
-use Illuminate\Http\Request;
-
 class PayrollController extends BaseController
 {
-    public function index(Request $request)
+    public function index()
     {
-        parent::init($request);
+        parent::init();
         $url = $this->baseUrl . "/payrolls";
         $response = $this->httpService->get($url);
 
@@ -21,9 +19,9 @@ class PayrollController extends BaseController
         ]);
     }
 
-    public function show(Request $request, int $payrollId)
+    public function show(int $payrollId)
     {
-        parent::init($request);
+        parent::init();
         $url = $this->baseUrl . "/payrolls/{$payrollId}";
         $response = $this->httpService->get($url);
         if ($response->isSuccess()) {

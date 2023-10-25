@@ -2,25 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Personal\BaseController;
-use Illuminate\Http\Request;
-
-class CompanyController extends BaseController
+class CompanyController extends Controller
 {
-    public function edit(Request $request)
+    public function edit()
     {
-        parent::init($request);
-        $response = $this->httpService->get("companies/" . $this->company['slug']);
+        $company = session('company');
+        $response = $this->httpService->get("companies/{$company['slug']}");
         if ($response->isSuccess()) {
-            $this->company = $response->getData();
+            $company = $response->getData();
+            $endpoint = config('app.api_endpoint') . "companies/{$company['slug']}?_method=PUT";
+            return view('pages.business.company-registration', [
+                'token' => session('access_token'),
+                'company' => optional($company),
+                'update_api_endpoint' => $endpoint
+            ]);
         }
-
-        $endpoint = config('app.api_endpoint') . "companies/" . $this->company['slug'] . '?_method=PUT';
-        return view('pages.business.company-registration', [
-            'token' => session('access_token'),
-            'company' => $this->company,
-            'update_api_endpoint' => $endpoint
-        ]);
     }
 
     public function complete()

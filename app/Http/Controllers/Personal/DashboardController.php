@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Personal;
 
-use Illuminate\Http\Request;
-
 class DashboardController extends BaseController
 {
-    public function index(Request $request)
+    public function index()
     {
-        parent::init($request);
+        parent::init();
         $url = $this->baseUrl . "/dashboard";
         $response = $this->httpService->get($url);
 

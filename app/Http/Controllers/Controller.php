@@ -13,8 +13,15 @@ class Controller extends BaseController
 
     protected $httpService;
 
+    protected $baseUrl;
+
     public function __construct(HttpService $httpService)
     {
         $this->httpService = $httpService;
+    }
+
+    public function init()
+    {
+        $this->baseUrl = "companies/" . $this->company['slug'] . "/employees/" . $this->employee['id'];
     }
 }

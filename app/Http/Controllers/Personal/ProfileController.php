@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class ProfileController extends BaseController
 {
-    public function index(Request $request)
+    public function index()
     {
-        parent::init($request);
+        parent::init();
         $url = $this->baseUrl;
         $response = $this->httpService->get($url);
 
@@ -22,9 +22,9 @@ class ProfileController extends BaseController
         ]);
     }
 
-    public function edit(Request $request)
+    public function edit()
     {
-        parent::init($request);
+        parent::init();
         $url = $this->baseUrl;
         $response = $this->httpService->get($url);
 
@@ -39,7 +39,7 @@ class ProfileController extends BaseController
 
     public function update(Request $request)
     {
-        parent::init($request);
+        parent::init();
         $url = $this->baseUrl . '/change-password';
         $response = $this->httpService->patch($url, $request->all());
 

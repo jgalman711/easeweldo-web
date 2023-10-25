@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Personal;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class BaseController extends Controller
 {
@@ -12,11 +11,12 @@ class BaseController extends Controller
     protected $company;
     protected $baseUrl;
 
-    public function init(Request $request)
+    public function init()
     {
-        $this->data = $request->session()->get('data');
-        $this->employee = optional(optional($this->data['user'])['employee']);
-        $this->company = optional(optional($this->data['user'])['companies'])[0];
-        $this->baseUrl = "companies/" . $this->company['slug'] . "/employees/" . $this->employee['id'];
+        $this->employee = session('employee');
+        $this->company = session('company');
+        if (isset($this->company['slug']) && isset($this->employee['id'])) {
+            $this->baseUrl = "companies/" . $this->company['slug'] . "/employees/" . $this->employee['id'];
+        }
     }
 }

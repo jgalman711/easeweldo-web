@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers\Personal;
 
-use Illuminate\Http\Request;
-
 class QrController extends BaseController
 {
-    public function create(Request $request)
+    public function create()
     {
-        parent::init($request);
+        parent::init();
         $url = $this->baseUrl . "/qrcode";
         $response = $this->httpService->get($url);
         return view('pages.personal.qr', ['qr' => $response->getBody()]);
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        parent::init($request);
+        parent::init();
         $geolocation = '';
         $params = "?employee_id={$this->employee['id']}&geo={$geolocation}";
         return view('pages.personal.qr-scanner', [

@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class LeaveController extends BaseController
 {
-    public function index(Request $request)
+    public function index()
     {
-        parent::init($request);
+        parent::init();
         $url = $this->baseUrl . "/leaves";
         $response = $this->httpService->get($url, [
             'sort' => '-date'
@@ -32,9 +32,8 @@ class LeaveController extends BaseController
         ]);
     }
 
-    public function create(Request $request)
+    public function create()
     {
-        parent::init($request);
         return view('pages.personal.leaves-apply', [
             'employee' => $this->employee
         ]);
@@ -42,7 +41,6 @@ class LeaveController extends BaseController
 
     public function store(Request $request)
     {
-        parent::init($request);
         $url = $this->baseUrl . "/leaves";
         $response = $this->httpService->post($url, $request->all());
 
