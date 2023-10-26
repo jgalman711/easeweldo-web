@@ -29,6 +29,7 @@
     <h1 class="text-3xl font-semibold mb-6">Forgot Your Password?</h1>
     <form action="forgot-password" method="POST">
         @csrf
+        <input type="hidden" id="type" name="type" value="{{ $type }}">
         @if($errors->any())
             <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-3 mb-4 text-sm">
                 @foreach($errors->all() as $error)
