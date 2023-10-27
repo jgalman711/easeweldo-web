@@ -14,17 +14,24 @@
 @endsection
 
 @section('content')
-<div class="container mx-auto mt-8 max-w-6xl px-4">
-    <h1 class="text-4xl font-semibold mb-4">You're almost there!</h1>
-    <h1 class="text-xl font-semibold mb-4">We're excited to offer you a 60-day free trial, where you can explore our powerful features without any cost.</h1>
-    <p class="text-gray-500 text-lg mb-6">Selected plan: <span class="font-semibold">{{ $subscription['title'] }}</span></p>
+<div class="bg-blue-500 py-12 mb-8">
+    <div class="container px-8 mx-auto text-white">
+        <h1 class="text-4xl font-semibold mb-4">You're almost there!</h1>
+        <h2 class="text-xl">
+            We're excited to offer you a 60-day free trial, where you can explore
+            our powerful features without any cost.
+        </h2>
+    </div>
+</div>
+<div class="md:container md:mx-auto px-8 text-white">
+    <p class="text-gray-800 text-xl mb-4">Selected plan: <span class="font-semibold text-blue-800">{{ $subscription['title'] }}</span></p>
     <form action="subscriptions" method="POST">
         @csrf
-        <div class="flex items-center mb-6">
-            <label class="text-2xl font-semibold mb-1 mr-2">Number of Employees:</label>
-            <input type="number" name="employee_count" id="employee-count" value="{{ $employee_count > 1 ? $employee_count : 1 }}" class="text-2xl w-20 px-3 py-1 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500" min="1">
+        <div class="text-gray-800 flex items-center mb-4">
+            <label class="text-xl font-semibold mb-1 mr-2">Number of Employees:</label>
+            <input type="number" name="employee_count" id="employee-count" value="{{ $employee_count > 1 ? $employee_count : 1 }}" class="text-xl w-20 px-3 py-1 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500" min="1">
         </div>
-        <h2 class="text-2xl font-semibold my-6">Choose Period:</h2>
+        <h2 class="text-gray-800 text-xl font-semibold my-4">Choose Period:</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             @foreach ($subscription['subscription_prices'] as $details)
             <div class="relative">
@@ -38,18 +45,20 @@
                     <div class="card bg-white rounded-lg p-6 border border-gray-300 hover:border-blue-500 transition duration-300 @if($details['months'] == 36) selected-card @endif" data-month="{{ $details['months'] }}" data-price="{{ $details['price_per_employee'] }}">
                         <p class="text-md font-semibold text-gray-500 mt-6 mb-8">{{ $details['months'] }} Month</p>
                         <h3 class="text-5xl font-semibold mb-2 text-blue-800">P{{ $details['price_per_employee'] }}</h3>
-                        <p class="text-gray-500 font-semibold mb-4">user / month</p>
-                        <p class="text-gray-500">Plan renews at {{ $details['months'] }} month after the <span class="text-blue-800">60-day trial</span></p>
+                        <p class="text-gray-500 font-semibold mb-4">employee / month</p>
+                        <p class="text-gray-500">Plan renews at {{ $details['months'] }} month</p>
+                        <p class="text-gray-500">after the <span class="text-blue-800">60-day trial</span></p>
                     </div>
                 </label>
             </div>
             @endforeach
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md my-14">
-            <p class="text-xl font-semibold">Total Amount: <span id="total-amount" class="text-3xl text-blue-800">P{{ number_format($total_amount, 2) }}</span></p>
+            <p class="text-xl font-semibold text-gray-800">Total Amount: <span id="total-amount" class="text-3xl text-blue-800">P{{ number_format($total_amount, 2) }}</span></p>
             <p class="text-gray-800 text-md font-semibold mb-6">You saved: <span id="total-saved" class="text-lg text-green-600">P{{ number_format($total_saved, 2) }}</span></p>
             <p class="text-gray-800 mb-4 text-lg">
-                Please deposit the calculated amount to one of the provided bank accounts:
+                Please deposit the calculated amount to one of the provided bank accounts.
+                Don't worry, you can pay the amount after the trial period expires.
             </p>
             @include('partials.payment-options')
             <input type="text" name="subscription_id" id="subscription_id-count" value="{{ $subscription['id'] }}" class="hidden" min="1">

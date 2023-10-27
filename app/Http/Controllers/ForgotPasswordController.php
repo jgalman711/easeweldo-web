@@ -19,8 +19,10 @@ class ForgotPasswordController extends Controller
         $response = $this->httpService->post('forgot-password', $request->all());
         if ($response->isSuccess()) {
             return redirect()->back()->with('status', $response->getMessage());
-        } else {
+        } elseif ($response->isFailed()) {
             return redirect()->back()->withErrors($response->getErrors())->withInput();
+        } else {
+            return redirect()->back()->withErrors(['errors' => 'Unable to send reset password.'])->withInput();
         }
     }
 }

@@ -9,7 +9,6 @@ class SubscriptionController extends Controller
 {
     public function index(Request $request)
     {
-        $company = session('company_slug');
         $request->validate([
             'subscription_id' => 'required'
         ]);
@@ -32,26 +31,21 @@ class SubscriptionController extends Controller
                     - ($plan['price_per_employee'] * $plan['months']);
             }
 
-            $response = $this->httpService->get("companies/{$company}/employees");
+            $employeeCount = 1;
+            $totalAmount = $employeeCount * $cheapestPlan['price_per_employee'] * $cheapestPlan['months'];
 
-            if ($response->isSuccess()) {
-                $employees = $response->getData();
-                $employeeCount = $employees ? count($employees) : 1;
-                $totalAmount = $employeeCount * $cheapestPlan['price_per_employee'] * $cheapestPlan['months'];
+            $totalSaved = $originalPlan['price_per_employee']
+                * $cheapestPlan['months']
+                * $employeeCount
+                - $totalAmount;
 
-                $totalSaved = $originalPlan['price_per_employee']
-                    * $cheapestPlan['months']
-                    * $employeeCount
-                    - $totalAmount;
-
-                return view('cart', [
-                    'original_plan' => $originalPlan,
-                    'subscription' => $subscription,
-                    'employee_count' => $employeeCount,
-                    'total_amount' => $totalAmount,
-                    'total_saved' => $totalSaved
-                ]);
-            }
+            return view('cart', [
+                'original_plan' => $originalPlan,
+                'subscription' => $subscription,
+                'employee_count' => $employeeCount,
+                'total_amount' => $totalAmount,
+                'total_saved' => $totalSaved
+            ]);
         }
         return redirect()->back()->withErrors($response->getErrors());
     }
