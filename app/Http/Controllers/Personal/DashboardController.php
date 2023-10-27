@@ -12,14 +12,15 @@ class DashboardController extends BaseController
 
         if ($response->isSuccess()) {
             $data = $response->getData();
+            return view('pages.personal.dashboard', [
+                'token' => session('access_token'),
+                'employee' => $this->employee,
+                'company' => $this->company,
+                'work_today' => $data['work_today'] ?? null,
+                'schedule' => $data['schedule'] ?? null,
+                'clock_in_url' => config('app.api_endpoint') . $this->baseUrl . "/clock"
+            ]);
         }
-        return view('pages.personal.dashboard', [
-            'token' => session('access_token'),
-            'employee' => $this->employee,
-            'company' => $this->company,
-            'work_today' => $data['work_today'] ?? null,
-            'schedule' => $data['schedule'] ?? null,
-            'clock_in_url' => config('app.api_endpoint') . $this->baseUrl . "/clock"
-        ]);
+        abort(500);
     }
 }
