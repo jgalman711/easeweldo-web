@@ -1,5 +1,12 @@
 @extends('layouts.business.default')
 
+@section('seo')
+<title>Registration Successful</title>
+<meta name="description" content="Congratulations! Your registration to Easeweldo is successful. Manage your payroll with ease and efficiency.">
+<meta name="keywords" content="Easeweldo, registration successful, payroll, payroll software, payroll management, payroll system, employee login">
+<meta name="author" content="Easeweldo Team">
+@endsection
+
 @section('content')
 <div class="min-h-screen flex items-center justify-center">
     <div class="mx-auto max-w-5xl text-center p-6">

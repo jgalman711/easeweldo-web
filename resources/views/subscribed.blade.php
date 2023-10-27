@@ -14,21 +14,18 @@
 @endsection
 
 @section('content')
-<div class="py-4 md:py-8 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto">
-        <div>
-            <h2 class="text-2xl md:text-6xl font-bold text-center">You have successfully subscribed!</h2>
-        </div>
-        <p class="mt-10 text-gray-800 text-center font-semibold text-lg">
+<div class="min-h-screen flex items-center justify-center">
+    <div class="mx-auto max-w-5xl text-center p-6">
+        <h1 class="text-2xl md:text-4xl font-bold text-center mb-8">You have successfully subscribed!</h1>
+        <p class="mt-4 text-lg mb-20">
             Thank you for joining Easeweldo. Please deposit the subscription amount <span class="text-blue-600">P{{ number_format($balance, 2) }}</span> to one of the provided bank accounts:
         </p>
-    </div>
-    <div class="container mx-auto mt-8 max-w-6xl px-4">
-        @include('partials.payment-options')
-    </div>
-    <div class="max-w-4xl mx-auto flex flex-col items-center">
-        <img src="{{ asset('assets/images/subscribed.png') }}" alt="Subscription Image" class="w-full h-auto">
-        <a href="{{ env('EASEWELDO_PORTAL_URL') }}" class="text-white bg-blue-800 hover:bg-blue-600 py-2 px-4 rounded-full text-lg font-semibold mt-8 inline-block transition duration-300">Go to Portal</a>
+        <div class="container mx-auto my-8 max-w-6xl px-4">
+            @include('partials.payment-options')
+        </div>
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <img src="{{ asset('assets/images/coming-soon.png') }}" alt="Subscription Image" class="w-full h-auto">
+        </div>
     </div>
 </div>
 @endsection

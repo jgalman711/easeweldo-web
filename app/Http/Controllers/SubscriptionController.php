@@ -9,6 +9,10 @@ class SubscriptionController extends Controller
 {
     public function index(Request $request)
     {
+        $token = session('access_token');
+        if (!$token) {
+            return redirect("register");
+        }
         $request->validate([
             'subscription_id' => 'required'
         ]);
@@ -53,7 +57,7 @@ class SubscriptionController extends Controller
     public function store(Request $request)
     {
         if (session()->has('subscribed')) {
-            return redirect(env('EASEWELDO_PORTAL_URL'));
+            return redirect('dashboard');
         }
         $company = session('company_slug');
         $response = $this->httpService->post("companies/{$company}/subscriptions", $request->all());

@@ -1,11 +1,11 @@
 @extends('layouts.business.default')
 
 @section('content')
-<div class="bg-blue-500 py-8">
+<div class="bg-blue-500 py-12 mb-8">
     <div class="container px-8 mx-auto text-white">
-        <h1 class="text-4xl font-semibold mb-4">You're almost there!</h1>
-        <h2 class="text-xl mb-4">
-            Complete your registration now, or you can revisit and update
+        <h1 class="text-4xl font-semibold mb-4">Complete your registration!</h1>
+        <h2 class="text-xl">
+            Fill up your company details now or you can revisit and update
             your details in your company profile later.
         </h2>
     </div>

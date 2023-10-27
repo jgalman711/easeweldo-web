@@ -63,7 +63,7 @@
             @include('partials.payment-options')
             <input type="text" name="subscription_id" id="subscription_id-count" value="{{ $subscription['id'] }}" class="hidden" min="1">
             <button type="submit" class="bg-blue-800 text-white text-xl font-semibold px-6 py-4 mt-6 rounded-full hover:bg-blue-600 transition duration-300">Subscribe</button>
-            <a href="{{ env('EASEWELDO_PORTAL_URL') }}" class="text-gray-600 text-lg ml-4 underline">Do it later</a>
+            <a href="{{ route('company.edit') }}" class="text-gray-600 text-lg ml-4 underline">Do it later</a>
         </div>
     </form>
 </div>

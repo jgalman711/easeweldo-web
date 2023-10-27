@@ -6,11 +6,11 @@ class CompanyController extends Controller
 {
     public function edit()
     {
-        $company = session('company');
-        $response = $this->httpService->get("companies/{$company['slug']}");
+        $companySlug = session('company_slug');
+        $response = $this->httpService->get("companies/{$companySlug}");
         if ($response->isSuccess()) {
             $company = $response->getData();
-            $endpoint = config('app.api_endpoint') . "companies/{$company['slug']}?_method=PUT";
+            $endpoint = config('app.api_endpoint') . "companies/{$companySlug}?_method=PUT";
             return view('pages.business.company-registration', [
                 'token' => session('access_token'),
                 'company' => optional($company),
