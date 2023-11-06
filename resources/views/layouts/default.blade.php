@@ -19,9 +19,15 @@
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
                 </a>
                 <div class="flex md:order-2">
+                    @if(session('access_token'))
+                    <a href="{{ route('logout') }}" class="hidden md:block text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-md md:text-sm lg:text-lg px-4 py-2 text-center md:mr-3 w-28">
+                        Logout
+                    </a>
+                    @else
                     <a href="{{ route('login.index') }}" class="hidden md:block text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-md md:text-sm lg:text-lg px-4 py-2 text-center md:mr-3 w-28">
                         Login
                     </a>
+                    @endif
                     <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-md md:text-sm lg:text-lg p-2 text-center mr-3 md:mr-0 w-28">
                         Free Trial
                     </a>

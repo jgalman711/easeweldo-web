@@ -41,10 +41,11 @@ Route::group(['middleware' => 'auth.redirect'], function () {
 });
 
 Route::group(['middleware' => 'auth.bearer'], function () {
-    Route::get('/logout', [LogoutController::class, 'index']);
+    Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
     Route::get('company', [CompanyController::class, 'edit'])->name('company.edit');
     Route::get('company/complete-registration', [CompanyController::class, 'complete'])->name('company.complete');
     Route::get('dashboard', [CompanyDashboardController::class, 'index'])->name('company.dashboard');
+    Route::get('clock-terminal', [CompanyDashboardController::class, 'index'])->name('company.dashboard');
 });
 
 Route::prefix('personal')->group(function () {
