@@ -23,6 +23,9 @@
         <div class="container mx-auto my-8 max-w-6xl px-4">
             @include('partials.payment-options')
         </div>
+        <p class="my-10 text-lg">
+            You will commence your 60-day complimentary free trial of Easeweldo once the portal's development is completed, which is expected to be very soon. In the meantime, you can complete your company registration by clicking <a class="leading-6 text-blue-600 cursor-pointer underline" href="company">here</a>.
+        </p>
         <div class="max-w-4xl mx-auto flex flex-col items-center">
             <img src="{{ asset('assets/images/coming-soon.png') }}" alt="Subscription Image" class="w-full h-auto">
         </div>

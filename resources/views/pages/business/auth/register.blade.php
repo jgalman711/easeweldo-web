@@ -8,7 +8,7 @@
 
 <meta property="og:title" content="Easeweldo: Register for an Account">
 <meta property="og:description" content="Register for an Easeweldo account. Simplify your payroll management process with our user-friendly solutions.">
-<meta property="og:image" content="assets/images/register.png">
+<meta property="og:image" content="{{ asset('assets/images/meta/register.png') }}">
 <meta property="og:url" content="https://easeweldo.com/register">
 <meta property="og:type" content="website">
 @endsection

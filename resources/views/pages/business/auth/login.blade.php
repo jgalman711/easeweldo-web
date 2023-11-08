@@ -58,6 +58,7 @@
     <div class="mt-4">
         <p class="text-sm text-gray-600">New Company? <a href="register" class="font-medium text-blue-600 hover:underline">Sign up</a></p>
     </div>
+    @if(env('IS_PERSONAL_ENABLED'))
     <div class="mt-8 pt-8 border-t-2 border-gray-200 text-center">
         <a href="{{ route('personal.login') }}" type="button" class=" text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-4 py-3 inline-flex items-center">
             Switch to Personal
@@ -66,5 +67,6 @@
             </svg>
         </a>
     </div>
+    @endif
 </div>
 @endsection
