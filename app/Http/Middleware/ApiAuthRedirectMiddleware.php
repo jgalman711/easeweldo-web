@@ -21,9 +21,9 @@ class ApiAuthRedirectMiddleware
             if (Str::contains($url, 'personal')) {
                 return redirect()->route('personal.dashboard');
             } else {
-                return redirect('dashboard');
+                return redirect('company/complete-registration');
             }
-            return redirect('dashboard');
+            return redirect('company/complete-registration');
         }
         return $next($request);
     }

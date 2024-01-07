@@ -28,7 +28,7 @@
                         Login
                     </a>
                     @endif
-                    <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-md md:text-sm lg:text-lg p-2 text-center mr-3 md:mr-0 w-28">
+                    <a href="{{ route('register.index') }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-md md:text-sm lg:text-lg p-2 text-center mr-3 md:mr-0 w-28">
                         Free Trial
                     </a>
                     <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-sticky" aria-expanded="false">

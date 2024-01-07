@@ -49,7 +49,7 @@
             </ul>
         </div>
         <div class="w-full px-4">
-            <a href="{{ route('subscriptions.index', ['subscription_id' => $subscription['subscription_id']]) }}" class="w-full text-center inline-block bg-blue-800 text-white font-semibold my-6 py-4 px-6 rounded-md shadow-md hover:bg-blue-600 transition duration-300">
+            <a href="{{ route('register.index') }}" class="w-full text-center inline-block bg-blue-800 text-white font-semibold my-6 py-4 px-6 rounded-md shadow-md hover:bg-blue-600 transition duration-300">
                 Choose Plan
             </a>
         </div>

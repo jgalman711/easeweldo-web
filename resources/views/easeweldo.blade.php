@@ -12,7 +12,7 @@
                     administration with our <span class="text-blue-800 font-semibold"> AI-Powered Solution</span>.
                 </p>
                 <div class="text-center sm:text-left py-8 lg:pt-32">
-                    <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}" class="inline-block bg-blue-800 text-white font-semibold py-4 px-6 lg:py-6 lg:px-12 rounded-xl shadow-md hover:bg-blue-600 transition duration-300 mx-auto lg:text-xl">
+                    <a href="{{ route('register.index') }}" class="inline-block bg-blue-800 text-white font-semibold py-4 px-6 lg:py-6 lg:px-12 rounded-xl shadow-md hover:bg-blue-600 transition duration-300 mx-auto lg:text-xl">
                         Start 60-days Trial Now
                     </a>
                 </div>
@@ -41,7 +41,7 @@
                     <p class="mb-4 text-md md:text-lg">
                         Discover how we can transform your HR operations and propel your business forward.
                     </p>
-                    <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}"
+                    <a href="{{ route('register.index') }}"
                         class="text-lg inline-flex items-center py-4 px-6 font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Start Free Trial Now
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -299,7 +299,7 @@
                     ready to assist you and answer any questions.
                 </p>
                 <p class="text-lg mb-12 max-w-4xl">
-                    Click <a href="{{ route('subscriptions.index', ['subscription_id' => 2]) }}" target="_blank" class="text-blue-500 font-semibold hover:text-blue-400">here</a>
+                    Click <a href="{{ route('register.index') }}" target="_blank" class="text-blue-500 font-semibold hover:text-blue-400">here</a>
                     to take advantage of our free 60-days trial and experience streamlined payroll
                     processes firsthand.
                 </p>
