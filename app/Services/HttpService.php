@@ -22,10 +22,7 @@ class HttpService
         $token = session('access_token');
         $uri = $this->endpoint . $uri;
         $query = http_build_query($data);
-        $this->response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $token,
-            'Accept' => 'application/json'
-        ])->get($uri, $query);
+        $this->response = Http::withHeaders(self::setHeader($token))->get($uri, $query);
         $this->jsonResponse = $this->response->json();
         return $this;
     }
@@ -34,10 +31,7 @@ class HttpService
     {
         $token = session('access_token');
         $uri = $this->endpoint . $uri;
-        $this->response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $token,
-            'Accept' => 'application/json'
-        ])->post($uri, $data);
+        $this->response = Http::withHeaders(self::setHeader($token))->post($uri, $data);
         $this->jsonResponse = $this->response->json();
         return $this;
     }
@@ -46,14 +40,10 @@ class HttpService
     {
         $token = session('access_token');
         $uri = $this->endpoint . $uri;
-        $this->response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $token,
-            'Accept' => 'application/json'
-        ])->patch($uri, $data);
+        $this->response = Http::withHeaders(self::setHeader($token))->patch($uri, $data);
         $this->jsonResponse = $this->response->json();
         return $this;
     }
-
 
     public function isSuccess(): bool
     {
@@ -105,5 +95,13 @@ class HttpService
     public function getBody()
     {
         return $this->response->body();
+    }
+
+    private function setHeader(string $token = null): array
+    {
+        return [
+            'Authorization' => 'Bearer ' . $token,
+            'Accept' => 'application/json'
+        ];
     }
 }

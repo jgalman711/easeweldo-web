@@ -8,7 +8,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        Cache::forget('index');
         $data = Cache::remember('index', 3600, function () {
             $response = $this->httpService->get('subscription-prices', ['search' => 36, 'except' => 'trial']);
             if ($response->isSuccess()) {

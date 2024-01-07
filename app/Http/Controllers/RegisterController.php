@@ -27,7 +27,7 @@ class RegisterController extends Controller
                 'access_token' => $token,
                 'company_slug' => $company['slug']
             ]);
-            return redirect('subscriptions?subscription_id=2');
+            return redirect('company');
         }
         return redirect()->back()->withErrors(['Registration failed.'])->withInput();
     }
